@@ -1,0 +1,9 @@
+# folders
+venv
+__pycache__/
+.vscode
+.idea
+
+# files
+.flaskenv
+*.pyc
