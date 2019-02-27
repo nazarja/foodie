@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="Your recipe website to share and create world cuisine recipes. Log in today and get started!">
+    <meta name="author" content="Sean Murphy">
+    <title>Foodie | Create . Share . Eat</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/uikit.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+    <!--Header -->
+    <header></header>
+
+    <!-- Main -->
+    <main>{% block content %}{% endblock %}</main>
+
+    <!-- Footer -->
+    <footer></footer>
+
+    <!-- JavaScript -->
+    <script src="{{ url_for('static', filename='js/uikit.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/uikit-icons.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
