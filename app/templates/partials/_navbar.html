@@ -1,0 +1,43 @@
+{% block content %}
+
+    <!-- OffCanvas Menu -->
+    {% include 'partials/_offcanvas.html' %}
+
+    <!-- Small Navbar -->
+    <nav id="navbar-small" uk-sticky>
+        <div id="nav-small-left">
+            <i id="offcanvas-toggle" uk-toggle="target: #offcanvas-menu" uk-icon="icon: menu"></i>
+            <a href="{{ url_for('index') }}">
+                <img height="40" width="60" src="{{ url_for('static', filename='images/logo_small_white.png') }}" alt="foodie logo" uklogo>
+            </a>
+        </div>
+
+        <!-- Sign / Account Ul Element -->
+        <div id="navbar-small-right" class="uk-navbar uk-position-right">
+            {% include 'partials/_navbar_sign.html' %}
+        </div>
+    </nav>
+    
+
+    <!-- Large Navbar -->
+    <nav id="navbar-large" uk-navbar uk-sticky>
+        <div class="uk-navbar-left">
+            <a id="logo-container" href="{{ url_for('index') }}">
+                <img id="logo" src="{{ url_for('static', filename='images/logo_large_white.png') }}" alt="foodie logo" uklogo>
+            </a>
+            
+            <!-- Main Menu -->
+            <div>
+                <span>dkjgkldj</span>
+                <span>dkjgkldj</span>
+                <span>dkjgkldj</span>
+            </div>
+        </div>
+
+        <!-- Search Element -->
+        {% include 'partials/_search_modal.html' %}
+
+        <!-- Sign / Account Ul Element -->
+        {% include 'partials/_navbar_sign.html' %}
+    </nav>
+{% endblock %}
