@@ -1,8 +1,5 @@
 {% block content %}
 
-    <!-- OffCanvas Menu -->
-    {% include 'partials/_offcanvas.html' %}
-
     <!-- Small Navbar -->
     <nav id="navbar-small" uk-sticky>
         <div id="nav-small-left">
@@ -16,6 +13,9 @@
         <div id="navbar-small-right" class="uk-navbar uk-position-right">
             {% include 'partials/_navbar_sign.html' %}
         </div>
+
+        <!-- OffCanvas Menu -->
+        {% include 'partials/_offcanvas.html' %}
     </nav>
     
 
@@ -27,11 +27,13 @@
             </a>
             
             <!-- Main Menu -->
-            <div>
-                <span>dkjgkldj</span>
-                <span>dkjgkldj</span>
-                <span>dkjgkldj</span>
-            </div>
+            <ul id="main-menu" class="uk-navbar-nav">
+                <li><a href="#"><i uk-icon="icon: chevron-down"></i>Cuisine</a></li>
+                <li><a href="#"><i uk-icon="icon: chevron-down"></i>Course</a></li>
+                <li><a href="#"><i uk-icon="icon: chevron-down"></i>Diet</a></li>
+                <li><a href="#"><i uk-icon="icon: chevron-down"></i>Skill Level</a></li>
+                <li><a href="#"><i uk-icon="icon: settings"></i>Filters</a></li>
+            </ul>
         </div>
 
         <!-- Search Element -->

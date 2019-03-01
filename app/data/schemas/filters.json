@@ -1,0 +1,8 @@
+{
+    "cuisine": ["american", "british", "caribbean", "chinese", "french", "greek", "indian", "italian", "japanese", "mediterranean", "mexican", "moroccan", "spanish", "thai", "turkish", "vietnamese"],
+    "planning": ["10-minute-supper", "beginners", "easily-doubled", "easily-halved", "everyday-food", "for-the-experienced-cook", "freezable", "in-season", "make-ahead", "make-it-tonight", "ultimate"],
+    "skill_level": ["easy", "medium", "hard"],
+    "mood": ["budget", "casual", "comfort", "family-friendly", "formal", "hearty", "indulgent", "light", "quick", "romantic"],
+    "course": ["afternoon-tea", "breakfast", "brunch", "buffet", "canapes", "cocktails", "condiment", "dessert", "dinner", "drink", "fish-course", "lunch", "main-course", "pasta-course", "side-dish", "snack", "soup-course", "starter", "supper", "treat", "vegetable-course"],
+    "diet": ["dairy-free", "gluten-free", "healthy", "low-calorie", "low-fat", "low-salt", "vegetarian"]
+}

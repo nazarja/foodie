@@ -1,8 +1,44 @@
 {% block content %}
-    <div id="offcanvas-menu" uk-offcanvas>
+    <div id="offcanvas-menu" uk-offcanvas="mode: push; flip: true">
         <div class="uk-offcanvas-bar">
             <button class="uk-offcanvas-close" type="button" uk-close></button>
-            <p>Offcanvas Menu</p>
+            <div id="offcanvas-content">
+
+                <!-- Logo -->
+                <div class="uk-text-center">
+                    <a href="{{ url_for('index') }}">
+                        <img src="{{ url_for('static', filename='images/logo_small_white.png') }}" alt="foodie logo">
+                    </a>
+                </div>
+
+                <!-- trial menu -->
+                <div>
+                    <ul class="uk-nav-default uk-nav-parent-icon" uk-nav>
+                        <li class="uk-active"><a href="#">Active</a></li>
+                        <li class="uk-parent">
+                            <a href="#">Parent</a>
+                            <ul class="uk-nav-sub">
+                                <li><a href="#">Sub item</a></li>
+                                <li>
+                                    <a href="#">Sub item</a>
+                                    <ul>
+                                        <li><a href="#">Sub item</a></li>
+                                        <li><a href="#">Sub item</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="uk-parent">
+                            <a href="#">Parent</a>
+                            <ul class="uk-nav-sub">
+                                <li><a href="#">Sub item</a></li>
+                                <li><a href="#">Sub item</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
         </div>
     </div>
 {% endblock %}
