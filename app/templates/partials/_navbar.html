@@ -11,7 +11,7 @@
 
         <!-- Sign / Account Ul Element -->
         <div id="navbar-small-right" class="uk-navbar uk-position-right">
-            {% include 'partials/_navbar_sign.html' %}
+            {% include 'partials/_sign_nav.html' %}
         </div>
 
         <!-- OffCanvas Menu -->
@@ -28,11 +28,10 @@
             
             <!-- Main Menu -->
             <ul id="main-menu" class="uk-navbar-nav">
-                <li><a href="#"><i uk-icon="icon: chevron-down"></i>Cuisine</a></li>
-                <li><a href="#"><i uk-icon="icon: chevron-down"></i>Course</a></li>
-                <li><a href="#"><i uk-icon="icon: chevron-down"></i>Diet</a></li>
-                <li><a href="#"><i uk-icon="icon: chevron-down"></i>Skill Level</a></li>
-                <li><a href="#"><i uk-icon="icon: settings"></i>Filters</a></li>
+                    {% for key in filters.keys() %}
+                    <li><a href="#">{{ key }}<i uk-icon="icon: chevron-down"></i></a></li>
+                    {% endfor %}
+                    <li><a href="#">Filters<i uk-icon="icon: settings"></i></a></li>
             </ul>
         </div>
 
@@ -40,6 +39,6 @@
         {% include 'partials/_search_modal.html' %}
 
         <!-- Sign / Account Ul Element -->
-        {% include 'partials/_navbar_sign.html' %}
+        {% include 'partials/_sign_nav.html' %}
     </nav>
 {% endblock %}

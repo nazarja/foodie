@@ -1,0 +1,185 @@
+
+/*
+==================================================================
+    Navigation Bar
+==================================================================
+*/
+
+nav {
+    background-color: var(--darkblue);
+    color: var(--white);
+}
+
+nav a {
+    color: var(--white) !important;
+}
+
+nav a:hover {
+    color: var(--white) !important;
+    opacity: 0.7;
+}
+
+#navbar-small {
+    display: none;
+    padding: 10px 20px;
+}
+
+#navbar-small-right {
+    top: -14px;
+    right: 20px;
+}
+
+#navbar-small-right li {
+    margin: 0 -5px;
+}
+
+#navbar-small-right a {
+    font-size: 0.8rem;
+}
+
+#navbar-large {
+    padding-left: 40px;
+    padding-right: 40px;
+    box-shadow: var(--box-shadow)
+}
+
+
+/*
+=================================
+    Logo
+=================================
+*/
+
+#logo-container {
+    width: 140px;
+    text-align: center;
+}
+
+#logo {
+    padding: 10px 0;
+    margin-right: 10px;
+    transition: 0.35s;
+    height: 109px;
+    width: 120px;
+    text-align: center;
+}
+
+
+/*
+=================================
+    Main Menu
+=================================
+*/
+
+#main-menu li a {
+    padding: 10px;
+}
+
+#main-menu li i {
+    padding-left: 5px;
+    margin-top: -1px;
+}
+
+
+/*
+=================================
+    Search
+=================================
+*/
+
+.uk-navbar-toggle,
+#search-icon-text {
+    color: var(--white);
+    text-decoration: none;
+}
+
+.uk-navbar-toggle:hover,
+#search-icon-text:hover {
+    opacity: 0.7;
+    color: var(--white);
+}
+
+#search-icon-text {
+    opacity: 0;
+    position: relative;
+    right: -40px;
+    transition: var(--transition);
+}
+
+#search-icon:hover {
+    animation: growSearch 0.35s;
+}
+
+#nav-search:hover > #search-icon-text {
+    opacity: 1;
+    right: 0px;
+}
+
+@keyframes growSearch {
+    0% {transform: scale(1);}
+    50% {transform: scale(1.2);}
+    100% { transform: scale(1);}
+} 
+
+
+/*
+=================================
+    OffCanvas
+=================================
+*/
+
+#offcanvas-toggle {
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.uk-offcanvas-container {
+    background-color: rgba(0,0,0,0.1);
+}
+
+.uk-offcanvas-bar {
+    background-color: var(--medblack);
+}
+
+#offcanvas-logo {
+    margin: 50px auto 0;
+}
+
+#offcanvas-search-icon {
+    display: inline;
+    padding-right: 20px;
+}
+
+.uk-search-input {
+    font-size: 5vmin !important;
+}
+
+.uk-icon-button {
+    line-height: 2;
+    text-align: center;
+}
+
+
+/*
+==================================================================
+    Media Queries
+==================================================================
+*/
+
+@media screen and (max-width: 1300px) {
+    
+    #navbar-large {
+        padding: 0 10px;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    
+    #navbar-small {
+        display: block;
+    }
+    
+    #navbar-large {
+        display: none;
+    }
+}

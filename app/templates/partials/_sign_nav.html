@@ -4,12 +4,11 @@
             <li><a href="#">Sign In</a></li>
             <i uk-icon="icon: ">|</i>
             <li><a href="#">Sign Up</a></li>
-            <i uk-icon="icon: user"></i>
         {% elif current_user.is_authenticated %}
             <li><a href="#">Account</a></li>
             <i uk-icon="icon: ">|</i>
             <li><a href="#">Sign Out</a></li>
-            <i uk-icon="icon: user"></i>
         {% endif %}
+        <i uk-icon="icon: user"></i>
     </ul>
 {% endblock %}

@@ -5,36 +5,34 @@
             <div id="offcanvas-content">
 
                 <!-- Logo -->
-                <div class="uk-text-center">
+                <div id="offcanvas-logo" class="uk-text-center">
                     <a href="{{ url_for('index') }}">
                         <img src="{{ url_for('static', filename='images/logo_small_white.png') }}" alt="foodie logo">
                     </a>
                 </div>
 
-                <!-- trial menu -->
-                <div>
+                <!-- Search Element -->
+                <div id="offcanvas-search">
+                    <a class="uk-navbar-toggle" href="#modal-full" uk-toggle>
+                        <i id="offcanvas-search-icon" uk-icon="icon: search"></i>
+                        <span class=uk-text-meta>Search for anything ...</span>
+                    </a>
+                </div>
+
+                <!-- Menu -->
+                <div id="offcanvas-menu">
                     <ul class="uk-nav-default uk-nav-parent-icon" uk-nav>
-                        <li class="uk-active"><a href="#">Active</a></li>
-                        <li class="uk-parent">
-                            <a href="#">Parent</a>
-                            <ul class="uk-nav-sub">
-                                <li><a href="#">Sub item</a></li>
-                                <li>
-                                    <a href="#">Sub item</a>
-                                    <ul>
-                                        <li><a href="#">Sub item</a></li>
-                                        <li><a href="#">Sub item</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="uk-parent">
-                            <a href="#">Parent</a>
-                            <ul class="uk-nav-sub">
-                                <li><a href="#">Sub item</a></li>
-                                <li><a href="#">Sub item</a></li>
-                            </ul>
-                        </li>
+                        {% for key, value in filters.items() %}
+                            <li class="uk-parent">
+                                <a href="#">{{ key|title }}</a>
+                                <ul class="uk-nav-sub">
+                                    {% for item in value %}
+                                        <li><a href="#">{{ item|title }}</a></li>
+                                    {% endfor %}
+                                </ul>
+                            </li>
+                        {% endfor %}
+                        <li><a href="#">All Filters</a></li>
                     </ul>
                 </div>
             </div>
