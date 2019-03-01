@@ -1,3 +1,4 @@
+
 /*
 ==================================================================
     Variables / Fonts
@@ -23,7 +24,6 @@
     font-family: 'ProximaNova Light';
 }
 
-
 @font-face {
     src: url('../fonts/ProximaNova-Reg.woff2');
     font-family: 'ProximaNova Regular';
@@ -39,6 +39,7 @@
 body {
     font-family: 'ProximaNova Light', Roboto, sans-serif;
     color: var(--grey);
+    background-color: var(--white);
     height: 1300px;
 }
 

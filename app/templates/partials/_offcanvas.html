@@ -22,12 +22,12 @@
                 <!-- Menu -->
                 <div id="offcanvas-menu">
                     <ul class="uk-nav-default uk-nav-parent-icon" uk-nav>
-                        {% for key, value in filters.items() %}
+                        {% for key, values in filters.items() %}
                             <li class="uk-parent">
                                 <a href="#">{{ key|title }}</a>
                                 <ul class="uk-nav-sub">
-                                    {% for item in value %}
-                                        <li><a href="#">{{ item|title }}</a></li>
+                                    {% for value in values %}
+                                        <li><a href="#">{{ value|title }}</a></li>
                                     {% endfor %}
                                 </ul>
                             </li>
@@ -37,6 +37,16 @@
                 </div>
             </div>
 
+            <!-- Icon Nav -->
+            <div id="offcanvas-iconnav">
+                <p class="uk-text-meta uk-text-center">Get in touch with us!</p>
+                <ul class="uk-iconnav">
+                    <li><a class="uk-icon-button" href="" uk-icon="facebook"></a></li>
+                    <li><a class="uk-icon-button" href="" uk-icon="twitter"></a></li>
+                    <li><a class="uk-icon-button" href="" uk-icon="google"></a></li>
+                    <li><a class="uk-icon-button" href="" uk-icon="youtube"></a></li>
+                </ul>
+            <div>
         </div>
     </div>
 {% endblock %}

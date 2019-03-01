@@ -80,6 +80,25 @@ nav a:hover {
     margin-top: -1px;
 }
 
+#main-menu .uk-navbar-dropdown  {
+    margin-top: 0px;
+}
+
+#main-menu .main-menu-ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+#main-menu .main-menu-item  {
+    width: 150px;
+}
+
+#main-menu .main-menu-item  a {
+    color: var(--black) !important;
+}
+
 
 /*
 =================================
@@ -133,12 +152,18 @@ nav a:hover {
     cursor: pointer;
 }
 
-.uk-offcanvas-container {
-    background-color: rgba(0,0,0,0.1);
-}
-
 .uk-offcanvas-bar {
     background-color: var(--medblack);
+    display: flex;
+    flex-direction: column;
+}
+
+.uk-offcanvas-container {
+    background-color: rgba(0,0,0,0.4);
+}
+
+#offcanvas-content {
+    flex-grow: 1;
 }
 
 #offcanvas-logo {
@@ -152,6 +177,14 @@ nav a:hover {
 
 .uk-search-input {
     font-size: 5vmin !important;
+}
+
+#offcanvas-iconnav {
+    margin-top: 30px;
+}
+
+.uk-iconnav {
+    justify-content: center;
 }
 
 .uk-icon-button {
