@@ -27,12 +27,12 @@
                                 <a href="#">{{ key|title }}</a>
                                 <ul class="uk-nav-sub">
                                     {% for value in values %}
-                                        <li><a href="#">{{ value|title }}</a></li>
+                                        <li><a href="{{ url_for('categories', category=key, data=value) }}">{{ value|title }}</a></li>
                                     {% endfor %}
                                 </ul>
                             </li>
                         {% endfor %}
-                        <li><a href="#">All Filters</a></li>
+                        <li><a href="{{ url_for('filters') }}">All Filters</a></li>
                     </ul>
                 </div>
             </div>

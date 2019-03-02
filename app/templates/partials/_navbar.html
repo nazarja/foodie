@@ -40,13 +40,13 @@
                         <div class="uk-navbar-dropdown uk-navbar-dropdown-width-2 main-dropdown-menu" uk-drop="offset: 15; pos: bottom-center">
                             <ul class="uk-nav uk-navbar-dropdown-nav main-menu-ul">
                                 {% for value in values %}
-                                    <li class="main-menu-item"><a href="#">{{ value|title }}</a></li>
+                                    <li class="main-menu-item"><a href="{{ url_for('categories', category=key, data=value) }}">{{ value|title }}</a></li>
                                 {% endfor %}
                             </ul>
                         </div>
                     </li>
                 {% endfor %}
-                    <li><a href="#">Filters <i uk-icon="icon: settings"></i></a></li>
+                    <li><a href="{{ url_for('filters') }}">Filters <i uk-icon="icon: settings"></i></a></li>
             </ul>
         </div>
 

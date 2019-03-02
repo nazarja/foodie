@@ -29,6 +29,24 @@ def index():
 # ================================================ #
 
 
+# filters
+@app.route('/filters')
+def filters():
+    return render_template('filters.html')
+
+
+# ================================================ #
+
+
+# categories
+@app.route('/categories/<category>/<data>')
+def categories(category, data):
+    return render_template('categories.html', category=category, data=data)
+
+
+# ================================================ #
+
+
 # profile
 @app.route('/profile')
 @login_required

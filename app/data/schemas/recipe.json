@@ -1,0 +1,38 @@
+{
+    "recipe_filters": {
+        "planning": "",
+        "cuisine": "",
+        "mood": "",
+        "diet": "",
+        "skill": "",
+        "main_ingredient": "",
+        "course": [],
+        "kw": [],
+        "ingred": []
+    },
+    "recipe_data": {
+        "title": "",
+        "author": "",
+        "description": "",
+        "prep_time": "",
+        "cook_time": "",
+        "difficulty": "",
+        "serves": ""
+    },
+    "image_details": [],
+    "ingredients": [],
+    "methods": [],
+    "nutrition": [
+        ["kcal", ""],
+        ["fat", ""],
+        ["saturates", ""],
+        ["carbs", ""],
+        ["sugars", ""],
+        ["fibre", ""]
+    ],
+    "users": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": []
+    }
+}
