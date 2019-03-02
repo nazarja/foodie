@@ -80,10 +80,6 @@ nav a:hover {
     margin-top: -1px;
 }
 
-#main-menu .uk-navbar-dropdown  {
-    margin-top: 0px;
-}
-
 #main-menu .main-menu-ul {
     display: flex;
     flex-direction: row;
@@ -213,6 +209,13 @@ nav a:hover {
     }
     
     #navbar-large {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    
+    #nav-search {
         display: none;
     }
 }

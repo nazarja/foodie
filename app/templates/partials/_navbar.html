@@ -1,6 +1,6 @@
 {% block content %}
 
-    <!-- Small Navbar -->
+    <!-- Small Navbar < 1200px -->
     <nav id="navbar-small" uk-sticky>
         <div id="nav-small-left">
             <i id="offcanvas-toggle" uk-toggle="target: #offcanvas-menu" uk-icon="icon: menu"></i>
@@ -9,9 +9,14 @@
             </a>
         </div>
 
-        <!-- Sign / Account Ul Element -->
         <div id="navbar-small-right" class="uk-navbar uk-position-right">
-            {% include 'partials/_sign_nav.html' %}
+            <div id="nav-search" class="uk-navbar-right">
+                <a id="search-icon-text" href="#modal-full" uk-toggle>search ...</a>
+                <a id="search-icon" class="uk-navbar-toggle" href="#modal-full" uk-search-icon uk-toggle></a>
+            </div>
+            
+            <!-- Sign / Account Ul Element -->
+            {% include 'partials/_sign.html' %}
         </div>
 
         <!-- OffCanvas Menu -->
@@ -19,7 +24,8 @@
     </nav>
     
 
-    <!-- Large Navbar -->
+
+    <!-- Large Navbar > 1200px -->
     <nav id="navbar-large" uk-navbar uk-sticky>
         <div class="uk-navbar-left">
             <a id="logo-container" href="{{ url_for('index') }}">
@@ -31,7 +37,7 @@
                 {% for key, values in filters.items() %}
                     <li>
                         <a href="#">{{ key }}<i uk-icon="icon: chevron-down"></i></a>
-                        <div class="uk-navbar-dropdown uk-navbar-dropdown-width-2">
+                        <div class="uk-navbar-dropdown uk-navbar-dropdown-width-2 main-dropdown-menu" uk-drop="offset: 15; pos: bottom-center">
                             <ul class="uk-nav uk-navbar-dropdown-nav main-menu-ul">
                                 {% for value in values %}
                                     <li class="main-menu-item"><a href="#">{{ value|title }}</a></li>
@@ -48,6 +54,6 @@
         {% include 'partials/_search_modal.html' %}
 
         <!-- Sign / Account Ul Element -->
-        {% include 'partials/_sign_nav.html' %}
+        {% include 'partials/_sign.html' %}
     </nav>
 {% endblock %}
