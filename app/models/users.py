@@ -3,7 +3,7 @@ from app import db, login
 from werkzeug.security import check_password_hash, generate_password_hash
 
 
-# User Loader
+# user loader
 @login.user_loader
 def load_user(username):
     user = db.users.find_one({"username": username})
@@ -12,8 +12,8 @@ def load_user(username):
     return User(user['username'], user)
 
 
-# User Login Class
-class User():
+# user login class
+class User:
 
     def __init__(self, username, user=None):
         self.username = username

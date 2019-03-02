@@ -1,15 +1,15 @@
 import json
 from app import app, db
-from flask import render_template, redirect, url_for, session, request, flash
+from flask import render_template, redirect, url_for, request, flash
 from flask_login import login_user, logout_user, login_required, current_user
 from app.models.forms import SignForm
 from app.models.users import User
 
 
-#================================================#
+# ================================================ #
 
 
-# make filters dict availible to all templates
+# make filters dict available to all templates
 @app.context_processor
 def inject_filters():
     with open('app/data/schemas/filters.json') as filters_file:
@@ -17,7 +17,7 @@ def inject_filters():
         return dict(filters=filters)
 
 
-#================================================#
+# ================================================ #
 
 
 # index
@@ -26,7 +26,7 @@ def index():
     return render_template('index.html')
 
 
-#================================================#
+# ================================================ #
 
 
 # profile
@@ -36,7 +36,7 @@ def profile():
     return render_template('profile.html')
 
 
-#================================================#
+# ================================================ #
 
 
 # sign in / out
@@ -74,7 +74,7 @@ def sign(url):
     return render_template('sign.html', form=form, url=url)
 
 
-#================================================#
+# ================================================ #
 
 
 # sign out
@@ -84,4 +84,4 @@ def signout():
     return redirect(url_for('sign', url='in'))
 
 
-#================================================#
+# ================================================ #

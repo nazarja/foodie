@@ -1,4 +1,6 @@
 
+
+
 function menuAnimation() {
     const logo = document.querySelector('#logo');
     const url = window.location.protocol + '//' + window.location.host + '/';
@@ -28,4 +30,4 @@ menuAnimation();
 function changeDropDown(offset) {    
     const menus = document.querySelectorAll('.main-dropdown-menu');
     menus.forEach(menu => menu.setAttribute('uk-drop', `offset: ${offset}`));
-};
+}

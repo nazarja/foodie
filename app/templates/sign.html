@@ -2,39 +2,35 @@
 
 {% block content %}
     <section id="sign">
-        <!-- LOGO / TITLE -->
         <a href="{{ url_for('index') }}"><img src="{{ url_for('static', filename='images/logo_large_black.png') }}" alt="foodie logo"></a>
         <h1>Sign {{ url }} to <strong>Foodie</strong></h1>
 
 
-        <!-- FORM -->
+        <!-- Form -->
         <form action="" method="POST" autocomplete="off" novalidate>
             {{ form.hidden_tag() }}
 
-
-            <!-- USERNAME -->
+            <!-- Username-->
             <p class="uk-form-label">{{ form.username.label }}<br />{{ form.username(class_="uk-input") }}</p>
             {% if form.username.errors %}
                 <p>{% for error in form.username.errors %}<span class="flashes">{{ error }}</span>{% endfor %}</p>
             {% endif %}
 
-
-            <!-- PASSWORD -->
+            <!-- Password -->
             <p class="uk-form-label">{{ form.password.label }}<br />{{ form.password(class_="uk-input") }}</p>
             {% if form.password.errors %}
                 <p>{% for error in form.password.errors %}<span class="flashes">{{ error }}</span>{% endfor %}</p>
             {% endif %}
 
-
-            <!-- REMEMBER ME -->
+            <!-- Remember Me -->
             <p class="uk-form-label">{{ form.remember(class_="uk-checkbox") }} {{ form.remember.label }}</p>
 
-
-            <!-- SUBMIT -->
+            <!-- Submit -->
             <p>{{ form.submit(class_="uk-button uk-button-large uk-width-1-1") }}</p>
         </form>
 
-        <!-- CHANGE SIGN IN/UP URL OPTION -->
+
+        <!-- Change Sign in / up url -->
         <div>
             {% if url == 'in' %}
                 <p>Not Registered Yet? <a href="{{ url_for('sign', url='up') }}" class="sign-link">Sign Up</a></p>
@@ -43,8 +39,9 @@
             {% endif %}
         </div>
 
-        <!-- FLASH ERROR MESSAGES -->
-        <div id="flashed-messages">
+
+        <!-- Flash Error Messages -->
+        <div>
             {% with messages = get_flashed_messages(category_filter=["sign-error"]) %}
                 {% if messages %}
                     <ul class=flashes>
