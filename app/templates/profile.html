@@ -1,0 +1,7 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <section>
+        <h1>Hey {{ current_user.user['username']|title }}.</h1>
+    </section>
+{% endblock %}

@@ -51,6 +51,15 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--black);
 }
 
+ul {
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    list-style: none;
+}
+
 main {
     margin-top: 50px;
     flex: 1;
