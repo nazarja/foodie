@@ -17,6 +17,7 @@
     --darkblue: #506377;
     --transition: 0.35s;
     --box-shadow: 0px 2px 10px 0px rgba(0,0,0,0.4);
+    --light-box-shadow: 0px 2px 10px 0px rgba(0,0,0,0.1);
 }
 
 @font-face {
@@ -40,12 +41,19 @@ body {
     font-family: 'ProximaNova Light', Roboto, sans-serif;
     color: var(--grey);
     background-color: var(--white);
-    height: 1300px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 h1, h2, h3, h4, h5, h6 {
     font-family: 'ProximaNova Light', Roboto, sans-serif;
     color: var(--black);
+}
+
+main {
+    margin-top: 50px;
+    flex: 1;
 }
 
 
@@ -54,3 +62,34 @@ h1, h2, h3, h4, h5, h6 {
     Reusable Classes
 ==================================================================
 */
+
+.uk-input {
+    border: 1px solid var(--lightgrey);
+    margin-top: 10px;
+}
+
+.uk-input:focus {
+    border-color: var(--grey);
+    box-shadow: var(--light-box-shadow);
+}
+
+.uk-checkbox {
+    border: 1px solid var(--lightgrey);
+    margin-right: 10px;
+}
+
+.uk-button {
+    color: var(--white);
+    background: var(--darkblue);
+    cursor: pointer;
+}
+
+.uk-button:hover {
+    background-color: var(--lightblack);
+    box-shadow: var(--light-box-shadow);
+}
+
+.flashes {
+    color: crimson;
+    font-weight: bolder;
+}

@@ -1,0 +1,22 @@
+
+/*
+==================================================================
+    Sign In / Out Page
+==================================================================
+*/
+
+#sign {
+    max-width: 350px;
+    min-width: 250px;
+    margin: auto;
+    padding: 0 15px;
+    text-align: center;
+}
+
+#sign form {
+    text-align: left;
+}
+
+#sign form p {
+    margin: 30px 0;
+}
