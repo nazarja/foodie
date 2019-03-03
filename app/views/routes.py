@@ -43,7 +43,8 @@ def filters():
 # categories
 @app.route('/categories/<category>/<data>')
 def categories(category, data):
-    return render_template('categories.html', category=category, data=data)
+    recipes = Recipe.get_recipes_by_category(category, data)
+    return render_template('categories.html', category=category, data=data, recipes=recipes[0], slideshow=recipes[1])
 
 
 # ================================================ #
