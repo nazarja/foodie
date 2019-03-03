@@ -1,9 +1,10 @@
 import json
-from app import app, db
+from app import app, db, ObjectId
 from flask import render_template, redirect, url_for, request, flash
 from flask_login import login_user, logout_user, login_required, current_user
 from app.models.forms import SignForm
 from app.models.users import User
+from app.models.recipes import Recipe
 
 
 # ================================================ #
@@ -23,7 +24,8 @@ def inject_filters():
 # index
 @app.route('/')
 def index():
-    return render_template('index.html')
+    slideshow = Recipe.get_random_recipes()
+    return render_template('index.html', slideshow=slideshow)
 
 
 # ================================================ #

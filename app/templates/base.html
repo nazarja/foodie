@@ -18,13 +18,13 @@
 <body>
 
     <!--Header -->
-    <header>{% include 'partials/_navbar.html' %}</header>
+    <header  uk-sticky>{% include 'partials/_navbar.html' %}</header>
 
     <!-- Main -->
     <main>{% block content %}{% endblock %}</main>
 
     <!-- Footer -->
-    <footer></footer>
+    <footer>{% include 'partials/_footer.html' %}</footer>
 
     <!-- JavaScript -->
     <script src="{{ url_for('static', filename='js/uikit.min.js') }}"></script>

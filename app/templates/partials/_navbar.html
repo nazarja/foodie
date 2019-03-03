@@ -1,7 +1,7 @@
 {% block content %}
 
-    <!-- Small Navbar < 1200px -->
-    <nav id="navbar-small" uk-sticky>
+    <!-- Small Navbar -->
+    <nav id="navbar-small">
         <div id="nav-small-left">
             <i id="offcanvas-toggle" uk-toggle="target: #offcanvas-menu" uk-icon="icon: menu"></i>
             <a href="{{ url_for('index') }}">
@@ -25,35 +25,37 @@
     
 
 
-    <!-- Large Navbar > 1200px -->
-    <nav id="navbar-large" uk-navbar uk-sticky>
-        <div class="uk-navbar-left">
-            <a id="logo-container" href="{{ url_for('index') }}">
-                <img id="logo" src="{{ url_for('static', filename='images/logo_large_white.png') }}" alt="foodie logo" uklogo>
-            </a>
-            
-            <!-- Main Menu -->
-            <ul id="main-menu" class="uk-navbar-nav">
-                {% for key, values in filters.items() %}
-                    <li>
-                        <a href="#">{{ key }}<i uk-icon="icon: chevron-down"></i></a>
-                        <div class="uk-navbar-dropdown uk-navbar-dropdown-width-2 main-dropdown-menu" uk-drop="offset: 15; pos: bottom-center">
-                            <ul class="uk-nav uk-navbar-dropdown-nav main-menu-ul">
-                                {% for value in values %}
-                                    <li class="main-menu-item"><a href="{{ url_for('categories', category=key, data=value) }}">{{ value|title }}</a></li>
-                                {% endfor %}
-                            </ul>
-                        </div>
-                    </li>
-                {% endfor %}
-                    <li><a href="{{ url_for('filters') }}">Filters <i uk-icon="icon: settings"></i></a></li>
-            </ul>
+    <!-- Large Navbar -->
+    <nav id="navbar-container">
+        <div id="navbar-large" uk-navbar>
+            <div class="uk-navbar-left">
+                <a id="logo-container" href="{{ url_for('index') }}">
+                    <img id="logo" src="{{ url_for('static', filename='images/logo_large_white.png') }}" alt="foodie logo" uklogo>
+                </a>
+                
+                <!-- Main Menu -->
+                <ul id="main-menu" class="uk-navbar-nav">
+                    {% for key, values in filters.items() %}
+                        <li>
+                            <a href="#">{{ key }}<i uk-icon="icon: chevron-down"></i></a>
+                            <div class="uk-navbar-dropdown uk-navbar-dropdown-width-2 main-dropdown-menu" uk-drop="offset: 15; pos: bottom-center">
+                                <ul class="uk-nav uk-navbar-dropdown-nav main-menu-ul">
+                                    {% for value in values %}
+                                        <li class="main-menu-item"><a href="{{ url_for('categories', category=key, data=value) }}">{{ value|title }}</a></li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        </li>
+                    {% endfor %}
+                        <li><a href="{{ url_for('filters') }}">Filters <i uk-icon="icon: settings"></i></a></li>
+                </ul>
+            </div>
+
+            <!-- Search Element -->
+            {% include 'partials/_search_modal.html' %}
+
+            <!-- Sign / Account Ul Element -->
+            {% include 'partials/_sign.html' %}
         </div>
-
-        <!-- Search Element -->
-        {% include 'partials/_search_modal.html' %}
-
-        <!-- Sign / Account Ul Element -->
-        {% include 'partials/_sign.html' %}
     </nav>
 {% endblock %}

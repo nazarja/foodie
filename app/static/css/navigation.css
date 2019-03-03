@@ -5,9 +5,10 @@
 ==================================================================
 */
 
-nav {
+header {
     background-color: var(--darkblue);
     color: var(--white);
+    box-shadow: var(--box-shadow)
 }
 
 nav a {
@@ -37,10 +38,14 @@ nav a:hover {
     font-size: 0.8rem;
 }
 
+#navbar-container {
+    max-width: 1300px;
+    margin: auto;
+}
+
 #navbar-large {
     padding-left: 40px;
     padding-right: 40px;
-    box-shadow: var(--box-shadow)
 }
 
 
@@ -154,10 +159,6 @@ nav a:hover {
     flex-direction: column;
 }
 
-.uk-offcanvas-container {
-    background-color: rgba(0,0,0,0.4);
-}
-
 #offcanvas-content {
     flex-grow: 1;
 }
@@ -179,11 +180,11 @@ nav a:hover {
     margin-top: 30px;
 }
 
-.uk-iconnav {
+#offcanvas-content .uk-iconnav {
     justify-content: center;
 }
 
-.uk-icon-button {
+#offcanvas-content .uk-icon-button {
     line-height: 2;
     text-align: center;
 }
@@ -198,7 +199,7 @@ nav a:hover {
 @media screen and (max-width: 1300px) {
     
     #navbar-large {
-        padding: 0 10px;
+        padding: 0 20px;
     }
 }
 
