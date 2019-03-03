@@ -13,8 +13,8 @@ from app.models.users import User
 @app.context_processor
 def inject_filters():
     with open('app/data/schemas/filters.json') as filters_file:
-        filters = json.load(filters_file)
-        return dict(filters=filters)
+        menu_filters = json.load(filters_file)
+        return dict(filters=menu_filters)
 
 
 # ================================================ #
