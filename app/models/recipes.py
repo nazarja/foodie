@@ -10,7 +10,7 @@ class Recipe:
 
 
     def get_recipe_details(id): 
-        return db.recipes.find_one({"_id": id})
+        return db.recipes.find_one({"_id": ObjectId(id)})
 
 
     def get_recipes_by_category(category, data):

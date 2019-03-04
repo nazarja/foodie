@@ -5,7 +5,7 @@
             "cuisine": "american",
             "mood": "",
             "diet": "",
-            "skill": "medium",
+            "skill": "easy",
             "main_ingredient": "",
             "course": ["buffet", "dinner", "side-dish"],
             "kw": ["chicken", "buffalo-chicken", "iron", "party", "spicy", "bbq"],
@@ -15,9 +15,9 @@
             "title": "Buffalo chicken",
             "author": "Emma Freud",
             "description": "These spicy wings are ideal party food for any celebration. The chicken is brined to make it extra juicy and the smoky sweetness of the sauce adds heat\u00a0",
-            "prep_time": " Prep: 20 mins ",
-            "cook_time": " Cook: 1 hr, 5 mins ",
-            "difficulty": " Hard ",
+            "prep_time": "Prep: - mins ",
+            "cook_time": "Cook: - mins ",
+            "difficulty": " Easy ",
             "serves": " Serves 4 "
         },
         "image_details": ["https://www.bbcgoodfood.com/sites/default/files/styles/recipe/public/recipe/recipe-image/2016/11/buffalo-wings.jpg?itok=_N9D87_0", "Buffalo chicken", "Buffalo chicken"],
@@ -54,7 +54,7 @@
             "description": "Once you've tried smoking and slow cooking your chicken, you'll be totally converted. The dry brine seasons the meat to the bone and keeps it succulent during cooking",
             "prep_time": " Prep: 20 mins ",
             "cook_time": " Cook: 6 hrs, 40 mins ",
-            "difficulty": " Hard ",
+            "difficulty": " Medium ",
             "serves": " Serves 10 "
         },
         "image_details": ["https://www.bbcgoodfood.com/sites/default/files/styles/recipe/public/recipe/recipe-image/2016/07/texas-bbq-medley-.jpg?itok=5oSXHSK4", "Texas BBQ medley", "Texas BBQ medley"],
@@ -424,7 +424,7 @@
             "description": "An indulgent chocolate and pecan treat with buttery pastry and a gooey filling everybody can get stuck into",
             "prep_time": " Prep: 1 hr ",
             "cook_time": " Cook: 1 hr, 25 mins ",
-            "difficulty": " Hard ",
+            "difficulty": " Medium ",
             "serves": " Serves 10 - 12 "
         },
         "image_details": ["https://www.bbcgoodfood.com/sites/default/files/styles/recipe/public/recipe/recipe-image/2016/07/choc-chip-pecan-pie.jpg?itok=ZH2c4YS2", "Choc chip pecan pie", "Choc chip pecan pie"],
@@ -608,7 +608,7 @@
             "author": "Emma Freud",
             "description": "Who doesn't love cookie dough and this one takes only minutes to make.\u00a0Keep a batch in the fridge, eat it by the spoon, serve it with ice cream, or\u00a0mould it, shape it and colour it with food dye like edible Play-Doh! \u00a0",
             "prep_time": " Prep: 5 mins - 10 mins ",
-            "cook_time": "",
+            "cook_time": "Cook: - mins ",
             "difficulty": " Easy ",
             "serves": " Makes 12 balls "
         },
@@ -757,7 +757,7 @@
             "description": "Fill a sweet shortcrust pastry tart case with lightly spiced squash to make a traditional American treat",
             "prep_time": " Prep: 40 mins ",
             "cook_time": " Cook: 1 hr, 30 mins ",
-            "difficulty": " Hard ",
+            "difficulty": " Medium ",
             "serves": " Serves 8 "
         },
         "image_details": ["https://www.bbcgoodfood.com/sites/default/files/styles/recipe/public/recipe_images/recipe-image-legacy-id--801482_11.jpg?itok=J_iBD0mH", "A sweet pumpkin pie on a serving dish with one slice served on a plate", "Pumpkin pie"],
@@ -1090,7 +1090,7 @@
             "description": "Celebrate gorgeous seasonal strawberries, raspberries, blackberries and redcurrants with this set basin brioche pud",
             "prep_time": " Prep: 25 mins ",
             "cook_time": " Cook: 5 mins ",
-            "difficulty": " Hard ",
+            "difficulty": " Medium ",
             "serves": " Serves 6 "
         },
         "image_details": ["https://www.bbcgoodfood.com/sites/default/files/styles/recipe/public/recipe_images/recipe-image-legacy-id--967650_11.jpg?itok=GHowINXf", "Classic summer pudding", "Classic summer pudding"],
@@ -1275,7 +1275,7 @@
             "description": "A traditional steak and ale pie with suet pastry. Make the filling the night before then steam the pudding the following morning for a delicious Sunday lunch",
             "prep_time": " Prep: 20 mins ",
             "cook_time": " Cook: 3 hrs, 30 mins ",
-            "difficulty": " Hard ",
+            "difficulty": " Medium ",
             "serves": " Serves 4 "
         },
         "image_details": ["https://www.bbcgoodfood.com/sites/default/files/styles/recipe/public/recipe_images/recipe-image-legacy-id--909460_10.jpg?itok=HIirDA4p", "Beef, ale & parsnip pudding", "Beef, ale & parsnip pudding"],
@@ -1312,7 +1312,7 @@
             "description": "Crispy beer battered langoustine or prawn tails with a mayo-based dip of gherkins, capers and herbs",
             "prep_time": " Prep: 30 mins ",
             "cook_time": " Cook: 20 mins ",
-            "difficulty": " Hard ",
+            "difficulty": " Medium ",
             "serves": " Serves 2 "
         },
         "image_details": ["https://www.bbcgoodfood.com/sites/default/files/styles/recipe/public/recipe_images/recipe-image-legacy-id--992451_11.jpg?itok=TEiXcKpa", "Scampi with tartare sauce", "Scampi with tartare sauce"],
@@ -1386,7 +1386,7 @@
             "description": "A hidden layer of bacon makes this traditional Scotch egg recipe extra special",
             "prep_time": " Prep: 1 hr, 20 mins ",
             "cook_time": " Cook: 30 mins ",
-            "difficulty": " A challenge ",
+            "difficulty": " Hard ",
             "serves": " Makes 9 "
         },
         "image_details": ["https://www.bbcgoodfood.com/sites/default/files/styles/recipe/public/recipe_images/recipe-image-legacy-id--1273686_8.jpg?itok=jVLaLL6T", "Scotch eggs", "Scotch eggs"],
@@ -1534,7 +1534,7 @@
             "description": "The ultimate comfort dish gets a superhealthy makeover",
             "prep_time": " Prep: 30 mins ",
             "cook_time": " Cook: 2 hrs, 15 mins ",
-            "difficulty": " Hard ",
+            "difficulty": " Medium ",
             "serves": " Serves 6 "
         },
         "image_details": ["https://www.bbcgoodfood.com/sites/default/files/styles/recipe/public/recipe_images/recipe-image-legacy-id--484486_11.jpg?itok=PSVOHk3C", "The ultimate makeover: Steak & kidney pie", "The ultimate makeover: Steak & kidney pie"],
@@ -1791,9 +1791,9 @@
             "title": "Beef Wellington",
             "author": "Gordon Ramsay",
             "description": "Gordon Ramsay's version of the classic steak dish - a show-stopping centrepiece on a special occasion",
-            "prep_time": "",
-            "cook_time": "",
-            "difficulty": " A challenge ",
+            "prep_time": "Prep: - mins ",
+            "cook_time": "Cook: - mins ",
+            "difficulty": " Hard ",
             "serves": " Serves 6 "
         },
         "image_details": ["https://www.bbcgoodfood.com/sites/default/files/styles/recipe/public/user-collections/my-colelction-image/2015/12/recipe-image-legacy-id--1079534_10.jpg?itok=SajjID9_", "Sliced beef Wellington on a wooden board", "Beef Wellington"],
@@ -1866,7 +1866,7 @@
             "author": "Shivi Ramoutar",
             "description": "Shivi Ramoutar's recipe for this classic Caribbean cocktail combines sweet and sour flavours for a fruity weekend tipple",
             "prep_time": " Prep: 5 mins ",
-            "cook_time": "",
+            "cook_time": "Cook: - mins ",
             "difficulty": " Easy ",
             "serves": " Serves 2 "
         },
@@ -2052,7 +2052,7 @@
             "description": "Cheap cuts like goat and mutton require slow-cooking in strong spices to tenderise - this Jamaican classic is a taste sensation",
             "prep_time": " Prep: 25 mins ",
             "cook_time": " Cook: 3 hrs ",
-            "difficulty": " Hard ",
+            "difficulty": " Medium ",
             "serves": " Serves 4 "
         },
         "image_details": ["https://www.bbcgoodfood.com/sites/default/files/styles/recipe/public/recipe_images/recipe-image-legacy-id--1047532_11.jpg?itok=ZMVx05jn", "Goat curry", "Goat curry"],
@@ -2162,7 +2162,7 @@
             "author": "Jennifer Joyce",
             "description": "Start your day with this fruity blend of passion fruits, mango, orange and banana. It's a good source of vitamin C and provides 1 of your 5-a-day, too",
             "prep_time": " Prep: 5 mins ",
-            "cook_time": "",
+            "cook_time": "Cook: - mins ",
             "difficulty": " Easy ",
             "serves": " Serves 2 - 3 "
         },
@@ -2309,8 +2309,8 @@
             "title": "Natalie's Trinidadian fish stew",
             "author": "Good Food",
             "description": "This dish of Caribbean sunshine is perfect for sharing with friend - make sure you marinate the fish in lemon and lime to get a really zingy taste",
-            "prep_time": "",
-            "cook_time": "",
+            "prep_time": "Prep: - mins ",
+            "cook_time": "Cook: - mins ",
             "difficulty": " Easy ",
             "serves": " Serves 2 "
         },
@@ -2420,7 +2420,7 @@
             "title": "Jerk pork with rice & beans",
             "author": "Sara Buenfeld",
             "description": "A speedy version of a Jamaican pork jerk favourite - loads of flavour, not too spicy",
-            "prep_time": "",
+            "prep_time": "Prep: - mins ",
             "cook_time": " Cook: 10 mins ",
             "difficulty": " Easy ",
             "serves": " Serves 4 "
@@ -2494,7 +2494,7 @@
             "title": "Exotic avocado salad",
             "author": "Good Food",
             "description": "Savour sharp, sweet flavours in this exotic avocado salad",
-            "prep_time": "",
+            "prep_time": "Prep: - mins ",
             "cook_time": " Cook: 20 mins ",
             "difficulty": " Easy ",
             "serves": " Serves 2 "
@@ -2568,8 +2568,8 @@
             "title": "Spicy jerk prawn & mango tacos with coconut dressing",
             "author": "Good Food",
             "description": "Use Caribbean-style jerk paste to marinade shellfish, then serve in crunchy corn tacos with a textured salad and light sauce",
-            "prep_time": "",
-            "cook_time": "",
+            "prep_time": "Prep: - mins ",
+            "cook_time": "Cook: - mins ",
             "difficulty": " Easy ",
             "serves": " Serves 4 "
         },
@@ -2642,8 +2642,8 @@
             "title": "Jerk spice mix",
             "author": "Cassie Best",
             "description": "This combination of Caribbean spices creates a sweet and fiery flavour - you can add Scotch bonnet chilli to make it super spicy",
-            "prep_time": "",
-            "cook_time": "",
+            "prep_time": "Prep: - mins ",
+            "cook_time": "Cook: - mins ",
             "difficulty": " Easy ",
             "serves": " Makes 1 small jar "
         },
@@ -2718,7 +2718,7 @@
             "description": "Make this beef\u00a0stew when the nights draw in. With\u00a0aubergine and\u00a0Chinese spices, the flavours are warming and it's slow-cooked for deliciously tender meat\u00a0",
             "prep_time": " Prep: 20 mins ",
             "cook_time": " Cook: 3 hrs, 30 mins ",
-            "difficulty": " Hard ",
+            "difficulty": " Medium ",
             "serves": " Serves 8 "
         },
         "image_details": ["https://www.bbcgoodfood.com/sites/default/files/styles/recipe/public/recipe/recipe-image/2017/10/chinese-beef-aubergine-hotpot.jpg?itok=7obVX214", "A casserole dish serving Chinese beef & aubergine hotpot", "Chinese beef & aubergine hotpot"],
@@ -2977,7 +2977,7 @@
             "description": "Tender pieces of chicken breast are stir-fried with crunchy, sweet cashew nuts in this classic Chinese dish",
             "prep_time": " Prep: 10 mins ",
             "cook_time": " Cook: 10 mins ",
-            "difficulty": " Hard ",
+            "difficulty": " Medium ",
             "serves": " Serves 4 "
         },
         "image_details": ["https://www.bbcgoodfood.com/sites/default/files/styles/recipe/public/recipe_images/cashew-chicken.jpg?itok=PLDmdR9A", "Cashew chicken", "Cashew chicken"],
@@ -3272,7 +3272,7 @@
             "author": "Barney Desmazery",
             "description": "Belly is the cheapest pork roasting joint and, as it\u2019s rich, a little goes a long way, making it perfect for Sundays and dinner parties",
             "prep_time": " Prep: 10 mins ",
-            "cook_time": "",
+            "cook_time": "Cook: - mins ",
             "difficulty": " Easy ",
             "serves": " Serves 4 "
         },
@@ -3421,7 +3421,7 @@
             "description": "With a little effort, and help from Gordon Ramsay, you can prepare really a special start to your dinner party",
             "prep_time": " Prep: 45 mins ",
             "cook_time": " Cook: 15 mins ",
-            "difficulty": " A challenge ",
+            "difficulty": " Hard ",
             "serves": " Serves 6 "
         },
         "image_details": ["https://www.bbcgoodfood.com/sites/default/files/styles/recipe/public/recipe_images/recipe-image-legacy-id--2535_12.jpg?itok=-zF9j1wQ", "Chinese-style wintery rolls", "Chinese-style wintery rolls"],
@@ -3494,7 +3494,7 @@
             "author": "Sara Buenfeld",
             "description": "Sara Buenfeld\u2019s fast and easy fried rice makes for a delicious Chinese supper",
             "prep_time": " Prep: 20 mins - 30 mins ",
-            "cook_time": "",
+            "cook_time": "Cook: - mins ",
             "difficulty": " Easy ",
             "serves": " Serves 4 "
         },
@@ -3530,8 +3530,8 @@
             "title": "Stir-fried greens with oyster sauce",
             "author": "Good Food",
             "description": "A great side dish for a DIY Chinese take-away, or an filling quick meal.",
-            "prep_time": "",
-            "cook_time": "",
+            "prep_time": "Prep: - mins ",
+            "cook_time": "Cook: - mins ",
             "difficulty": " Easy ",
             "serves": " Serves 3 "
         },
@@ -3567,9 +3567,9 @@
             "title": "Steamed pork & prawn wontons",
             "author": "Good Food",
             "description": "Low fat but so impressive - you can find the wrappers in freezer cabinets of Asian food stores or speciality food halls",
-            "prep_time": "",
-            "cook_time": "",
-            "difficulty": " Hard ",
+            "prep_time": "Prep: - mins ",
+            "cook_time": "Cook: - mins ",
+            "difficulty": " Medium ",
             "serves": " Makes 35-40 "
         },
         "image_details": ["https://www.bbcgoodfood.com/sites/default/files/styles/recipe/public/recipe_images/recipe-image-legacy-id--2174_12.jpg?itok=fS-qGGPm", "Steamed pork & prawn wontons", "Steamed pork & prawn wontons"],
@@ -3643,7 +3643,7 @@
             "description": "Best enjoyed fresh from the oven, these delicate madeleines dipped in dark chocolate and dusted with blood orange powder\u00a0make a delectable dessert",
             "prep_time": " Prep: 50 mins ",
             "cook_time": " Cook: 30 mins ",
-            "difficulty": " Hard ",
+            "difficulty": " Medium ",
             "serves": " Makes 15 - 20 "
         },
         "image_details": ["https://www.bbcgoodfood.com/sites/default/files/styles/recipe/public/recipe/recipe-image/2016/01/blood-orange-madeleines.jpg?itok=KvACRySD", "Blood orange & dark chocolate madeleines", "Blood orange & dark chocolate madeleines"],
@@ -3754,7 +3754,7 @@
             "description": "These little French tarts are wonderfully buttery and crisp, glazed with a red wine jelly - the perfect end to a special supper for two",
             "prep_time": " Prep: 30 mins ",
             "cook_time": " Cook: 1 hr ",
-            "difficulty": " Hard ",
+            "difficulty": " Medium ",
             "serves": " Makes 2 "
         },
         "image_details": ["https://www.bbcgoodfood.com/sites/default/files/styles/recipe/public/recipe_images/chinon-apple-tarts.jpg?itok=wYnTyE3U", "Chinon apple tarts", "Chinon apple tarts"],
@@ -3865,7 +3865,7 @@
             "description": "This hearty French classic combines meltingly tender meat with crispy skin, and can be made well in advance - perfect for dinner parties",
             "prep_time": " Prep: 15 mins ",
             "cook_time": " Cook: 2 hrs, 50 mins ",
-            "difficulty": " Hard ",
+            "difficulty": " Medium ",
             "serves": " Serves 4 "
         },
         "image_details": ["https://www.bbcgoodfood.com/sites/default/files/styles/recipe/public/recipe_images/honey-roast-confit-of-duck.jpg?itok=ZwOX8Wuw", "Honey-roast confit of duck", "Honey-roast confit of duck"],
@@ -3976,7 +3976,7 @@
             "description": "With a double layer of goat's cheese and a coating of cream, these bistro-style bakes are authentically rich",
             "prep_time": " Prep: 20 mins ",
             "cook_time": " Cook: 45 mins ",
-            "difficulty": " Hard ",
+            "difficulty": " Medium ",
             "serves": " Serves 4 "
         },
         "image_details": ["https://www.bbcgoodfood.com/sites/default/files/styles/recipe/public/recipe_images/recipe-image-legacy-id--1256463_9.jpg?itok=urQXUCyN", "Three-cheese souffl\u00e9s", "Three-cheese souffl\u00e9s"],
@@ -4085,8 +4085,8 @@
             "title": "Ultimate French omelette",
             "author": "Angela Nilsen",
             "description": "The omelette is one of the most fundamental dishes in any cook's arsenal, and this recipe will teach you how to get it right every time",
-            "prep_time": "",
-            "cook_time": "",
+            "prep_time": "Prep: - mins ",
+            "cook_time": "Cook: - mins ",
             "difficulty": " Easy ",
             "serves": " Serves 1 "
         },
@@ -4198,7 +4198,7 @@
             "description": "Gordon adds a touch of spice to the ultimate French classic to create the definitive autumn pudding",
             "prep_time": " Prep: 10 mins ",
             "cook_time": " Cook: 50 mins ",
-            "difficulty": " Hard ",
+            "difficulty": " Medium ",
             "serves": " Serves 8 "
         },
         "image_details": ["https://www.bbcgoodfood.com/sites/default/files/styles/recipe/public/recipe_images/recipe-image-legacy-id--15182_12.jpg?itok=St8bG0kd", "Pear tarte tatin", "Pear tarte tatin"],
@@ -4235,7 +4235,7 @@
             "description": "Serve this super-creamy chocolate dessert on its own, or as part of an 'assiete' of mini chocolate puddings",
             "prep_time": " Prep: 15 mins ",
             "cook_time": " Cook: 20 mins ",
-            "difficulty": " Hard ",
+            "difficulty": " Medium ",
             "serves": " Serves 8 "
         },
         "image_details": ["https://www.bbcgoodfood.com/sites/default/files/styles/recipe/public/recipe_images/recipe-image-legacy-id--3249_11.jpg?itok=9Y-vB_KK", "White chocolate cr\u00e8me br\u00fbl\u00e9e", "White chocolate cr\u00e8me br\u00fbl\u00e9e"],
@@ -4307,9 +4307,9 @@
             "title": "Basic hollandaise",
             "author": "Gordon Ramsay",
             "description": "This sauce, from Gordon Ramsay, takes some time to prepare, but think of it as a workout with a whisk",
-            "prep_time": "",
-            "cook_time": "",
-            "difficulty": " A challenge ",
+            "prep_time": "Prep: - mins ",
+            "cook_time": "Cook: - mins ",
+            "difficulty": " Hard ",
             "serves": " Makes about 300ml (enough to serve 4-6) "
         },
         "image_details": ["https://www.bbcgoodfood.com/sites/default/files/styles/recipe/public/recipe_images/recipe-image-legacy-id--22791_12.jpg?itok=78VCkN-R", "Basic hollandaise", "Basic hollandaise"],
@@ -4346,7 +4346,7 @@
             "description": "A vegetarian and savoury version of tart tatin - perfect for a light supper",
             "prep_time": " Prep: 1 hr ",
             "cook_time": " Cook: 25 mins ",
-            "difficulty": " Hard ",
+            "difficulty": " Medium ",
             "serves": " Serves 4 "
         },
         "image_details": ["https://www.bbcgoodfood.com/sites/default/files/styles/recipe/public/recipe_images/recipe-image-legacy-id--338870_11.jpg?itok=sqA_cGOZ", "Tomato & caramelised onion tart tatin", "Tomato & caramelised onion tart tatin"],
@@ -4418,9 +4418,9 @@
             "title": "Raymond Blanc's cassoulet",
             "author": "Raymond Blanc",
             "description": "Raymond Blanc's rustic cassoulet is rich and warming \u2013 slow cooking at its best",
-            "prep_time": "",
-            "cook_time": "",
-            "difficulty": " Hard ",
+            "prep_time": "Prep: - mins ",
+            "cook_time": "Cook: - mins ",
+            "difficulty": " Medium ",
             "serves": " Serves 4 - 6 "
         },
         "image_details": ["https://www.bbcgoodfood.com/sites/default/files/styles/recipe/public/recipe_images/recipe-image-legacy-id--848_11.jpg?itok=k5YSuGbX", "Raymond Blanc's cassoulet", "Raymond Blanc's cassoulet"],
@@ -4457,7 +4457,7 @@
             "description": "Light as a feather, these chocolatey melt-in-the-mouth souffl\u00e9s are sure to please",
             "prep_time": " Prep: 20 mins ",
             "cook_time": " Cook: 10 mins ",
-            "difficulty": " Hard ",
+            "difficulty": " Medium ",
             "serves": " Serves 6 "
         },
         "image_details": ["https://www.bbcgoodfood.com/sites/default/files/styles/recipe/public/recipe_images/recipe-image-legacy-id--338568_11.jpg?itok=E-JxAtNw", "Hot chocolate souffl\u00e9s with chocolate cream sauce", "Hot chocolate souffl\u00e9s with chocolate cream sauce"],
@@ -4494,7 +4494,7 @@
             "description": "Conjure up thoughts of Mediterranean holidays with this light but indulgent meal for two",
             "prep_time": " Prep: 30 mins ",
             "cook_time": " Cook: 55 mins ",
-            "difficulty": " Hard ",
+            "difficulty": " Medium ",
             "serves": " Serves 2 "
         },
         "image_details": ["https://www.bbcgoodfood.com/sites/default/files/styles/recipe/public/recipe_images/recipe-image-legacy-id--1195544_12.jpg?itok=ZpvkXzWr", "Summer fish stew with rouille", "Summer fish stew with rouille"],
@@ -4568,7 +4568,7 @@
             "description": "Seal a leg of lamb in a parcel then roast it long and slow with garlic, lemon and herbs, and potatoes to soak up the delicious juices",
             "prep_time": " Prep: 10 mins ",
             "cook_time": " Cook: 5 hrs, 20 mins ",
-            "difficulty": " Hard ",
+            "difficulty": " Medium ",
             "serves": " Serves 6 "
         },
         "image_details": ["https://www.bbcgoodfood.com/sites/default/files/styles/recipe/public/recipe_images/kleftiko.jpg?itok=j8jvUn3M", "Lamb kleftiko", "Lamb kleftiko"],
@@ -4605,7 +4605,7 @@
             "description": "A lightly spiced lamb bake with artichoke hearts, a cherry tomato ragu and layers of fried aubergine and potato",
             "prep_time": " Prep: 40 mins ",
             "cook_time": " Cook: 1 hr, 40 mins ",
-            "difficulty": " Hard ",
+            "difficulty": " Medium ",
             "serves": " Serves 8 - 10 "
         },
         "image_details": ["https://www.bbcgoodfood.com/sites/default/files/styles/recipe/public/recipe/recipe-image/2016/06/artichoke-aubergine-lamb-moussaka.jpg?itok=cEFlCdEt", "Artichoke, aubergine & lamb moussaka", "Artichoke, aubergine & lamb moussaka"],
@@ -4788,8 +4788,8 @@
             "title": "Griddled chicken with quinoa Greek salad",
             "author": "Good Food",
             "description": "A light dish of grilled chicken fillets and authentic salad with Kalamata olives, feta cheese, tomato and mint",
-            "prep_time": "",
-            "cook_time": "",
+            "prep_time": "Prep: - mins ",
+            "cook_time": "Cook: - mins ",
             "difficulty": " Easy ",
             "serves": " Serves 4 "
         },
@@ -4900,7 +4900,7 @@
             "author": "Sara Buenfeld",
             "description": "Pack salty Greek cheese into jars with olive oil, thyme, tomatoes, artichokes and olives - mop up the goodness with bread",
             "prep_time": " Prep: 10 mins ",
-            "cook_time": "",
+            "cook_time": "Cook: - mins ",
             "difficulty": " Easy ",
             "serves": " Serves 6 - 8 "
         },
@@ -5011,7 +5011,7 @@
             "author": "Sarah Cook",
             "description": "Treat this salty Greek cheese a little differently by coating a chunk with cumin and coriander, then serving with a light and fruity salsa",
             "prep_time": " Prep: 15 mins ",
-            "cook_time": "",
+            "cook_time": "Cook: - mins ",
             "difficulty": " Easy ",
             "serves": " Serves 2 "
         },
@@ -5123,7 +5123,7 @@
             "description": "Entertaining doesn't have to equal stress, this spruced up one-pot is perfect for people with little time for preparation",
             "prep_time": " Prep: 20 mins ",
             "cook_time": " Cook: 2 hrs, 35 mins ",
-            "difficulty": " Hard ",
+            "difficulty": " Medium ",
             "serves": " Serves 6 "
         },
         "image_details": ["https://www.bbcgoodfood.com/sites/default/files/styles/recipe/public/recipe_images/recipe-image-legacy-id--424736_11.jpg?itok=v4fPERMR", "Greek lamb with orzo", "Greek lamb with orzo"],
@@ -5158,7 +5158,7 @@
             "title": "Greek pasta salad",
             "author": "Good Food",
             "description": "For a fresh idea with pasta, try Greek salad",
-            "prep_time": "",
+            "prep_time": "Prep: - mins ",
             "cook_time": " Cook: 35 mins ",
             "difficulty": " Easy ",
             "serves": " Serves 4 "
@@ -5195,8 +5195,8 @@
             "title": "Greek island salad with chicken & avocado",
             "author": "Good Food",
             "description": "Jill Dupleix's colourful and summery avocado salad is perfect for a casual buffet",
-            "prep_time": "",
-            "cook_time": "",
+            "prep_time": "Prep: - mins ",
+            "cook_time": "Cook: - mins ",
             "difficulty": " Easy ",
             "serves": " Serves 6 "
         },
@@ -5306,7 +5306,7 @@
             "title": "Greek salad omelette",
             "author": "Good Food",
             "description": "A quick and healthy supper",
-            "prep_time": "",
+            "prep_time": "Prep: - mins ",
             "cook_time": " Cook: 20 mins ",
             "difficulty": " Easy ",
             "serves": " Serves 4 - 6 "
@@ -5639,8 +5639,8 @@
             "title": "Coronation chicken naans with Indian slaw",
             "author": "Lucy Netherton",
             "description": "Top Indian bread with shredded meat, fruity mild curry sauce and a carrot and cabbage slaw",
-            "prep_time": "",
-            "cook_time": "",
+            "prep_time": "Prep: - mins ",
+            "cook_time": "Cook: - mins ",
             "difficulty": " Easy ",
             "serves": " Serves 4 "
         },
@@ -6194,8 +6194,8 @@
             "title": "Creamy masala chicken",
             "author": "James Martin",
             "description": "A mild chicken curry with oodles of flavour",
-            "prep_time": "",
-            "cook_time": "",
+            "prep_time": "Prep: - mins ",
+            "cook_time": "Cook: - mins ",
             "difficulty": " Easy ",
             "serves": " Serves 4 "
         },
@@ -6344,7 +6344,7 @@
             "description": "A delicious vegetarian main dish or accompaniment to another curry, ideal for a curry buffet or spicy feast",
             "prep_time": " Prep: 40 mins ",
             "cook_time": " Cook: 45 mins - 1 hr ",
-            "difficulty": " Hard ",
+            "difficulty": " Medium ",
             "serves": " Serves 8 "
         },
         "image_details": ["https://www.bbcgoodfood.com/sites/default/files/styles/recipe/public/recipe_images/recipe-image-legacy-id--8596_11.jpg?itok=y6R1NoH0", "Fragrant vegetable & cashew biryani", "Fragrant vegetable & cashew biryani"],
@@ -6418,7 +6418,7 @@
             "description": "Learn how to make cannoli with our easy-to-follow recipe. A classic Italian pastry with a crisp\u00a0shell and creamy, sweet ricotta filling, it's a\u00a0moreish treat",
             "prep_time": " Prep: 40 mins ",
             "cook_time": " Cook: 30 mins ",
-            "difficulty": " Hard ",
+            "difficulty": " Medium ",
             "serves": " Makes 12 "
         },
         "image_details": ["https://www.bbcgoodfood.com/sites/default/files/styles/recipe/public/recipe/recipe-image/2017/10/canoli3.jpg?itok=6rjH2c2z", "Cannoli on a plate, dusted with icing sugar", "Cannoli"],
@@ -6492,7 +6492,7 @@
             "description": "Slow-cook rich game into a delicious ragu to serve with ribbon pasta - stock and wine will keep the lean meat moist",
             "prep_time": " Prep: 30 mins ",
             "cook_time": " Cook: 1 hr, 25 mins ",
-            "difficulty": " Hard ",
+            "difficulty": " Medium ",
             "serves": " Serves 5 "
         },
         "image_details": ["https://www.bbcgoodfood.com/sites/default/files/styles/recipe/public/recipe_images/recipe-image-legacy-id--1098484_11.jpg?itok=zXurOt9s", "Braised rabbit pappardelle", "Braised rabbit pappardelle"],
@@ -6528,7 +6528,7 @@
             "author": "Barney Desmazery",
             "description": "This heavenly combination is so simple - yet impressive",
             "prep_time": " Prep: 5 mins ",
-            "cook_time": "",
+            "cook_time": "Cook: - mins ",
             "difficulty": " Easy ",
             "serves": " Serves 6 "
         },
@@ -6640,7 +6640,7 @@
             "description": "Pass on the pasta and try making your own potato gnocchi - forage for samphire to make a fresh and frugal meat-free main",
             "prep_time": " Prep: 1 hr ",
             "cook_time": " Cook: 15 mins ",
-            "difficulty": " Hard ",
+            "difficulty": " Medium ",
             "serves": " Serves 4 "
         },
         "image_details": ["https://www.bbcgoodfood.com/sites/default/files/styles/recipe/public/recipe_images/gnocci-with-parsley-butter-samphire.jpg?itok=3Q1wy5UH", "Gnocchi with parsley, butter & samphire", "Gnocchi with parsley, butter & samphire"],
@@ -6788,7 +6788,7 @@
             "description": "Good roast lamb is hard to beat, Lesley Waters's recipe gives it new flavour",
             "prep_time": " Prep: 15 mins ",
             "cook_time": " Cook: 1 hr, 30 mins ",
-            "difficulty": " Hard ",
+            "difficulty": " Medium ",
             "serves": " Serves 8 "
         },
         "image_details": ["https://www.bbcgoodfood.com/sites/default/files/styles/recipe/public/recipe_images/recipe-image-legacy-id--5371_11.jpg?itok=h13kEhMP", "Roast red wine lamb with Italian beans", "Roast red wine lamb with Italian beans"],
@@ -6825,7 +6825,7 @@
             "description": "Delicate, nutty pastry provides a perfect backdrop to the creamy filling of this mouthwatering meat-free main course",
             "prep_time": " Prep: 40 mins ",
             "cook_time": " Cook: 1 hr, 20 mins ",
-            "difficulty": " Hard ",
+            "difficulty": " Medium ",
             "serves": " Serves 8 "
         },
         "image_details": ["https://www.bbcgoodfood.com/sites/default/files/styles/recipe/public/recipe_images/taleggio-tart-walnut-pastry.jpg?itok=OP_8fKJQ", "Taleggio tart with walnut pastry", "Taleggio tart with walnut pastry"],
@@ -6862,7 +6862,7 @@
             "description": "A ripple of sweet plum pur\u00e9e and chunks of almond biscuit turn this Italian ice cream into an all-in-one dessert",
             "prep_time": " Prep: 25 mins ",
             "cook_time": " Cook: 15 mins ",
-            "difficulty": " A challenge ",
+            "difficulty": " Hard ",
             "serves": " Serves 8 "
         },
         "image_details": ["https://www.bbcgoodfood.com/sites/default/files/styles/recipe/public/recipe_images/recipe-image-legacy-id--1066507_11.jpg?itok=n12eeHjb", "Plum & amaretti semifreddo", "Plum & amaretti semifreddo"],
@@ -6899,7 +6899,7 @@
             "description": "These Italian dumplings are like light balls of ricotta gnocchi, or the filling for ravioli - use freshly foraged nettles for a simple sauce",
             "prep_time": " Prep: 25 mins ",
             "cook_time": " Cook: 15 mins ",
-            "difficulty": " Hard ",
+            "difficulty": " Medium ",
             "serves": " Serves 4 "
         },
         "image_details": ["https://www.bbcgoodfood.com/sites/default/files/styles/recipe/public/recipe_images/nettle-gnudi-with-wild-pesto.jpg?itok=k5YENJJS", "Nettle gnudi with wild pesto", "Nettle gnudi with wild pesto"],
@@ -7158,7 +7158,7 @@
             "description": "Give this Tuscan tart a delicious twist by adding dark chocolate to the traditional custard filling and delicate sweet pastry",
             "prep_time": " Prep: 40 mins ",
             "cook_time": " Cook: 1 hr, 15 mins ",
-            "difficulty": " Hard ",
+            "difficulty": " Medium ",
             "serves": " Serves 6 - 8 "
         },
         "image_details": ["https://www.bbcgoodfood.com/sites/default/files/styles/recipe/public/recipe_images/torta-del-nonna.jpg?itok=Xbie7oi4", "Torta del Nonna", "Torta del Nonna"],
@@ -7490,7 +7490,7 @@
             "author": "Elena Silcock",
             "description": "Make this shredded cabbage as a typical Japanese side dish. It offers a freshness to cut through the richness of tonkatsu or other fried Japanese dishes",
             "prep_time": " Prep: 5 mins ",
-            "cook_time": "",
+            "cook_time": "Cook: - mins ",
             "difficulty": " Easy ",
             "serves": " Serves 4 "
         },
@@ -7861,7 +7861,7 @@
             "description": "This Japanese pancake is full of authentic flavours and textures, with fresh squid or prawns and a mirin and a honey sauce. Garnish with bonito flakes",
             "prep_time": " Prep: 30 mins ",
             "cook_time": " Cook: 10 mins ",
-            "difficulty": " Hard ",
+            "difficulty": " Medium ",
             "serves": " Serves 2 "
         },
         "image_details": ["https://www.bbcgoodfood.com/sites/default/files/styles/recipe/public/recipe/recipe-image/2016/12/okonomiyaki.jpg?itok=xyEqSNSU", "Japanese okonomiyaki", "Japanese okonomiyaki"],
@@ -7972,7 +7972,7 @@
             "description": "Your favourite Japanese curry in burger form: this indulgent treat is a relaxed spin on traditional flavours, with a katsu curry mayonnaise\u00a0to top the panko-coated chicken patty",
             "prep_time": " Prep: 20 mins ",
             "cook_time": " Cook: 15 mins ",
-            "difficulty": " Hard ",
+            "difficulty": " Medium ",
             "serves": " Serves 2 "
         },
         "image_details": ["https://www.bbcgoodfood.com/sites/default/files/styles/recipe/public/recipe/recipe-image/2016/06/chicken-katsu-curry-burger.jpg?itok=EX0IgQQi", "Chicken katsu curry burger", "Chicken katsu curry burger"],
@@ -8266,8 +8266,8 @@
             "title": "Griddled chicken with quinoa Greek salad",
             "author": "Good Food",
             "description": "A light dish of grilled chicken fillets and authentic salad with Kalamata olives, feta cheese, tomato and mint",
-            "prep_time": "",
-            "cook_time": "",
+            "prep_time": "Prep: - mins ",
+            "cook_time": "Cook: - mins ",
             "difficulty": " Easy ",
             "serves": " Serves 4 "
         },
@@ -8377,8 +8377,8 @@
             "title": "Bacon & brie omelette wedges with summer salad",
             "author": "Good Food",
             "description": "Spanish-style frittatas, or 'tortilla', are traditionally served in thick slices complete with oozing cheese and a crunchy salad",
-            "prep_time": "",
-            "cook_time": "",
+            "prep_time": "Prep: - mins ",
+            "cook_time": "Cook: - mins ",
             "difficulty": " Easy ",
             "serves": " Serves 4 "
         },
@@ -8822,7 +8822,7 @@
             "author": "Good Food",
             "description": "A healthy dish, full of sunshine flavours",
             "prep_time": " Prep: 50 mins - 55 mins ",
-            "cook_time": "",
+            "cook_time": "Cook: - mins ",
             "difficulty": " Easy ",
             "serves": " Serves 2 "
         },
@@ -8934,7 +8934,7 @@
             "description": "This is a great little dish for entertaining as you can pre-cook and stuff the mussels several hours ahead of serving",
             "prep_time": " Prep: 25 mins ",
             "cook_time": " Cook: 4 mins ",
-            "difficulty": " Hard ",
+            "difficulty": " Medium ",
             "serves": " Serves 4 as a starter or light main course "
         },
         "image_details": ["https://www.bbcgoodfood.com/sites/default/files/styles/recipe/public/recipe_images/recipe-image-legacy-id--7460_11.jpg?itok=RT75xCsM", "Crunchy baked mussels", "Crunchy baked mussels"],
@@ -8970,8 +8970,8 @@
             "author": "Good Food",
             "description": "A creamy garlic hit, a perfect dip for steamed spring vegetables",
             "prep_time": " Prep: 5 mins ",
-            "cook_time": "",
-            "difficulty": " Hard ",
+            "cook_time": "Cook: - mins ",
+            "difficulty": " Medium ",
             "serves": " Serves 4 "
         },
         "image_details": ["https://www.bbcgoodfood.com/sites/default/files/styles/recipe/public/recipe_images/recipe-image-legacy-id--3456_10.jpg?itok=2GbNm-Va", "A\u00efoli", "A\u00efoli"],
@@ -9045,7 +9045,7 @@
             "description": "Squid is cheap, plentiful, quick to cook, and delicious with the classic Italian vegetable dish, caponata",
             "prep_time": " Prep: 30 mins ",
             "cook_time": " Cook: 30 mins ",
-            "difficulty": " Hard ",
+            "difficulty": " Medium ",
             "serves": " Serves 4 "
         },
         "image_details": ["https://www.bbcgoodfood.com/sites/default/files/styles/recipe/public/recipe_images/recipe-image-legacy-id--191499_11.jpg?itok=fG2C9Wwb", "Crispy squid with caponata", "Crispy squid with caponata"],
@@ -9525,7 +9525,7 @@
             "author": "Juliet Sear",
             "description": "This classic corn salsa is a simple Mexican recipe you can prep in 20 minutes. Leave to marinate before serving to intensify the vibrant flavours",
             "prep_time": " Prep: 5 mins ",
-            "cook_time": "",
+            "cook_time": "Cook: - mins ",
             "difficulty": " Easy ",
             "serves": " Serves 4 - 6 "
         },
@@ -10043,7 +10043,7 @@
             "author": "Elena Silcock",
             "description": "Cold lager, chilli powder, pepper\u00a0and lime: spice up your lager with this Mexican cocktail, popular throughout Latin America and\u00a0great for a summer party",
             "prep_time": " Prep: 5 mins ",
-            "cook_time": "",
+            "cook_time": "Cook: - mins ",
             "difficulty": " Easy ",
             "serves": " Serves 1 "
         },
@@ -10377,7 +10377,7 @@
             "description": "The perfect showpiece to your Christmas Day meal - and it's suitable for veggies",
             "prep_time": " Prep: 1 hr, 30 mins ",
             "cook_time": " Cook: 35 mins ",
-            "difficulty": " Hard ",
+            "difficulty": " Medium ",
             "serves": " Serves 6 "
         },
         "image_details": ["https://www.bbcgoodfood.com/sites/default/files/styles/recipe/public/recipe_images/recipe-image-legacy-id--424498_12.jpg?itok=Fe84E7BY", "Moroccan spiced pie", "Moroccan spiced pie"],
@@ -10413,7 +10413,7 @@
             "author": "Good Food",
             "description": "This classic and well-loved Middle-Eastern dish is perfect to serve with fish",
             "prep_time": " Prep: 15 mins - 20 mins ",
-            "cook_time": "",
+            "cook_time": "Cook: - mins ",
             "difficulty": " Easy ",
             "serves": " Serves 4 "
         },
@@ -10597,8 +10597,8 @@
             "title": "Spicy Moroccan rice",
             "author": "Good Food",
             "description": "Spice up plain old chicken with a taste of the exotic",
-            "prep_time": "",
-            "cook_time": "",
+            "prep_time": "Prep: - mins ",
+            "cook_time": "Cook: - mins ",
             "difficulty": " Easy ",
             "serves": " Serves 4 "
         },
@@ -10671,7 +10671,7 @@
             "title": "Tangy couscous salad",
             "author": "Good Food",
             "description": "Throw together a deliciously tangy and superhealthy couscous salad in just 10 minutes",
-            "prep_time": "",
+            "prep_time": "Prep: - mins ",
             "cook_time": " Cook: 10 mins ",
             "difficulty": " Easy ",
             "serves": " Serves 4 as a side dish "
@@ -10745,8 +10745,8 @@
             "title": "Versatile dip",
             "author": "Good Food",
             "description": "Use spicy harissa to make a quick and easy dip for veggies and potato skins",
-            "prep_time": "",
-            "cook_time": "",
+            "prep_time": "Prep: - mins ",
+            "cook_time": "Cook: - mins ",
             "difficulty": " Easy ",
             "serves": " Serves 6 as a starter "
         },
@@ -10858,7 +10858,7 @@
             "description": "This game bird is a lot like chicken, so can be cooked in the same way - give it a whirl in this fragrant Moroccan-spiced casserole",
             "prep_time": " Prep: 20 mins ",
             "cook_time": " Cook: 1 hr, 20 mins ",
-            "difficulty": " Hard ",
+            "difficulty": " Medium ",
             "serves": " Serves 6 "
         },
         "image_details": ["https://www.bbcgoodfood.com/sites/default/files/styles/recipe/public/recipe_images/recipe-image-legacy-id--1217491_11.jpg?itok=17rCioYD", "Guinea fowl tagine with chickpeas, squash & apricots", "Guinea fowl tagine with chickpeas, squash & apricots"],
@@ -11080,7 +11080,7 @@
             "description": "Impress your friends with Jason Atherton's luxurious shellfish rice, topped with juicy cod and drizzled with saffron",
             "prep_time": " Prep: 20 mins ",
             "cook_time": " Cook: 1 hr ",
-            "difficulty": " Hard ",
+            "difficulty": " Medium ",
             "serves": " Serves 6 "
         },
         "image_details": ["https://www.bbcgoodfood.com/sites/default/files/styles/recipe/public/recipe_images/recipe-image-legacy-id--954467_11.jpg?itok=Lqj9pX9u", "Roast cod with paella & saffron olive oil", "Roast cod with paella & saffron olive oil"],
@@ -11115,9 +11115,9 @@
             "title": "Churros with chocolate dipping sauce",
             "author": "Sarah Cook",
             "description": "Try a fresh spin on doughnuts by piping them Spanish-style and serving with a thick and indulgent dark chocolate sauce",
-            "prep_time": "",
-            "cook_time": "",
-            "difficulty": " Hard ",
+            "prep_time": "Prep: - mins ",
+            "cook_time": "Cook: - mins ",
+            "difficulty": " Medium ",
             "serves": " Makes about 20 churros "
         },
         "image_details": ["https://www.bbcgoodfood.com/sites/default/files/styles/recipe/public/user-collections/my-colelction-image/2015/12/recipe-image-legacy-id--1051458_11.jpg?itok=1ES6nTm3", "Churros with chocolate dipping sauce", "Churros with chocolate dipping sauce"],
@@ -11412,7 +11412,7 @@
             "author": "Mary Cadogan",
             "description": "Make-ahead this crowd-pleasing, vegetarian starter and get a good dose of vitamin C and one of your five-a-day",
             "prep_time": " Prep: 25 mins ",
-            "cook_time": "",
+            "cook_time": "Cook: - mins ",
             "difficulty": " Easy ",
             "serves": " Serves 8 "
         },
@@ -11449,7 +11449,7 @@
             "author": "Good Food",
             "description": "A festive version of Pan de\nHigo, a dried fig cake that the Spanish traditionally eat with cheese and a drizzle of honey",
             "prep_time": " Prep: 20 mins ",
-            "cook_time": "",
+            "cook_time": "Cook: - mins ",
             "difficulty": " Easy ",
             "serves": " Makes 6 balls "
         },
@@ -11671,7 +11671,7 @@
             "author": "Mary Cadogan",
             "description": "These tasty tapas snacks are ready in just 5 minutes, the perfect accompaniment for a drinks party",
             "prep_time": " Prep: 5 mins ",
-            "cook_time": "",
+            "cook_time": "Cook: - mins ",
             "difficulty": " Easy ",
             "serves": " Serves 10-12 with other dishes "
         },
@@ -11707,7 +11707,7 @@
             "title": "Quick gazpacho",
             "author": "Good Food",
             "description": "Packed with vitamin C, low fat and counts as two\u00a0of your five a day \u2013 this should be on the menu every week!",
-            "prep_time": "",
+            "prep_time": "Prep: - mins ",
             "cook_time": " Cook: 10 mins ",
             "difficulty": " Easy ",
             "serves": " Serves 1 "
@@ -11744,8 +11744,8 @@
             "title": "Prawns with Romesco sauce",
             "author": "Mary Cadogan",
             "description": "Succulent tiger prawns are spiced up with chilli and peppers in this Spanish-style tapas dish",
-            "prep_time": "",
-            "cook_time": "",
+            "prep_time": "Prep: - mins ",
+            "cook_time": "Cook: - mins ",
             "difficulty": " Easy ",
             "serves": " Serves 10-12 with other dishes "
         },
@@ -11781,7 +11781,7 @@
             "title": "Spaghetti with Spanish flavours",
             "author": "Sara Buenfeld",
             "description": "A 10 minute dish which infuses spaghetti with the flavours of Spain - you can make a vegetarian version too",
-            "prep_time": "",
+            "prep_time": "Prep: - mins ",
             "cook_time": " Cook: 10 mins ",
             "difficulty": " Easy ",
             "serves": " Serves 4 "
@@ -11820,7 +11820,7 @@
             "description": "A hint of garlic mayo makes everything that little bit more delicious, and this crisp calamari is no exception",
             "prep_time": " Prep: 15 mins ",
             "cook_time": " Cook: 10 mins ",
-            "difficulty": " A challenge ",
+            "difficulty": " Hard ",
             "serves": " Serves 6 as a starter "
         },
         "image_details": ["https://www.bbcgoodfood.com/sites/default/files/styles/recipe/public/recipe_images/recipe-image-legacy-id--338493_12.jpg?itok=TjcM8__h", "Crispy squid with capers", "Crispy squid with capers"],
@@ -11966,8 +11966,8 @@
             "title": "Easy pad Thai",
             "author": "Mary Cadogan",
             "description": "Almost a national dish of Thailand, Mary Cadogan's simplified take makes it easy to shop for - and very authentic tasting",
-            "prep_time": "",
-            "cook_time": "",
+            "prep_time": "Prep: - mins ",
+            "cook_time": "Cook: - mins ",
             "difficulty": " Easy ",
             "serves": " Serves 2-3 "
         },
@@ -12301,7 +12301,7 @@
             "description": "This low-fat yet satisfying salad is full of authentic Asian flavour and will add plenty of zing to al fresco dining",
             "prep_time": " Prep: 30 mins ",
             "cook_time": " Cook: 5 mins ",
-            "difficulty": " Hard ",
+            "difficulty": " Medium ",
             "serves": " Serves 4 "
         },
         "image_details": ["https://www.bbcgoodfood.com/sites/default/files/styles/recipe/public/recipe_images/recipe-image-legacy-id--295464_11.jpg?itok=YUQaqqqf", "Thai shredded chicken & runner bean salad", "Thai shredded chicken & runner bean salad"],
@@ -12336,8 +12336,8 @@
             "title": "Ken Hom's stir-fried chicken with chillies & basil",
             "author": "Ken Hom",
             "description": "A traditional Thai dish packed with aromatic flavours, that's easy to prepare and packed with aromatic flavour",
-            "prep_time": "",
-            "cook_time": "",
+            "prep_time": "Prep: - mins ",
+            "cook_time": "Cook: - mins ",
             "difficulty": " Easy ",
             "serves": " Serves 4 "
         },
@@ -12485,7 +12485,7 @@
             "author": "Curtis Stone",
             "description": "Add subtle Thai flavours to seafood in Curtis Stone's prawn recipe",
             "prep_time": " Prep: 1 hr ",
-            "cook_time": "",
+            "cook_time": "Cook: - mins ",
             "difficulty": " Easy ",
             "serves": " Serves 4 "
         },
@@ -12632,8 +12632,8 @@
             "title": "Thai chicken cakes with sweet chilli sauce",
             "author": "James Martin",
             "description": "A light and healthy supper that's a great variation on the chicken theme.\u00a0Works well as a starter\u00a0or a main \u2013 just serve with sweet chilli sauce.",
-            "prep_time": "",
-            "cook_time": "",
+            "prep_time": "Prep: - mins ",
+            "cook_time": "Cook: - mins ",
             "difficulty": " Easy ",
             "serves": " Serves 2 - 3 "
         },
@@ -12670,7 +12670,7 @@
             "author": "Barney Desmazery",
             "description": "These little Thai nibbles are ready in just 10 minutes",
             "prep_time": " Prep: 10 mins ",
-            "cook_time": "",
+            "cook_time": "Cook: - mins ",
             "difficulty": " Easy ",
             "serves": " Serves 4 "
         },
@@ -12930,7 +12930,7 @@
             "description": "A savoury Turkish pastry that's actually made with bread. Stuff with lamb, feta, raisins and pine nuts and serve with pomegranate dip",
             "prep_time": " Prep: 50 mins ",
             "cook_time": " Cook: 45 mins ",
-            "difficulty": " Hard ",
+            "difficulty": " Medium ",
             "serves": " Makes 4 "
         },
         "image_details": ["https://www.bbcgoodfood.com/sites/default/files/styles/recipe/public/recipe_images/recipe-image-legacy-id--1309456_3.jpg?itok=mtsd8kkX", "Spiced lamb & feta gozleme with special tomato sauce", "Spiced lamb & feta gozleme with special tomato sauce"],
@@ -13298,7 +13298,7 @@
             "title": "Turkish lamb pilau",
             "author": "Good Food",
             "description": "Serve up a basmati rice one pot flavoured with cinnamon, mint and apricot, studded with tender lamb",
-            "prep_time": "",
+            "prep_time": "Prep: - mins ",
             "cook_time": " Cook: 30 mins ",
             "difficulty": " Easy ",
             "serves": " Serves 4 "
@@ -13448,7 +13448,7 @@
             "description": "Serve these prepare-ahead puds with coffee, dessert wine or fresh mint tea for a real after-dinner treat",
             "prep_time": " Prep: 45 mins ",
             "cook_time": " Cook: 15 mins ",
-            "difficulty": " Hard ",
+            "difficulty": " Medium ",
             "serves": " Makes 12-16 "
         },
         "image_details": ["https://www.bbcgoodfood.com/sites/default/files/styles/recipe/public/recipe_images/recipe-image-legacy-id--523533_11.jpg?itok=81HvzAj1", "Almond & honey pastries with orange cream", "Almond & honey pastries with orange cream"],
@@ -13595,7 +13595,7 @@
             "author": "Sarah Cook",
             "description": "A smooth blended chickpea dip with tahini and garlic that's versatile and good for you, this easy hummus\u00a0makes a great snack or lunch",
             "prep_time": " Prep: 5 mins ",
-            "cook_time": "",
+            "cook_time": "Cook: - mins ",
             "difficulty": " Easy ",
             "serves": " Makes 4 snack portions "
         },
@@ -13633,7 +13633,7 @@
             "description": "New Zealand chef Peter Gordon showcases seasonal flavours in this impressive, healthy vegetarian meal",
             "prep_time": " Prep: 30 mins ",
             "cook_time": " Cook: 40 mins ",
-            "difficulty": " Hard ",
+            "difficulty": " Medium ",
             "serves": " Serves 4 "
         },
         "image_details": ["https://www.bbcgoodfood.com/sites/default/files/styles/recipe/public/recipe_images/recipe-image-legacy-id--441508_11.jpg?itok=iLyyrLXr", "Baked aubergine stuffed with roast pumpkin, feta & walnut with minted courgettes", "Baked aubergine stuffed with roast pumpkin, feta & walnut with minted courgettes"],
@@ -13669,7 +13669,7 @@
             "author": "Good Food",
             "description": "Bring the taste of Turkey to your kitchen with these fun lamb pittas, great hand held food",
             "prep_time": " Prep: 15 mins ",
-            "cook_time": "",
+            "cook_time": "Cook: - mins ",
             "difficulty": " Easy ",
             "serves": " Serves 4 "
         },
@@ -13744,7 +13744,7 @@
             "description": "These flatbreads go well with dips and are the perfect finger food for outdoor entertaining",
             "prep_time": " Prep: 15 mins ",
             "cook_time": " Cook: 5 mins ",
-            "difficulty": " Hard ",
+            "difficulty": " Medium ",
             "serves": " Makes about 16 "
         },
         "image_details": ["https://www.bbcgoodfood.com/sites/default/files/styles/recipe/public/user-collections/my-colelction-image/2015/12/recipe-image-legacy-id--10722_11.jpg?itok=R5kTuhqr", "Griddled flatbreads", "Griddled flatbreads"],
@@ -13928,7 +13928,7 @@
             "author": "Good Food",
             "description": "A no-cook main course salad with all the light, fragrant flavours of Southeast Asia such as peanut, chilli, mint and soy",
             "prep_time": " Prep: 20 mins ",
-            "cook_time": "",
+            "cook_time": "Cook: - mins ",
             "difficulty": " Easy ",
             "serves": " Serves 3 "
         },
@@ -13966,7 +13966,7 @@
             "description": "Crisp, spicy coating and hot, tender squid make an irresistible combination",
             "prep_time": " Prep: 20 mins ",
             "cook_time": " Cook: 5 mins ",
-            "difficulty": " Hard ",
+            "difficulty": " Medium ",
             "serves": " Serves 4 as a starter or as a main alongside other dishes "
         },
         "image_details": ["https://www.bbcgoodfood.com/sites/default/files/styles/recipe/public/recipe_images/recipe-image-legacy-id--659600_11.jpg?itok=NsBM7tMo", "Salt & pepper squid", "Salt & pepper squid"],
@@ -14113,7 +14113,7 @@
             "author": "Good Food",
             "description": "A spicy zingy dressing lifts a bag of defrosted fish and a few fresh ingredients into a super, feelgood supper that's ready in just 10 minutes",
             "prep_time": " Prep: 10 mins ",
-            "cook_time": "",
+            "cook_time": "Cook: - mins ",
             "difficulty": " Easy ",
             "serves": " Serves 5 "
         },
@@ -14150,7 +14150,7 @@
             "author": "Barney Desmazery",
             "description": "Fresh-tasting rice paper rolls packed with shellfish, light vermicelli noodles, carrots, cucumber and herbs, with a sweet ginger chilli dipping sauce",
             "prep_time": " Prep: 30 mins ",
-            "cook_time": "",
+            "cook_time": "Cook: - mins ",
             "difficulty": " Easy ",
             "serves": " Makes 12 "
         },
@@ -14188,7 +14188,7 @@
             "description": "A caramel base balances out the hot and salty ingredients of this Asian-inspired one-pan fish dish for two",
             "prep_time": " Prep: 5 mins ",
             "cook_time": " Cook: 15 mins ",
-            "difficulty": " Hard ",
+            "difficulty": " Medium ",
             "serves": " Serves 2 "
         },
         "image_details": ["https://www.bbcgoodfood.com/sites/default/files/styles/recipe/public/recipe_images/caramel-trout.jpg?itok=zysTCwmG", "Vietnamese caramel trout", "Vietnamese caramel trout"],
@@ -14261,7 +14261,7 @@
             "author": "Good Food",
             "description": "Inspired by the Vietnamese dish, Bun xao, this fresh-tasting salad has very little fat but is so satisfying",
             "prep_time": " Prep: 20 mins ",
-            "cook_time": "",
+            "cook_time": "Cook: - mins ",
             "difficulty": " Easy ",
             "serves": " Serves 2 "
         },
@@ -14372,7 +14372,7 @@
             "author": "Emma Lewis",
             "description": "Fancy something a bit different? Try these healthy vegetable parcels, based on Vietnamese rolls",
             "prep_time": " Prep: 15 mins ",
-            "cook_time": "",
+            "cook_time": "Cook: - mins ",
             "difficulty": " Easy ",
             "serves": " Serves 4 "
         },
@@ -14410,7 +14410,7 @@
             "description": "Tastier than a take away and great for nibbling and sharing. These dim sum will impress your guests.",
             "prep_time": " Prep: 25 mins ",
             "cook_time": " Cook: 25 mins ",
-            "difficulty": " Hard ",
+            "difficulty": " Medium ",
             "serves": " "
         },
         "image_details": ["https://www.bbcgoodfood.com/sites/default/files/styles/recipe/public/recipe_images/recipe-image-legacy-id--646454_11.jpg?itok=xSSCTJ2p", "Barbecue pork buns", "Barbecue pork buns"],
@@ -14556,7 +14556,7 @@
             "title": "Noodle bowl salad",
             "author": "Barney Desmazery",
             "description": "Fresh and healthy salad for picnic fare",
-            "prep_time": "",
+            "prep_time": "Prep: - mins ",
             "cook_time": " Cook: 15 mins - 20 mins ",
             "difficulty": " Easy ",
             "serves": " Serves 2 "
@@ -14594,7 +14594,7 @@
             "author": "Barney Desmazery",
             "description": "This no-cook main course salad can just be tossed together and served on its own, or with steamed rice or boiled noodles",
             "prep_time": " Prep: 20 mins ",
-            "cook_time": "",
+            "cook_time": "Cook: - mins ",
             "difficulty": " Easy ",
             "serves": " Serves 4 "
         },
@@ -14631,7 +14631,7 @@
             "author": "Good Food",
             "description": "This autumnal salad makes a fresh and healthy side dish and is great served with grilled halloumi or burgers",
             "prep_time": " Prep: 15 mins ",
-            "cook_time": "",
+            "cook_time": "Cook: - mins ",
             "difficulty": " Easy ",
             "serves": " Serves 4 "
         },
@@ -14705,7 +14705,7 @@
             "author": "Lulu Grimes",
             "description": "This no-cook main course is packed full of good-for-you ingredients",
             "prep_time": " Prep: 20 mins ",
-            "cook_time": "",
+            "cook_time": "Cook: - mins ",
             "difficulty": " Easy ",
             "serves": " Serves 4 - 6 "
         },

@@ -44,9 +44,7 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    height: 1300px;
 }
-
 
 h1, h2, h3, h4, h5, h6 {
     font-family: 'ProximaNova Regular', Roboto, sans-serif;
@@ -71,6 +69,12 @@ main {
     flex: 1;
 }
 
+footer {
+    background-color: var(--lightblack);
+    color: var(--white);
+    min-height: 100px;
+    margin-top: 100px;
+}
 
 /*
 ==================================================================
@@ -150,3 +154,52 @@ ul.uk-iconnav li a {
     display: inline-block;
 }
 
+.uk-card-title a {
+    color: var(--black);
+    text-decoration-color: var(--black) !important;
+}
+
+
+/*
+==================================================================
+    Recipe Page
+==================================================================
+*/
+
+.cuisine-badge {
+    color: var(--white);
+    background-color: var(--darkblue);
+    padding: 2px 4px;
+    border-radius: 3px;
+}
+
+.uk-padding-bottom {
+    padding-bottom: 40px;
+}
+
+.tags {
+    padding: 0 5px;
+}
+
+
+/*
+==================================================================
+    Sign In / Out Page
+==================================================================
+*/
+
+#sign {
+    max-width: 350px;
+    min-width: 250px;
+    margin: auto;
+    padding: 0 15px;
+    text-align: center;
+}
+
+#sign form {
+    text-align: left;
+}
+
+#sign form p {
+    margin: 30px 0;
+}

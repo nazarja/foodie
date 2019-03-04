@@ -50,6 +50,16 @@ def categories(category, data):
 # ================================================ #
 
 
+# recipe
+@app.route('/recipe/<recipe>/<title>')
+def recipe(recipe, title):
+    recipe = Recipe.get_recipe_details(recipe)
+    return render_template('recipe.html', recipe=recipe)
+
+
+# ================================================ #
+
+
 # profile
 @app.route('/profile')
 @login_required

@@ -1,33 +1,36 @@
 {% block content %}
     <div class="slider" uk-slider="center: true; autoplay: true; autoplay-interval: 5000;">
-        <div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1">
+        <div class="uk-position-relative uk-visible-toggle" tabindex="-1">
             <ul class="uk-slider-items uk-child-width-1-2@s uk-grid">
                     
                 {% for recipe in slideshow %}
                     <div class="featured-slider-card uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin" uk-grid>
                         
                         <!-- Card Image -->
-                        <div class="uk-card-media-left uk-cover-container">
-                            <img class="slider-image" data-src="{{ recipe.image_details[0] }}" alt="{{ recipe.image_details[1] }}" uk-cover uk-img>
-                            <canvas width="400" height="400"></canvas>
-                        </div>
+                        <a href="{{ url_for('recipe', recipe=recipe._id, title=recipe.recipe_data.title|lower) }}">
+                            <div class="uk-card-media-left uk-cover-container">
+                                <img class="slider-image" data-src="{{ recipe.image_details[0] }}" alt="{{ recipe.image_details[1] }}" uk-cover uk-img>
+                                <canvas width="400" height="400"></canvas>
+                            </div>
+                        </a>
 
                         <!-- Card Body -->
                         <div class="uk-card-body">
                             <div class="uk-card-badge uk-label">{{ recipe.recipe_filters.cuisine|title }}</div>
-                            <h3 class="uk-card-title">{{ recipe.recipe_data.title|title }}</h3>
+                            <h3 class="uk-card-title"><a href="{{ url_for('recipe', recipe=recipe._id, title=recipe.recipe_data.title|lower) }}">{{ recipe.recipe_data.title|title }}</a></h3>
                             <p>{{ recipe.recipe_data.description }}</p>
                             <p><span class="card-lead-text">Author:</span>{{ recipe.recipe_data.author }}</p>
                             <p><span class="card-lead-text">Difficulty:</span>{{ recipe.recipe_data.difficulty }}</p>
                             <p><span class="card-lead-text">Serves:</span>{{ recipe.recipe_data.serves }}</p>
-                            <p><i uk-icon="icon: bell" class="slider-icons"></i> {{ recipe.recipe_data.cook_time  }} <i uk-icon="icon: bolt" class="slider-icons"></i> {{ recipe.recipe_data.prep_time }}</p>
-
+                            <p class="slider-icons"><i uk-icon="icon: bell"></i> {{ recipe.recipe_data.cook_time  }} <i uk-icon="icon: bolt"></i> {{ recipe.recipe_data.prep_time }}</p>
+                            <p><a href="{{ url_for('recipe', recipe=recipe._id, title=recipe.recipe_data.title|lower) }}">More Details ...</a></p>
+                            
                             <!-- Iconnav -->
-                            <div class=" uk-card-footer uk-position-bottom-right">
+                            <div class="uk-card-footer uk-position-bottom-right">
                                 <ul class="uk-iconnav">
                                     <li  uk-tooltip="title: Like; pos: top-right"><a href="#" uk-icon="icon: heart"> {{ recipe.users.likes }} </a></li>
                                     <li  uk-tooltip="title: Dislike; pos: top-right"><a href="#" uk-icon="icon: trash">  {{ recipe.users.dislikes }} </a></li>
-                                    <li  uk-tooltip="title: Comment; pos: top-right"><a href="#" uk-icon="icon: comments">  {{ recipe.users.comments|count }} </a></li>
+                                    <li  uk-tooltip="title: Comments; pos: top-right"><a href="#" uk-icon="icon: comments">  {{ recipe.users.comments|count }} </a></li>
                                 </ul>
                             </div>
                         </div>

@@ -188,35 +188,3 @@ nav a:hover {
     line-height: 2;
     text-align: center;
 }
-
-
-/*
-==================================================================
-    Media Queries
-==================================================================
-*/
-
-@media screen and (max-width: 1300px) {
-    
-    #navbar-large {
-        padding: 0 20px;
-    }
-}
-
-@media screen and (max-width: 1200px) {
-    
-    #navbar-small {
-        display: block;
-    }
-    
-    #navbar-large {
-        display: none;
-    }
-}
-
-@media screen and (max-width: 500px) {
-    
-    #nav-search {
-        display: none;
-    }
-}
