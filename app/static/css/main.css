@@ -72,7 +72,7 @@ main {
 
 footer {
     background-color: var(--darkblue);
-    margin-top: 100px;
+    margin-top: 70px;
     color: var(--white);
     padding: 30px 0 10px;
 }
@@ -169,9 +169,8 @@ footer img {
     text-decoration-color: var(--black) !important;
 }
 
-#recipe .uk-iconnav li a,
-#categories .uk-iconnav li a {
-    color: black !important;
+.uk-iconnav>*>a{
+    color: var(--black);
     text-decoration: none;
 }
 
@@ -201,7 +200,6 @@ footer img {
     background-color: var(--darkwhite) !important;
     border-radius: 5px;
 }
-
 
 
 /*
