@@ -14,7 +14,8 @@ class Recipe:
 
 
     def get_recipes_by_category(category, data):
-        cursor = db.recipes.find({ f"recipe_filters.{category}": data} )
+        cursor = db.recipes.find({ f"recipe_filters.{category}": data})
         recipes = [recipe for recipe in cursor]
         slideshow = sample(recipes, len(recipes)) if len(recipes) <= 10 else sample(recipes, 10) 
         return (recipes, slideshow)
+

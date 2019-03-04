@@ -166,8 +166,7 @@ def get_recipe_data():
             # create user specific fields
             users = {
                 "likes": random.randint(0, 100),
-                "dislikes": random.randint(0, 30),
-                "comments": []
+                "dislikes": random.randint(0, 30)
             }
 
             # create recipe object - add all values to master dict

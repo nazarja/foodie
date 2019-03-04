@@ -2,7 +2,7 @@
     "username": "",
     "password": "",
     "recipes": [],
-    "comments": [],
     "likes": [],
-    "dislikes": []
+    "dislikes": [],
+    "comments": []
 }

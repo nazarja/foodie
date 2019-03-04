@@ -60,7 +60,7 @@
                         <li  uk-tooltip="title: Edit; pos: top-right"><a href="#" uk-icon="icon: file-edit"> Edit </a></li>
                         <li  uk-tooltip="title: Like; pos: top-right"><a href="#" uk-icon="icon: heart"> {{ recipe.users.likes }} </a></li>
                         <li  uk-tooltip="title: Dislike; pos: top-right"><a href="#" uk-icon="icon: trash">  {{ recipe.users.dislikes }} </a></li>
-                        <li  uk-tooltip="title: Comments; pos: top-right"><a href="#" uk-icon="icon: comments">  {{ recipe.users.comments|count }} </a></li>
+                        <li  uk-tooltip="title: Comments; pos: top-right"><a href="#comments" uk-icon="icon: comments" uk-scroll>  {{ recipe.users.comments|count }} </a></li>
                     </ul>
                 </div>
             </div>
@@ -91,5 +91,25 @@
                 </ol>
             </div>
         </div>
+
+        
     </section>
-{% endblock%}
+
+
+    <!-- Comments -->
+    <section id="comments" class="uk-container uk-margin-large">
+        <h2>Comments</h2>
+        <p>Have your say about this recipe!</p>
+
+        <!-- Placeholder if no comments exist -->
+        {% if not recipe.users.comments %}
+            <div class="uk-placeholder uk-text-center uk-padding-large uk-margin-medium">
+                <p>Such Empty, No Comments Yet!</p>
+            </div>
+        {% else %}
+            {% for comment in recipe.users.comments %}
+                {% include 'partials/_comments.html' %}
+            {% endfor %}
+        {% endif%}
+    </section>
+{% endblock %}

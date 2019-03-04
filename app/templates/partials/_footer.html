@@ -1,4 +1,28 @@
 {% block content %}
-    <section class="container">
+    <section class="uk-container uk-text-center">
+
+        <!-- Logo -->
+        <div class="uk-inline uk-padding-small@l uk-align-left@l">
+            <a href="{{ url_for('index') }}">
+                <img height="60" width="80" src="{{ url_for('static', filename='images/logo_small_white.png') }}" alt="foodie logo" uklogo>
+            </a>
+        </div>
+        
+        <!-- Middle Text -->
+        <div class="uk-inline uk-text-bold uk-margin-small-top">
+            <span class="uk-padding-small uk-text-nowrap">Create | Share | Eat</span>
+            <span>|</span>
+            <span class="uk-padding-small uk-text-nowrap">&copy; 2019 Foodie</span>
+        </div>
+
+        <!-- Icon Nav -->
+        <div class="uk-inline uk-padding-small@l uk-align-right@l">
+            <ul class="uk-iconnav">
+                <li><a class="uk-icon-button" href="https://facebook.com" target="_blank" uk-tooltip="title: Facebook; pos: top-right" uk-icon="facebook"></a></li>
+                <li><a class="uk-icon-button" href="https://twitter.com" target="_blank" uk-tooltip="title: Twitter; pos: top-right" uk-icon="twitter"></a></li>
+                <li><a class="uk-icon-button" href="https://google.com" target="_blank" uk-tooltip="title: Google; pos: top-right" uk-icon="google"></a></li>
+                <li><a class="uk-icon-button" href="https://youtube.com" target="_blank" uk-tooltip="title: Youtube; pos: top-right" uk-icon="youtube"></a></li>
+            </ul>
+        </div>
     </section>
 {% endblock %}

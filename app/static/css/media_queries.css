@@ -25,6 +25,10 @@
     #recipe-lists {
         flex-direction: column-reverse;
     }
+
+    footer section div {
+        display: block !important;
+    }
 }
 
 @media screen and (max-width: 500px) {

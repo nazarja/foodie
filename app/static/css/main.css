@@ -13,6 +13,7 @@
     --medblack: #2d2d2d;
     --lightblack: #434343;
     --white: #f5f5f5;
+    --darkwhite: #e5e5e5;
     --blue: #1E87F0;
     --darkblue: #506377;
     --transition: 0.35s;
@@ -70,15 +71,29 @@ main {
 }
 
 footer {
-    background-color: var(--lightblack);
-    color: var(--white);
-    min-height: 100px;
+    background-color: var(--darkblue);
     margin-top: 100px;
+    color: var(--white);
+    padding: 30px 0 10px;
 }
+
+footer a.uk-icon-button.uk-icon {
+    background-color: transparent;
+    color: white;
+}
+
+footer a.uk-icon-button.uk-icon:hover {
+    opacity: 0.7;
+}
+
+footer img {
+    margin-top: -3px;
+}
+
 
 /*
 ==================================================================
-    Reusable Classes
+    Forms
 ==================================================================
 */
 
@@ -111,11 +126,6 @@ footer {
 .flashes {
     color: crimson;
     font-weight: bolder;
-}
-
-ul.uk-iconnav li a {
-    color: black !important;
-    text-decoration: none;
 }
 
 /*
@@ -159,6 +169,12 @@ ul.uk-iconnav li a {
     text-decoration-color: var(--black) !important;
 }
 
+#recipe .uk-iconnav li a,
+#categories .uk-iconnav li a {
+    color: black !important;
+    text-decoration: none;
+}
+
 
 /*
 ==================================================================
@@ -169,17 +185,23 @@ ul.uk-iconnav li a {
 .cuisine-badge {
     color: var(--white);
     background-color: var(--darkblue);
-    padding: 2px 4px;
+    padding: 2px 5px;
     border-radius: 3px;
+}
+
+.tags {
+    padding: 0 5px;
 }
 
 .uk-padding-bottom {
     padding-bottom: 40px;
 }
 
-.tags {
-    padding: 0 5px;
+.uk-comment, .uk-placeholder {
+    background-color: var(--darkwhite) !important;
+    border-radius: 5px;
 }
+
 
 
 /*
