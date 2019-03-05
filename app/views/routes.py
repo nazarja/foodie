@@ -60,6 +60,17 @@ def recipe(recipe, title):
 # ================================================ #
 
 
+# comment
+@app.route('/comments', methods=['POST'])
+def comment():
+    if request.method == "POST":
+        Recipe.add_comment(request.form['recipe_id'], dict(username=request.form['username'], date=request.form['date'], reply=request.form['reply']))
+    return "Comment Added"
+
+
+# ================================================ #
+
+
 # profile
 @app.route('/profile')
 @login_required

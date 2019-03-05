@@ -5,16 +5,14 @@
             <img class="uk-comment-avatar" src="{{ url_for('static', filename='images/profile_picture.png')}}" width="80" height="80" alt="profile picture">
         </div>
         <div class="uk-width-expand">
-            <h4 class="uk-comment-title uk-margin-remove">{{ comment.user }}</h4>
+            <h4 class="uk-comment-title uk-margin-remove">{{ comment.username }}</h4>
             <ul class="uk-comment-meta uk-subnav uk-subnav-divider uk-margin-remove-top">
-                <li>{{ comment.time }}</li>
+                <li>{{ comment.date }}</li>
             </ul>
         </div>
     </header>
     <div class="uk-comment-body">
-        <p>{{ comment.comment }}</p>
+        <p class="comment">{{ comment.reply }}</p>
     </div>
 </article>
-
-<hr class="uk-divider">
 {% endblock %}

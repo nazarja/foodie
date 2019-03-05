@@ -45,7 +45,7 @@
 
             <!-- Tags -->
             <p>
-                <span class="card-lead-text"><i uk-icon="icon: tag"></i> Tags:</span>
+                <i uk-icon="icon: tag"></i>
                 {% for key, value in recipe.recipe_filters.items() %}
                     {% if key in ['planning', 'mood', 'diet', 'skill', 'cuisine'] and value != "" %}
                     <a class="tags uk-text-nowrap" href="{{ url_for('categories', category=key, data=value) }}"><i uk-icon="icon: hashtag"></i>{{ value }}</a>
@@ -97,31 +97,45 @@
 <!-- Comments -->
 <section id="comments" class="uk-container uk-margin-large">
     <h2>Comments</h2>
-    <p>Have your say about this recipe!</p>
+    <p class="uk-margin-remove-bottom">Have your say about this recipe!</p>
 
+    <!-- Users Comments -->
+    <div id="user-comments" class="uk-margin-medium">
+
+        <!-- Loop over comments -->
+        {% if recipe.users.comments %}
+            {% for comment in recipe.users.comments %}
+                {% include 'partials/_comments.html' %}
+            {% endfor %}
+        {% else %}
+
+            <!-- Placeholder if no comments exist -->    
+            <div id="comments-placeholder" class="uk-placeholder uk-text-center uk-padding-large">
+                <p>Such Empty, No Comments Yet.</p>
+            </div>
+        {% endif%}
+    </div>
+
+    <!-- Form / Alert -->
+    <h3>Leave a comment ...</h3>
+
+    <!-- Require Sign In to post a comment -->
     {% if not current_user.is_authenticated %}
     <div class="uk-alert-primary" uk-alert>
         <p>You must be logged in to comment. <a class="uk-align-right" href="{{ url_for('sign', url='in') }}" class="sign-link"> Sign In </a></p>
     </div>
+
+    <!-- Comment Input form -->
     {% elif current_user.is_authenticated %}
-    <form method="" action="" class="uk-text-right">
+    <form id="comments-form" method="" action="" class="uk-text-right">
         <label class="uk-form-label" for="form-reply-comment">Reply <i uk-icon="icon: reply"></i></label>
-        <input class="uk-input" id="form-reply-comment" type="text" placeholder="Comment here ...">
-        <input class="uk-button-primary uk-margin-small uk-button" type="button" value="Send"></input>
+        <input class="uk-input" id="form-reply-comment" type="text" placeholder="Comment here ..." autocomplete="off" required>
+        <input type="hidden" id="hidden-input" value="{{ current_user.user['username'] }}">
+        <input class="uk-button-primary uk-margin-small uk-button" type="submit" value="Send"></input>
     </form>
     {% endif %}
 
-    <hr class="uk-divider">
-
-    <!-- Placeholder if no comments exist -->
-    {% if not recipe.users.comments %}
-    <div class="uk-placeholder uk-text-center uk-padding-large uk-margin-medium">
-        <p>Such Empty, No Comments Yet.</p>
-    </div>
-    {% else %}
-        {% for comment in recipe.users.comments %}
-            {% include 'partials/_comments.html' %}
-        {% endfor %}
-    {% endif%}
+    <!-- Give JavaScript the recipeID -->
+    <script>const recipe_id = '{{recipe._id}}';</script>
 </section>
 {% endblock %}

@@ -13,7 +13,7 @@
     --medblack: #2d2d2d;
     --lightblack: #434343;
     --white: #f5f5f5;
-    --darkwhite: #e5e5e5;
+    --darkwhite: #e8e8e8;
     --blue: #1E87F0;
     --darkblue: #506377;
     --transition: 0.35s;
@@ -72,7 +72,7 @@ main {
 
 footer {
     background-color: var(--darkblue);
-    margin-top: 70px;
+    margin-top: 100px;
     color: var(--white);
     padding: 30px 0 10px;
 }
@@ -112,7 +112,7 @@ footer img {
     margin-right: 10px;
 }
 
-.uk-button {
+.uk-button, .uk-button:active, .uk-button:focus {
     color: var(--white);
     background: var(--darkblue);
     cursor: pointer;
@@ -199,6 +199,15 @@ footer img {
 .uk-comment, .uk-placeholder {
     background-color: var(--darkwhite) !important;
     border-radius: 5px;
+}
+
+.uk-comment-title {
+    text-transform: capitalize;
+}
+
+p.comment {
+    padding-left: 110px;
+    padding-bottom: 10px;
 }
 
 

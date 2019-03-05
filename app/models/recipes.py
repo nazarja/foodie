@@ -19,3 +19,7 @@ class Recipe:
         slideshow = sample(recipes, len(recipes)) if len(recipes) <= 10 else sample(recipes, 10) 
         return (recipes, slideshow)
 
+    def add_comment(id, comment):
+        db.recipes.update({"_id": ObjectId(id)}, { "$push": { "users.comments": comment }})
+        
+
