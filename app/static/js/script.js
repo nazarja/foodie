@@ -70,7 +70,7 @@ function listenForComments() {
                     <div class="uk-width-auto">
                     <img class="uk-comment-avatar" src="../../static/images/profile_picture.png" width="80" height="80" alt="profile picture"></div>
                     <div class="uk-width-expand"><h4 class="uk-comment-title uk-margin-remove">${data.value}</h4><div class="uk-comment-meta">
-                    <a href="{{ url_for('recipe', recipe=${recipeId}, title=comment.recipe_title|lower|replace(' ', '-')) }}">${recipeTitle}</a>
+                    <a href="{{ url_for('recipe', recipe=${recipeId}, title=comment.recipe_title|resub)}}">${recipeTitle}</a>
                     </div><ul class="uk-comment-meta uk-subnav uk-subnav-divider uk-margin-remove-top"><li>${date}</li>
                     </ul></div></header><div class="uk-comment-body">
                     <p class="comment">${reply.value}</p></div></article>`;

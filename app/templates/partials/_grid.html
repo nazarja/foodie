@@ -3,7 +3,7 @@
 
     <!-- Recipe Image -->
     <div class="uk-card-media-top">
-        <a href="{{ url_for('recipe', recipe=recipe._id, title=recipe.recipe_data.title|lower|replace(' ', '+')) }}">
+        <a href="{{ url_for('recipe', recipe=recipe._id, title=recipe.recipe_data.title|resub )}}">
             <img class="grid-image" data-src="{{ recipe.image_details[0] }}" alt="{{ recipe.image_details[1] }}" uk-img>
         </a>
     </div>
@@ -20,7 +20,7 @@
 
         <!-- Recipe Title -->
         </p>
-            <a class="uk-h5" href="{{ url_for('recipe', recipe=recipe._id, title=recipe.recipe_data.title|lower|replace(' ', '+')) }}">
+            <a class="uk-h5" href="{{ url_for('recipe', recipe=recipe._id, title=recipe.recipe_data.title|resub )}}">
                 {{ recipe.recipe_data.title|title }}
             </a>
         </p>

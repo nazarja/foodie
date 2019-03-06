@@ -7,7 +7,7 @@
             <div class="featured-slider-card uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin" uk-grid>
                 
                 <!-- Card Image -->
-                <a href="{{ url_for('recipe', recipe=recipe._id, title=recipe.recipe_data.title|lower|replace(' ', '-')) }}">
+                <a href="{{ url_for('recipe', recipe=recipe._id, title=recipe.recipe_data.title|resub )}}">
                     <div class="uk-card-media-left uk-cover-container">
                         <img class="slider-image" data-src="{{ recipe.image_details[0] }}" alt="{{ recipe.image_details[1] }}" uk-cover uk-img>
                         <canvas width="400" height="400"></canvas>
@@ -17,13 +17,13 @@
                 <!-- Card Body -->
                 <div class="uk-card-body">
                     <div class="uk-card-badge uk-label">{{ recipe.recipe_filters.cuisine|title }}</div>
-                    <h3 class="uk-card-title"><a href="{{ url_for('recipe', recipe=recipe._id, title=recipe.recipe_data.title|lower|replace(' ', '+')) }}">{{ recipe.recipe_data.title|title }}</a></h3>
+                    <h3 class="uk-card-title"><a href="{{ url_for('recipe', recipe=recipe._id, title=recipe.recipe_data.title|resub )}}">{{ recipe.recipe_data.title|title }}</a></h3>
                     <p>{{ recipe.recipe_data.description }}</p>
                     <p><span class="card-lead-text">Author:</span>{{ recipe.recipe_data.author }}</p>
                     <p><span class="card-lead-text">Difficulty:</span>{{ recipe.recipe_data.difficulty }}</p>
                     <p><span class="card-lead-text">Serves:</span>{{ recipe.recipe_data.serves }}</p>
                     <p class="slider-icons"><i uk-icon="bell"></i> {{ recipe.recipe_data.cook_time  }} <i uk-icon="bolt"></i> {{ recipe.recipe_data.prep_time }}</p>
-                    <p><a href="{{ url_for('recipe', recipe=recipe._id, title=recipe.recipe_data.title|lower|replace(' ', '+')) }}">More Details ...</a></p>
+                    <p><a href="{{ url_for('recipe', recipe=recipe._id, title=recipe.recipe_data.title|resub )}}">More Details ...</a></p>
                     
                     <!-- Iconnav -->
                     <div class="uk-card-footer uk-position-bottom-right">

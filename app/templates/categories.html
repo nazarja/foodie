@@ -32,11 +32,15 @@
     </div>
 
     <!-- Pagination -->
-    {% if pages > 1 %}
+    {% if pages > 2 %}
     <ul class="uk-pagination uk-flex-center uk-margin-large uk-text-emphasis">
         <li><a href="{{ url_for('categories', category=category, data=data, page=1, sort=sort)}}"><span uk-pagination-previous></span> First </a></li>
-        {% for page in range(1, pages) %}
-        <li><a href="{{ url_for('categories', category=category, data=data, page=page, sort=sort)}}">{{ page }}</a></li>
+        {% for index in range(1, pages) %}
+            {% if index == page %}
+            <li class="active">{{ index }}</li>
+            {% else %}
+            <li><a href="{{ url_for('categories', category=category, data=data, page=index, sort=sort)}}">{{ index }}</a></li>
+            {% endif %}
         {% endfor %}
         <li><a href="{{ url_for('categories', category=category, data=data, page=(pages-1), sort=sort)}}"><span uk-pagination-next> Last </span></a></li>
     </ul>

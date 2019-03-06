@@ -1,4 +1,4 @@
-import json
+import json, re
 from math import ceil
 from app import app, db, ObjectId
 from flask import render_template, redirect, url_for, request, flash
@@ -17,6 +17,15 @@ def inject_filters():
     with open('app/data/schemas/filters.json') as filters_file:
         menu_filters = json.load(filters_file)
         return dict(filters=menu_filters)
+
+
+# ================================================ #
+
+# Make recipe slug readable - remove non word chars
+def slugFriendly(title):
+    return re.sub(r'\W', '_', title)
+
+app.jinja_env.filters['resub'] = slugFriendly
 
 
 # ================================================ #
