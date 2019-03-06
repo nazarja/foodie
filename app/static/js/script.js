@@ -6,7 +6,7 @@
 */
 
 function menuAnimation() {
-    
+
     const logo = document.querySelector('#logo');
     const url = window.location.protocol + '//' + window.location.host + '/';
     let pageOffsetPosition = window.pageYOffset;
@@ -46,7 +46,7 @@ function changeDropDown(offset) {
 
 function listenForComments() {
 
-    if (document.querySelector('#recipe')) {
+    if (document.querySelector('#comments-form')) {
 
         const form = document.querySelector('#comments-form');
         const userComments = document.querySelector('#user-comments');
@@ -58,7 +58,6 @@ function listenForComments() {
         form.addEventListener('submit', (event) => {
             event.preventDefault()
             const date = new Date().toLocaleString();
-            
 
             let xhr = new XMLHttpRequest();
             xhr.open("POST", '/comments', true);
@@ -70,8 +69,9 @@ function listenForComments() {
                     <header class="uk-comment-header uk-grid-medium uk-flex-middle" uk-grid>
                     <div class="uk-width-auto">
                     <img class="uk-comment-avatar" src="../../static/images/profile_picture.png" width="80" height="80" alt="profile picture"></div>
-                    <div class="uk-width-expand"><h4 class="uk-comment-title uk-margin-remove">${data.value}</h4>
-                    <ul class="uk-comment-meta uk-subnav uk-subnav-divider uk-margin-remove-top"><li>${date}</li>
+                    <div class="uk-width-expand"><h4 class="uk-comment-title uk-margin-remove">${data.value}</h4><div class="uk-comment-meta">
+                    <a href="{{ url_for('recipe', recipe=${recipeId}, title=comment.recipe_title|lower|replace(' ', '-')) }}">${recipeTitle}</a>
+                    </div><ul class="uk-comment-meta uk-subnav uk-subnav-divider uk-margin-remove-top"><li>${date}</li>
                     </ul></div></header><div class="uk-comment-body">
                     <p class="comment">${reply.value}</p></div></article>`;
                                 
@@ -81,7 +81,7 @@ function listenForComments() {
                 };
             };
             xhr.setRequestHeader('content-type', 'application/x-www-form-urlencoded;charset=UTF-8');
-            xhr.send(`recipe_id=${recipe_id}&username=${data.value}&date=${date}&reply=${reply.value}`); 
+            xhr.send(`recipe_id=${recipeId}&recipe_title=${recipeTitle}&username=${data.value}&date=${date}&reply=${reply.value}`); 
         });
     };
 };

@@ -6,5 +6,10 @@
 
     <!-- Slider -->
     {% include 'partials/_slider.html' %}
+
+    <!-- Recipe Grid -->
+    {% for recipe in recipes %}
+        {% include 'partials/_grid.html' %}
+    {% endfor %}
 </section>
 {% endblock %}

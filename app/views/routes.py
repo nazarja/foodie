@@ -64,7 +64,7 @@ def recipe(recipe, title):
 @app.route('/comments', methods=['POST'])
 def comment():
     if request.method == "POST":
-        Recipe.add_comment(request.form['recipe_id'], dict(username=request.form['username'], date=request.form['date'], reply=request.form['reply']))
+        Recipe.add_comment(request.form['recipe_id'], dict(recipe_id=request.form['recipe_id'], recipe_title=request.form['recipe_title'], username=request.form['username'], date=request.form['date'], reply=request.form['reply']))
     return "Comment Added"
 
 

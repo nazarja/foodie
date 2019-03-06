@@ -3,5 +3,6 @@
     "password": "",
     "recipes": [],
     "likes": [],
-    "dislikes": []
+    "dislikes": [],
+    "comments": []
 }

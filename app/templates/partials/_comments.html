@@ -6,6 +6,9 @@
         </div>
         <div class="uk-width-expand">
             <h4 class="uk-comment-title uk-margin-remove">{{ comment.username }}</h4>
+            <div class="uk-comment-meta">
+                <a href="{{ url_for('recipe', recipe=comment.recipe_id, title=comment.recipe_title|lower|replace(' ', '-')) }}">{{ comment.recipe_title|title }}</a>
+            </div>
             <ul class="uk-comment-meta uk-subnav uk-subnav-divider uk-margin-remove-top">
                 <li>{{ comment.date }}</li>
             </ul>

@@ -135,7 +135,10 @@
     </form>
     {% endif %}
 
-    <!-- Give JavaScript the recipeID -->
-    <script>const recipe_id = '{{recipe._id}}';</script>
+    <!-- Give JavaScript some recipe details -->
+    <script>
+        const recipeId = '{{ recipe._id }}';
+        const recipeTitle = '{{ recipe.recipe_data.title }}'
+    </script>
 </section>
 {% endblock %}
