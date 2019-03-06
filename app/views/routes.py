@@ -1,4 +1,5 @@
-import json, re
+import json
+from math import ceil
 from app import app, db, ObjectId
 from flask import render_template, redirect, url_for, request, flash
 from flask_login import login_user, logout_user, login_required, current_user
@@ -37,8 +38,22 @@ def categories(category, data):
     
     sort = request.args.get('sort') or "users.likes"
     order = request.args.get('order') or -1
-    recipes = Recipe.get_recipes_by_category(category, data, sort, int(order))
-    return render_template('categories.html', category=category, data=data, sort=sort, recipes=recipes[0], slideshow=recipes[1])
+    page = request.args.get('page') or 1
+
+    recipes = Recipe.get_recipes_by_category(category, data, sort, int(order), int(page))
+    pages = ceil(recipes[2] / 12) + 1
+
+    return render_template(
+        'categories.html', 
+        category=category, 
+        data=data, 
+        sort=sort, 
+        page=int(page), 
+        pages=pages, 
+        recipes=recipes[0], 
+        slideshow=recipes[1], 
+        count=recipes[2]
+    )
 
 
 # ================================================ #

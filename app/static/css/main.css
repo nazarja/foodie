@@ -250,6 +250,10 @@ p.comment {
     background-color: var(--darkwhite);
 }
 
+#grid .uk-text-meta {
+    color: var(--lightblack) !important;
+}
+
 .grid-image {
     border-radius: 2.5px;
 }

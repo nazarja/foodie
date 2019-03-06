@@ -1,4 +1,3 @@
-from random import sample
 from app import app, db, ObjectId
 from app.models.users import User
 from flask_login import current_user
@@ -15,10 +14,11 @@ class Recipe:
         return db.recipes.find_one({"_id": ObjectId(id)})
 
 
-    def get_recipes_by_category(category, data, sort, order):
-        cursor = db.recipes.find({ f"recipe_filters.{category}": data }).sort([(sort, order)]).limit(12)
+    def get_recipes_by_category(category, data, sort, order, page):
+        count = db.recipes.count_documents({f"recipe_filters.{category}": data })
+        cursor = db.recipes.find({ f"recipe_filters.{category}": data }).sort([(sort, order)]).skip((page-1)*12).limit(12)
         slideshow = db.recipes.aggregate([{ "$match": { f"recipe_filters.{category}": data }},{ "$sample": { "size": 10 }}])
-        return ([recipe for recipe in cursor], [recipe for recipe in slideshow])
+        return ([recipe for recipe in cursor], [recipe for recipe in slideshow], count)
 
     def add_comment(id, comment):
         db.recipes.find_one_and_update({"_id": ObjectId(id)}, { "$push": { "users.comments": comment }})

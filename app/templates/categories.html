@@ -11,7 +11,7 @@
     <hr class="uk-icon-divider">
 
     <!-- Grid Title -->
-    <h2>All {{ data|title }} Recipes <span class="uk-text-small">({{ recipes|count }} of )</span></h2>
+    <h2>All {{ data|title }} Recipes <span class="uk-text-small">({{ (page-1)*12 }} - {{ recipes|count+(page-1)*12 }} of {{ count }} recipes)</span></h2>
     <div id="grid-filters-nav" class="uk-padding-small uk-margin-medium">
         <ul class="uk-subnav uk-subnav-pill">
             <li><a href="{{ url_for('categories', category=category, data=data, sort='users.likes')}}">Likes</a></li>
@@ -30,5 +30,16 @@
         {% include 'partials/_grid.html' %}
     {% endfor %}
     </div>
+
+    <!-- Pagination -->
+    {% if pages > 1 %}
+    <ul class="uk-pagination uk-flex-center uk-margin-large uk-text-emphasis">
+        <li><a href="{{ url_for('categories', category=category, data=data, page=1, sort=sort)}}"><span uk-pagination-previous></span> First </a></li>
+        {% for page in range(1, pages) %}
+        <li><a href="{{ url_for('categories', category=category, data=data, page=page, sort=sort)}}">{{ page }}</a></li>
+        {% endfor %}
+        <li><a href="{{ url_for('categories', category=category, data=data, page=(pages-1), sort=sort)}}"><span uk-pagination-next> Last </span></a></li>
+    </ul>
+    {% endif %}
 </section>
 {% endblock %}
