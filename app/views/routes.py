@@ -1,4 +1,4 @@
-import json
+import json, re
 from app import app, db, ObjectId
 from flask import render_template, redirect, url_for, request, flash
 from flask_login import login_user, logout_user, login_required, current_user
@@ -31,20 +31,14 @@ def index():
 # ================================================ #
 
 
-# filters
-@app.route('/filters')
-def filters():
-    return render_template('filters.html')
-
-
-# ================================================ #
-
-
 # categories
 @app.route('/categories/<category>/<data>')
 def categories(category, data):
-    recipes = Recipe.get_recipes_by_category(category, data)
-    return render_template('categories.html', category=category, data=data, recipes=recipes[0], slideshow=recipes[1])
+    
+    sort = request.args.get('sort') or "users.likes"
+    order = request.args.get('order') or -1
+    recipes = Recipe.get_recipes_by_category(category, data, sort, int(order))
+    return render_template('categories.html', category=category, data=data, sort=sort, recipes=recipes[0], slideshow=recipes[1])
 
 
 # ================================================ #
@@ -64,8 +58,24 @@ def recipe(recipe, title):
 @app.route('/comments', methods=['POST'])
 def comment():
     if request.method == "POST":
-        Recipe.add_comment(request.form['recipe_id'], dict(recipe_id=request.form['recipe_id'], recipe_title=request.form['recipe_title'], username=request.form['username'], date=request.form['date'], reply=request.form['reply']))
+        comment = {
+                "recipe_id": request.form['recipe_id'], 
+                "recipe_title": request.form['recipe_title'], 
+                "username": request.form['username'], 
+                "date": request.form['date'], 
+                "reply": request.form['reply']
+        }
+        Recipe.add_comment(request.form['recipe_id'],comment) 
     return "Comment Added"
+
+
+# ================================================ #
+
+
+# filters
+@app.route('/filters')
+def filters():
+    return render_template('filters.html')
 
 
 # ================================================ #

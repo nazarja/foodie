@@ -39,16 +39,16 @@
             
             <!-- Cook / Prep Time -->
             <p class="slider-icons">
-                <span class="uk-text-nowrap"><i uk-icon="icon: bell"></i> {{ recipe.recipe_data.cook_time  }} </span>
-                <span class="uk-text-nowrap"><i uk-icon="icon: bolt"></i> {{ recipe.recipe_data.prep_time }}</span>
+                <span class="uk-text-nowrap"><i uk-icon="bell"></i> {{ recipe.recipe_data.cook_time  }} </span>
+                <span class="uk-text-nowrap"><i uk-icon="bolt"></i> {{ recipe.recipe_data.prep_time }}</span>
             </p>                
 
             <!-- Tags -->
             <p>
-                <i uk-icon="icon: tag"></i>
+                <i uk-icon="tag"></i>
                 {% for key, value in recipe.recipe_filters.items() %}
                     {% if key in ['planning', 'mood', 'diet', 'skill', 'cuisine'] and value != "" %}
-                    <a class="tags uk-text-nowrap" href="{{ url_for('categories', category=key, data=value) }}"><i uk-icon="icon: hashtag"></i>{{ value }}</a>
+                    <a class="tags uk-text-nowrap" href="{{ url_for('categories', category=key, data=value) }}"><i uk-icon="hashtag"></i>{{ value }}</a>
                     {% endif %}
                 {% endfor %}
             </p>
@@ -57,10 +57,10 @@
             <!-- Iconnav -->
             <div class="uk-margin-top uk-position-bottom-right">
                 <ul class="uk-iconnav">
-                    <li  uk-tooltip="title: Edit; pos: top-right"><a href="#" uk-icon="icon: file-edit"> Edit </a></li>
-                    <li  uk-tooltip="title: Like; pos: top-right"><a href="#" uk-icon="icon: heart"> {{ recipe.users.likes }} </a></li>
-                    <li  uk-tooltip="title: Dislike; pos: top-right"><a href="#" uk-icon="icon: trash">  {{ recipe.users.dislikes }} </a></li>
-                    <li  uk-tooltip="title: Comments; pos: top-right"><a href="#comments" uk-icon="icon: comments" uk-scroll>  {{ recipe.users.comments|count }} </a></li>
+                    <li  uk-tooltip="title: Edit; pos: top-right"><a href="#" uk-icon="file-edit"> Edit </a></li>
+                    <li  uk-tooltip="title: Like; pos: top-right"><a href="#" uk-icon="heart"> {{ recipe.users.likes }} </a></li>
+                    <li  uk-tooltip="title: Dislike; pos: top-right"><a href="#" uk-icon="trash">  {{ recipe.users.dislikes }} </a></li>
+                    <li  uk-tooltip="title: Comments; pos: top-right"><a href="#comments" uk-icon="comments" uk-scroll>  {{ recipe.users.comments|count }} </a></li>
                 </ul>
             </div>
         </div>
@@ -128,7 +128,7 @@
     <!-- Comment Input form -->
     {% elif current_user.is_authenticated %}
     <form id="comments-form" method="" action="" class="uk-text-right">
-        <label class="uk-form-label" for="form-reply-comment">Reply <i uk-icon="icon: reply"></i></label>
+        <label class="uk-form-label" for="form-reply-comment">Reply <i uk-icon="reply"></i></label>
         <input class="uk-input" id="form-reply-comment" type="text" placeholder="Comment here ..." autocomplete="off" required>
         <input type="hidden" id="hidden-input" value="{{ current_user.user['username'] }}">
         <input class="uk-button-primary uk-margin-small uk-button" type="submit" value="Send"></input>

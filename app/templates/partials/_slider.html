@@ -22,16 +22,16 @@
                     <p><span class="card-lead-text">Author:</span>{{ recipe.recipe_data.author }}</p>
                     <p><span class="card-lead-text">Difficulty:</span>{{ recipe.recipe_data.difficulty }}</p>
                     <p><span class="card-lead-text">Serves:</span>{{ recipe.recipe_data.serves }}</p>
-                    <p class="slider-icons"><i uk-icon="icon: bell"></i> {{ recipe.recipe_data.cook_time  }} <i uk-icon="icon: bolt"></i> {{ recipe.recipe_data.prep_time }}</p>
+                    <p class="slider-icons"><i uk-icon="bell"></i> {{ recipe.recipe_data.cook_time  }} <i uk-icon="bolt"></i> {{ recipe.recipe_data.prep_time }}</p>
                     <p><a href="{{ url_for('recipe', recipe=recipe._id, title=recipe.recipe_data.title|lower|replace(' ', '+')) }}">More Details ...</a></p>
                     
                     <!-- Iconnav -->
                     <div class="uk-card-footer uk-position-bottom-right">
                         <ul class="uk-iconnav">
-                            <li  uk-tooltip="title: Edit; pos: top-right"><a href="#" uk-icon="icon: file-edit"> Edit </a></li>
-                            <li  uk-tooltip="title: Like; pos: top-right"><a href="#" uk-icon="icon: heart"> {{ recipe.users.likes }} </a></li>
-                            <li  uk-tooltip="title: Dislike; pos: top-right"><a href="#" uk-icon="icon: trash">  {{ recipe.users.dislikes }} </a></li>
-                            <li  uk-tooltip="title: Comments; pos: top-right"><a href="#" uk-icon="icon: comments">  {{ recipe.users.comments|count }} </a></li>
+                            <li  uk-tooltip="title: Edit; pos: top-right"><a href="#" uk-icon="file-edit"> Edit </a></li>
+                            <li  uk-tooltip="title: Like; pos: top-right"><a href="#" uk-icon="heart"> {{ recipe.users.likes }} </a></li>
+                            <li  uk-tooltip="title: Dislike; pos: top-right"><a href="#" uk-icon="trash">  {{ recipe.users.dislikes }} </a></li>
+                            <li  uk-tooltip="title: Comments; pos: top-right"><a href="#" uk-icon="comments">  {{ recipe.users.comments|count }} </a></li>
                         </ul>
                     </div>
                 </div>

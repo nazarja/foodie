@@ -5,7 +5,7 @@
 
     <!-- Logo / Burger Menu -->
     <div id="nav-small-left">
-        <i id="offcanvas-toggle" uk-toggle="target: #offcanvas-menu" uk-icon="icon: menu"></i>
+        <i id="offcanvas-toggle" uk-toggle="target: #offcanvas-menu" uk-icon="menu"></i>
         <a href="{{ url_for('index') }}">
             <img height="40" width="60" src="{{ url_for('static', filename='images/logo_small_white.png') }}" alt="foodie logo" uklogo>
         </a>
@@ -42,7 +42,7 @@
             <ul id="main-menu" class="uk-navbar-nav">
                 {% for key, values in filters.items() %}
                 <li>
-                    <a href="#">{{ key }}<i uk-icon="icon: chevron-down"></i></a>
+                    <a href="#">{{ key }}<i uk-icon="chevron-down"></i></a>
                     <div class="uk-navbar-dropdown uk-navbar-dropdown-width-2 main-dropdown-menu" uk-drop="offset: 15; pos: bottom-center">
                         <ul class="uk-nav uk-navbar-dropdown-nav main-menu-ul">
                             {% for value in values %}
@@ -52,7 +52,7 @@
                     </div>
                 </li>
                 {% endfor %}
-                <li><a href="{{ url_for('filters') }}">Filters <i uk-icon="icon: settings"></i></a></li>
+                <li><a href="{{ url_for('filters') }}">Filters <i uk-icon="settings"></i></a></li>
             </ul>
         </div>
 

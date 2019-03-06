@@ -7,9 +7,28 @@
     <!-- Slider -->
     {% include 'partials/_slider.html' %}
 
+    <!-- Divider -->
+    <hr class="uk-icon-divider">
+
+    <!-- Grid Title -->
+    <h2>All {{ data|title }} Recipes <span class="uk-text-small">({{ recipes|count }} of )</span></h2>
+    <div id="grid-filters-nav" class="uk-padding-small uk-margin-medium">
+        <ul class="uk-subnav uk-subnav-pill">
+            <li><a href="{{ url_for('categories', category=category, data=data, sort='users.likes')}}">Likes</a></li>
+            <li><a href="{{ url_for('categories', category=category, data=data, sort='users.dislikes')}}">Dislikes</a></li>
+            <li><a href="{{ url_for('categories', category=category, data=data, sort='recipe_data.title', order=1)}}">Title</a></li>
+            <li><a href="{{ url_for('categories', category=category, data=data, sort='recipe_filters.skill', order=1)}}">Difficulty</a></li>
+            <li><a href="{{ url_for('categories', category=category, data=data, sort='recipe_data.author', order=1)}}">Author</a></li>
+            <li><a href="{{ url_for('categories', category=category, data=data, sort='recipe_data.serves', order=-1)}}">Servings</a></li>
+            <li><a href="{{ url_for('categories', category=category, data=data, sort='recipe_filters.main_ingredient', order=1)}}">Main Ingredient</a></li>
+        </ul>
+    </div>
+
     <!-- Recipe Grid -->
+    <div id="grid" class="uk-grid-medium uk-grid-match uk-child-width-1-2@s uk-child-width-1-4@m" uk-grid>
     {% for recipe in recipes %}
         {% include 'partials/_grid.html' %}
     {% endfor %}
+    </div>
 </section>
 {% endblock %}

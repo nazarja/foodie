@@ -7,7 +7,7 @@ class Recipe:
 
 
     def get_random_recipes():
-        cursor = db.recipes.find({}).aggregate([{ "$sample": { "size": 10 }}])
+        cursor = db.recipes.aggregate([{ "$sample": { "size": 10 }}])
         return [recipe for recipe in cursor]
 
 
@@ -15,8 +15,8 @@ class Recipe:
         return db.recipes.find_one({"_id": ObjectId(id)})
 
 
-    def get_recipes_by_category(category, data, sort="users.likes"):
-        cursor = db.recipes.find({ f"recipe_filters.{category}": data }).sort([(sort, -1)]).limit(12)
+    def get_recipes_by_category(category, data, sort, order):
+        cursor = db.recipes.find({ f"recipe_filters.{category}": data }).sort([(sort, order)]).limit(12)
         slideshow = db.recipes.aggregate([{ "$match": { f"recipe_filters.{category}": data }},{ "$sample": { "size": 10 }}])
         return ([recipe for recipe in cursor], [recipe for recipe in slideshow])
 

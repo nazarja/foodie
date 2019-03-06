@@ -1,5 +1,38 @@
 {% block content %}
-<div id="grid">
-    <p>{{ recipe.recipe_data.title|title }} = {{ recipe.users.likes }}</p>
-</div>
+<div class="uk-card uk-card-default uk-card-hover">
+    <div class="uk-card-media-top">
+        <a href="{{ url_for('recipe', recipe=recipe._id, title=recipe.recipe_data.title|lower|replace(' ', '+')) }}">
+            <img class="grid-image" data-src="{{ recipe.image_details[0] }}" alt="{{ recipe.image_details[1] }}" uk-img>
+        </a>
+    </div>
+    <div class="uk-card-body uk-padding-small">
+        <div class="uk-card-badge uk-label">
+            {% if recipe.recipe_filters.main_ingredient != "" %}
+                {{ recipe.recipe_filters.main_ingredient }}
+            {% else %}
+                {{ recipe.recipe_filters.ingred[0] }}
+            {% endif %}
+        </div>
+        </p>
+            <a class="uk-h5" href="{{ url_for('recipe', recipe=recipe._id, title=recipe.recipe_data.title|lower|replace(' ', '+')) }}">
+                {{ recipe.recipe_data.title|title }}
+            </a>
+        </p>
+        <p class="uk-text-meta">
+            {% if sort == 'users.likes' %}Likes <i uk-icon="arrow-down"></i>
+            {% elif sort == 'users.dislikes' %}Dislikes <i uk-icon="arrow-down"></i>
+            {% elif sort == 'recipe_data.title' %}Title
+            {% elif sort == 'recipe_filters.skill' %}{{ recipe.recipe_filters.skill }}
+            {% elif sort == 'recipe_data.author' %}Author: {{ recipe.recipe_data.author }}
+            {% elif sort == 'recipe_data.serves' %}{{ recipe.recipe_data.serves }}
+            {% else %}Main Ingredient: {{ recipe.recipe_filters.main_ingredient }}
+            {% endif %}
+        </p>
+        <ul class="uk-iconnav uk-align-left">
+            <li class="uk-inline" uk-tooltip="title: Edit; pos: top-right"><a href="#" uk-icon="file-edit"></a></li>
+            <li class="uk-inline" uk-tooltip="title: Likes; pos: top-right"><a href="#" uk-icon="heart"> {{ recipe.users.likes }} </a></li>
+            <li class="uk-inline" uk-tooltip="title: Dislikes; pos: top-right"><a href="#" uk-icon="trash"> {{ recipe.users.dislikes }} </a></li>
+        </ul>
+    </div>
+</div>   
 {% endblock %}
