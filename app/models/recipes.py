@@ -6,19 +6,20 @@ class Recipe:
 
 
     def get_random_recipes():
-        cursor = db.recipes.aggregate([{ "$sample": { "size": 10 }}])
-        return [recipe for recipe in cursor]
+        grid = db.recipes.aggregate([{ "$sample": { "size": 4 }}])
+        slideshow = db.recipes.aggregate([{ "$sample": { "size": 10 }}])
+        return ([recipe for recipe in grid], [recipe for recipe in slideshow])
 
 
     def get_recipe_details(id): 
         return db.recipes.find_one({"_id": ObjectId(id)})
 
 
-    def get_recipes_by_category(category, data, sort, order, page):
+    def get_recipes_by_category(category, data, sort, order, page, num):
         count = db.recipes.count_documents({f"recipe_filters.{category}": data })
-        cursor = db.recipes.find({ f"recipe_filters.{category}": data }).sort([(sort, order)]).skip((page-1)*12).limit(12)
+        grid = db.recipes.find({ f"recipe_filters.{category}": data }).sort([(sort, order)]).skip((page-1)*num).limit(num)
         slideshow = db.recipes.aggregate([{ "$match": { f"recipe_filters.{category}": data }},{ "$sample": { "size": 10 }}])
-        return ([recipe for recipe in cursor], [recipe for recipe in slideshow], count)
+        return ([recipe for recipe in grid], [recipe for recipe in slideshow], count)
 
     def add_comment(id, comment):
         db.recipes.find_one_and_update({"_id": ObjectId(id)}, { "$push": { "users.comments": comment }})

@@ -52,7 +52,8 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--black);
 }
 
-h1, h2, .uk-h2 {
+h1, h2,
+.uk-h1, .uk-h2 {
     font-family: 'ProximaNova Light', Roboto, sans-serif;
     text-decoration-color: var(--black) !important;
 }
@@ -181,6 +182,17 @@ footer img {
     text-decoration: none;
 }
 
+
+/*
+==================================================================
+   Index Page
+==================================================================
+*/
+
+#cta {
+    margin-top: -50px;
+    background-image: linear-gradient(to bottom right,rgba(65, 60, 53, 0.6),rgba(65, 60, 53, 0.6)), url('../images/cta-bg.jpg');
+}
 
 /*
 ==================================================================

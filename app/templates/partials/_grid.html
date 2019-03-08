@@ -3,7 +3,7 @@
 
     <!-- Recipe Image -->
     <div class="uk-card-media-top">
-        <a href="{{ url_for('recipe', recipe=recipe._id, title=recipe.recipe_data.title|resub )}}">
+        <a tabindex="0" href="{{ url_for('recipe', recipe=recipe._id, title=recipe.recipe_data.title|resub )}}">
             <img class="grid-image" data-src="{{ recipe.image_details[0] }}" alt="{{ recipe.image_details[1] }}" uk-img>
         </a>
     </div>
@@ -33,7 +33,8 @@
             {% elif sort == 'recipe_filters.skill' %}Skill: {{ recipe.recipe_filters.skill }}
             {% elif sort == 'recipe_data.author' %}Author: {{ recipe.recipe_data.author }}
             {% elif sort == 'recipe_data.serves' %}{{ recipe.recipe_data.serves }}
-            {% else %}Main Ingredient: {{ recipe.recipe_filters.main_ingredient }}
+            {% elif sort == 'recipe.recipe_filters.main_ingredient' %}Main Ingredient: {{ recipe.recipe_filters.main_ingredient }}
+            {% else %}Likes <i uk-icon="arrow-down"></i>
             {% endif %}
         </p>
 

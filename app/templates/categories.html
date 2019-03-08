@@ -11,7 +11,7 @@
     <hr class="uk-icon-divider">
 
     <!-- Grid Title -->
-    <h2>All {{ data|title }} Recipes <span class="uk-text-small">({{ (page-1)*12 }} - {{ recipes|count+(page-1)*12 }} of {{ count }} recipes)</span></h2>
+    <h2>All {{ data|title }} Recipes <span class="uk-text-small">({{ (page-1)*num }} - {{ recipes|count+(page-1)*num }} of {{ count }} recipes)</span></h2>
     <div id="grid-filters-nav" class="uk-padding-small uk-margin-medium">
         <ul class="uk-subnav uk-subnav-pill">
             <li><a href="{{ url_for('categories', category=category, data=data, sort='users.likes')}}">Likes</a></li>

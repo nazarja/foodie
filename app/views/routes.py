@@ -34,8 +34,8 @@ app.jinja_env.filters['resub'] = slugFriendly
 # index
 @app.route('/')
 def index():
-    slideshow = Recipe.get_random_recipes()
-    return render_template('index.html', slideshow=slideshow)
+    recipes = Recipe.get_random_recipes()
+    return render_template('index.html', recipes=recipes[0], slideshow=recipes[1])
 
 
 # ================================================ #
@@ -49,7 +49,7 @@ def categories(category, data):
     order = request.args.get('order') or -1
     page = request.args.get('page') or 1
 
-    recipes = Recipe.get_recipes_by_category(category, data, sort, int(order), int(page))
+    recipes = Recipe.get_recipes_by_category(category, data, sort, int(order), int(page), num=12)
     pages = ceil(recipes[2] / 12) + 1
 
     return render_template(
@@ -57,6 +57,7 @@ def categories(category, data):
         category=category, 
         data=data, 
         sort=sort, 
+        num=12,
         page=int(page), 
         pages=pages, 
         recipes=recipes[0], 

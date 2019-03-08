@@ -6,5 +6,23 @@
     
     <!-- Slider -->
     {% include 'partials/_slider.html' %}
+
+    <!-- Explore By -->
+    <h2>Explore by Cuisine</h2>
+  
+    <h3>You May Also Like ...</h3>
+    
+    <!-- Recipe Grid -->
+    <div id="grid" class="uk-grid-medium uk-grid-match uk-child-width-1-2@s uk-child-width-1-4@m" uk-grid>
+    {% for recipe in recipes %}
+        {% include 'partials/_grid.html' %}
+    {% endfor %}
+    </div>
 </section>
 {% endblock %}
+<!-- Add Recipe CTA -->
+<!-- <div id="cta" class="uk-height-medium uk-background-cover uk-overflow-hidden uk-light uk-flex uk-flex-top"">
+    <div class="uk-width-1-2@m uk-text-center uk-margin-auto uk-margin-auto-vertical">
+        <p class="uk-text-bold uk-text-large" uk-parallax="opacity: 1,0; y: 0,100; scale: 1,0.5; viewport: 0.5;">Create & Store your own Delicious Food and Drink Recipes!</p>
+    </div>
+</div> -->
