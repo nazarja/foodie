@@ -106,6 +106,15 @@ def filters():
 # ================================================ #
 
 
+# filters
+@app.route('/add_recipe')
+def add_recipe():
+    return render_template('filters.html')
+
+
+# ================================================ #
+
+
 # profile
 @app.route('/profile')
 @login_required

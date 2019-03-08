@@ -6,9 +6,8 @@ class Recipe:
 
 
     def get_random_recipes():
-        grid = db.recipes.aggregate([{ "$sample": { "size": 4 }}])
-        slideshow = db.recipes.aggregate([{ "$sample": { "size": 10 }}])
-        return ([recipe for recipe in grid], [recipe for recipe in slideshow])
+        cursor = [recipe for recipe in db.recipes.aggregate([{ "$sample": { "size": 14 }}])]
+        return (cursor[10:], cursor[:10])
 
 
     def get_recipe_details(id): 

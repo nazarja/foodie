@@ -2,17 +2,32 @@
 
 {% block content %}
 <section class="uk-container">
-    <h1 class="uk-heading-divider uk-h2">Featured Recipes</h1>
-    
+
+    <!-- Call To Action -->
+    <div id="cta" class="uk-height-medium uk-background-cover uk-overflow-hidden uk-light uk-flex uk-flex-top">
+        <div class="uk-text-center uk-margin-auto uk-margin-auto-vertical">
+            {% if not current_user.is_authenticated %}
+            <p class="uk-h2 uk-text-bold" uk-parallax="opacity: 1,1,0; y: 0,0,-100; x: 0,100,-100; scale: 1,1,2; viewport: 0.5;">Create & Store your own Delicious Food and Drink Recipes!</p>
+            <a href="{{ url_for('sign', url='in') }}">
+                <button class="uk-button uk-button-medium"  uk-parallax="opacity: 1,1,0; y: 0,0,100; x: 0,-100,-100; scale: 1,1,0.5; viewport: 0.5;">Sign In</button>
+            </a>
+            {% else %}
+            <p class="uk-h2" uk-parallax="opacity: 1,1,0; y: 0,0,-100; x: 0,100,-100; scale: 1,1,2; viewport: 0.5;">Add a New Recipe, Share with the World!</p>
+            <a href="{{ url_for('add_recipe') }}">
+                <button class="uk-button uk-button-large" uk-parallax="opacity: 1,1,0; y: 0,0,100; x: 0,-100,-100; scale: 1,1,0.5; viewport: 0.5;">Add Recipe</button>
+            </a>
+            {% endif %}
+        </div>
+    </div>
+
+
     <!-- Slider -->
+    <h1 class="uk-heading-divider uk-h2">Featured Recipes</h1>
     {% include 'partials/_slider.html' %}
 
-    <!-- Explore By -->
-    <h2>Explore by Cuisine</h2>
-  
-    <h3>You May Also Like ...</h3>
-    
+
     <!-- Recipe Grid -->
+    <h3>You May Also Like ...</h3>    
     <div id="grid" class="uk-grid-medium uk-grid-match uk-child-width-1-2@s uk-child-width-1-4@m" uk-grid>
     {% for recipe in recipes %}
         {% include 'partials/_grid.html' %}
@@ -20,9 +35,3 @@
     </div>
 </section>
 {% endblock %}
-<!-- Add Recipe CTA -->
-<!-- <div id="cta" class="uk-height-medium uk-background-cover uk-overflow-hidden uk-light uk-flex uk-flex-top"">
-    <div class="uk-width-1-2@m uk-text-center uk-margin-auto uk-margin-auto-vertical">
-        <p class="uk-text-bold uk-text-large" uk-parallax="opacity: 1,0; y: 0,100; scale: 1,0.5; viewport: 0.5;">Create & Store your own Delicious Food and Drink Recipes!</p>
-    </div>
-</div> -->
