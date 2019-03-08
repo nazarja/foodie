@@ -27,7 +27,7 @@ def add_recipes():
         add recipes to recipe collection
     """
 
-    with open('app/data/scraper/db.json') as db_file:
+    with open('db.json') as db_file:
         data = json.load(db_file)
         recipes.insert_many(data['recipes'])
 
@@ -40,7 +40,7 @@ def add_user():
         add first user to user collection
     """
 
-    with open('app/data/schemas/user.json') as users_file:
+    with open('../schemas/user.json') as users_file:
         user = json.load(users_file)
         user['username'] = 'sean'
         user['password'] = generate_password_hash('password')
@@ -55,7 +55,7 @@ def add_filters():
         create collection for menu items and mega filter
     """
 
-    with open('app/data/scraper/db.json') as db_file:
+    with open('db.json') as db_file:
         data = json.load(db_file)
 
         cuisine = []
@@ -69,33 +69,33 @@ def add_filters():
         for i in data['recipes']:
 
             # cuisine
-            if not i['recipe_filters']['cuisine'] in cuisine:
-                if not i['recipe_filters']['cuisine'] == '':
-                    cuisine.append(i['recipe_filters']['cuisine'])
+            if not i['filters']['cuisine'] in cuisine:
+                if not i['filters']['cuisine'] == '':
+                    cuisine.append(i['filters']['cuisine'])
 
             # planning
-            if not i['recipe_filters']['planning'] in planning:
-                if not i['recipe_filters']['planning'] == '':
-                    planning.append(i['recipe_filters']['planning'])
+            if not i['filters']['planning'] in planning:
+                if not i['filters']['planning'] == '':
+                    planning.append(i['filters']['planning'])
 
             # skill
-            if not i['recipe_filters']['skill'] in skill:
-                if not i['recipe_filters']['skill'] == '':
-                    skill.append(i['recipe_filters']['skill'])
+            if not i['filters']['skill'] in skill:
+                if not i['filters']['skill'] == '':
+                    skill.append(i['filters']['skill'])
 
             # mood
-            if not i['recipe_filters']['mood'] in mood:
-                if not i['recipe_filters']['mood'] == '':
-                    mood.append(i['recipe_filters']['mood'])
+            if not i['filters']['mood'] in mood:
+                if not i['filters']['mood'] == '':
+                    mood.append(i['filters']['mood'])
 
             # diet
-            if not i['recipe_filters']['diet'] in diet:
-                if not i['recipe_filters']['diet'] == '':
-                    diet.append(i['recipe_filters']['diet'])
+            if not i['filters']['diet'] in diet:
+                if not i['filters']['diet'] == '':
+                    diet.append(i['filters']['diet'])
 
             # course
-            for courses in i['recipe_filters']['course']:
-                if not courses in course:
+            for courses in i['filters']['course']:
+                if courses not in course:
                     if not courses == '':
                         course.append(courses)
 

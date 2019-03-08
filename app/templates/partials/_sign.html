@@ -1,13 +1,13 @@
 {% block content %}
 <ul class="uk-navbar-nav uk-navbar-right">
     {% if not current_user.is_authenticated %}
-    <li><a href="{{ url_for('sign', url='in') }}">Sign In</a></li>
-    <i uk-icon="">|</i>
-    <li><a href="{{ url_for('sign', url='up') }}">Sign Up</a></li>
+        <li><a href="{{ url_for('sign', url='in') }}">Sign In</a></li>
+        <i uk-icon="">|</i>
+        <li><a href="{{ url_for('sign', url='up') }}">Sign Up</a></li>
     {% elif current_user.is_authenticated %}
-    <li><a href="{{ url_for('profile') }}">Account</a></li>
-    <i uk-icon="">|</i>
-    <li><a href="{{ url_for('signout') }}">Sign Out</a></li>
+        <li><a href="{{ url_for('profile') }}">Account</a></li>
+        <i uk-icon="">|</i>
+        <li><a href="{{ url_for('sign_out') }}">Sign Out</a></li>
     {% endif %}
     <i uk-icon="user"></i>
 </ul>

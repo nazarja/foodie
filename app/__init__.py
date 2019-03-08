@@ -1,8 +1,7 @@
 from flask import Flask
-from config.config import Config
 from flask_login import LoginManager
+from config.config import Config
 from pymongo import MongoClient
-from bson.objectid import ObjectId
 
 
 # initialize app

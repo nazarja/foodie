@@ -3,47 +3,45 @@
 
     <!-- Recipe Image -->
     <div class="uk-card-media-top">
-        <a tabindex="0" href="{{ url_for('recipe', recipe=recipe._id, title=recipe.recipe_data.title|resub )}}">
-            <img class="grid-image" data-src="{{ recipe.image_details[0] }}" alt="{{ recipe.image_details[1] }}" uk-img>
+        <a tabindex="0" href="{{ url_for('recipe', recipe=recipe._id, title=recipe.details.title|resub )}}">
+            <img class="grid-image" data-src="{{ recipe.image[0] }}" alt="{{ recipe.image[1] }}" uk-img>
         </a>
     </div>
+
+    <!-- Card Body -->
     <div class="uk-card-body uk-padding-small">
 
         <!-- Recipe Label -->
         <div class="uk-card-badge uk-label">
-            {% if recipe.recipe_filters.main_ingredient != "" %}
-                {{ recipe.recipe_filters.main_ingredient }}
+            {% if recipe.filters.main_ingredient != "" %}
+                {{ recipe.filters.main_ingredient }}
             {% else %}
-                {{ recipe.recipe_filters.ingred[0] }}
+                {{ recipe.filters.ingred[0] }}
             {% endif %}
         </div>
 
         <!-- Recipe Title -->
-        </p>
-            <a class="uk-h5" href="{{ url_for('recipe', recipe=recipe._id, title=recipe.recipe_data.title|resub )}}">
-                {{ recipe.recipe_data.title|title }}
-            </a>
-        </p>
+        <p><a class="uk-h5" href="{{ url_for('recipe', recipe=recipe._id, title=recipe.details.title|resub )}}">{{ recipe.details.title|title }}</a></p>
 
-        <!-- Sort By - Data -->
+        <!-- Sort By -->
         <p class="uk-text-meta">
             {% if sort == 'users.likes' %}Likes <i uk-icon="arrow-down"></i>
             {% elif sort == 'users.dislikes' %}Dislikes <i uk-icon="arrow-down"></i>
-            {% elif sort == 'recipe_data.title' %}By Title
-            {% elif sort == 'recipe_filters.skill' %}Skill: {{ recipe.recipe_filters.skill }}
-            {% elif sort == 'recipe_data.author' %}Author: {{ recipe.recipe_data.author }}
-            {% elif sort == 'recipe_data.serves' %}{{ recipe.recipe_data.serves }}
-            {% elif sort == 'recipe.recipe_filters.main_ingredient' %}Main Ingredient: {{ recipe.recipe_filters.main_ingredient }}
+            {% elif sort == 'details.title' %}By Title
+            {% elif sort == 'filters.skill' %}Skill: {{ recipe.filters.skill }}
+            {% elif sort == 'details.author' %}Author: {{ recipe.details.author }}
+            {% elif sort == 'details.serves' %}{{ recipe.details.serves }}
+            {% elif sort == 'recipe.filters.main_ingredient' %}Main Ingredient: {{ recipe.filters.main_ingredient }}
             {% else %}Likes <i uk-icon="arrow-down"></i>
             {% endif %}
         </p>
 
         <!-- Icon Nav -->
         <ul class="uk-iconnav uk-align-left">
-            <li class="uk-inline" uk-tooltip="title: Edit; pos: top-right"><a href="#" uk-icon="file-edit"></a></li>
+            <li class="uk-inline" uk-tooltip="title: Edit; pos: top-right"><a href="{{ url_for('editor', url='edit', recipe=recipe._id) }}" uk-icon="file-edit"></a></li>
             <li class="uk-inline" uk-tooltip="title: Likes; pos: top-right"><a href="#" uk-icon="heart"> {{ recipe.users.likes }} </a></li>
             <li class="uk-inline" uk-tooltip="title: Dislikes; pos: top-right"><a href="#" uk-icon="trash"> {{ recipe.users.dislikes }} </a></li>
         </ul>
     </div>
-</div>   
+</div>
 {% endblock %}

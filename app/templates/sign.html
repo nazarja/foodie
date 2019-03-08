@@ -12,13 +12,13 @@
         <!-- Username-->
         <p class="uk-form-label">{{ form.username.label }}<br />{{ form.username(class_="uk-input") }}</p>
         {% if form.username.errors %}
-        <p>{% for error in form.username.errors %}<span class="flashes">{{ error }}</span>{% endfor %}</p>
+            <p>{% for error in form.username.errors %}<span class="flashes">{{ error }}</span>{% endfor %}</p>
         {% endif %}
 
         <!-- Password -->
         <p class="uk-form-label">{{ form.password.label }}<br />{{ form.password(class_="uk-input") }}</p>
         {% if form.password.errors %}
-        <p>{% for error in form.password.errors %}<span class="flashes">{{ error }}</span>{% endfor %}</p>
+            <p>{% for error in form.password.errors %}<span class="flashes">{{ error }}</span>{% endfor %}</p>
         {% endif %}
 
         <!-- Remember Me -->
@@ -31,9 +31,9 @@
     <!-- Change Sign in / up url -->
     <div>
         {% if url == 'in' %}
-        <p>Not Registered Yet? <a href="{{ url_for('sign', url='up') }}" class="sign-link">Sign Up</a></p>
+            <p>Not Registered Yet? <a href="{{ url_for('sign', url='up') }}" class="sign-link">Sign Up</a></p>
         {% else %}
-        <p>Already Registered? <a href="{{ url_for('sign', url='in') }}" class="sign-link">Sign In</a></p>
+            <p>Already Registered? <a href="{{ url_for('sign', url='in') }}" class="sign-link">Sign In</a></p>
         {% endif %}
     </div>
 
@@ -41,11 +41,11 @@
     <div>
         {% with messages = get_flashed_messages(category_filter=["sign-error"]) %}
             {% if messages %}
-            <ul class=flashes>
-                {% for message in messages %}
-                <li>{{ message }}</li>
-                {% endfor %}
-            </ul>
+                <ul class=flashes>
+                    {% for message in messages %}
+                        <li>{{ message }}</li>
+                    {% endfor %}
+                </ul>
             {% endif %}
         {% endwith %}
     </div>

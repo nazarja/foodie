@@ -1,6 +1,7 @@
-import json, re
+import json
+import re
 from math import ceil
-from app import app, db, ObjectId
+from app import app, db
 from flask import render_template, redirect, url_for, request, flash
 from flask_login import login_user, logout_user, login_required, current_user
 from app.models.forms import SignForm
@@ -8,6 +9,7 @@ from app.models.users import User
 from app.models.recipes import Recipe
 
 
+# ================================================ #
 # ================================================ #
 
 
@@ -20,24 +22,50 @@ def inject_filters():
 
 
 # ================================================ #
+# ================================================ #
+
 
 # Make recipe slug readable - remove non word chars
-def slugFriendly(title):
+def slug_friendly(title):
     return re.sub(r'\W', '_', title)
 
-app.jinja_env.filters['resub'] = slugFriendly
+
+app.jinja_env.filters['resub'] = slug_friendly
 
 
+# ================================================ #
 # ================================================ #
 
 
 # index
 @app.route('/')
 def index():
-    recipes = Recipe.get_random_recipes()
+    recipes = Recipe.get_random()
     return render_template('index.html', recipes=recipes[0], slideshow=recipes[1])
 
 
+# ================================================ #
+# ================================================ #
+
+
+# profile
+@app.route('/profile')
+@login_required
+def profile():
+    return render_template('profile.html')
+
+
+# ================================================ #
+# ================================================ #
+
+
+# filters
+@app.route('/filters')
+def filters():
+    return render_template('filters.html')
+
+
+# ================================================ #
 # ================================================ #
 
 
@@ -48,8 +76,9 @@ def categories(category, data):
     sort = request.args.get('sort') or "users.likes"
     order = request.args.get('order') or -1
     page = request.args.get('page') or 1
+    num = 12
 
-    recipes = Recipe.get_recipes_by_category(category, data, sort, int(order), int(page), num=12)
+    recipes = Recipe.get_by_category(category, data, sort, int(order), int(page), num=num)
     pages = ceil(recipes[2] / 12) + 1
 
     return render_template(
@@ -67,61 +96,48 @@ def categories(category, data):
 
 
 # ================================================ #
+# ================================================ #
 
 
 # recipe
 @app.route('/recipe/<recipe>/<title>')
 def recipe(recipe, title):
-    recipe = Recipe.get_recipe_details(recipe)
+    recipe = Recipe.get_details(recipe)
     return render_template('recipe.html', recipe=recipe)
 
 
+# ================================================ #
 # ================================================ #
 
 
 # comment
 @app.route('/comments', methods=['POST'])
 def comment():
+
     if request.method == "POST":
         comment = {
-                "recipe_id": request.form['recipe_id'], 
-                "recipe_title": request.form['recipe_title'], 
+                "_id": request.form['_id'],
+                "title": request.form['title'],
                 "username": request.form['username'], 
                 "date": request.form['date'], 
                 "reply": request.form['reply']
         }
-        Recipe.add_comment(request.form['recipe_id'],comment) 
+        Recipe.add_comment(request.form['_id'], comment)
+
     return "Comment Added"
 
 
 # ================================================ #
-
-
-# filters
-@app.route('/filters')
-def filters():
-    return render_template('filters.html')
-
-
 # ================================================ #
 
 
-# filters
-@app.route('/add_recipe')
-def add_recipe():
-    return render_template('filters.html')
+# editor
+@app.route('/editor/<url>')
+def editor(url):
+    return render_template('editor.html', url=url)
 
 
 # ================================================ #
-
-
-# profile
-@app.route('/profile')
-@login_required
-def profile():
-    return render_template('profile.html')
-
-
 # ================================================ #
 
 
@@ -161,13 +177,13 @@ def sign(url):
 
 
 # ================================================ #
+# ================================================ #
 
 
 # sign out
-@app.route('/signout')
-def signout():
+@app.route('/sign_out')
+def sign_out():
     logout_user()    
     return redirect(url_for('sign', url='in'))
 
 
-# ================================================ #

@@ -70,7 +70,7 @@ function listenForComments() {
                     <div class="uk-width-auto">
                     <img class="uk-comment-avatar" src="../../static/images/profile_picture.png" width="80" height="80" alt="profile picture"></div>
                     <div class="uk-width-expand"><h4 class="uk-comment-title uk-margin-remove">${data.value}</h4><div class="uk-comment-meta">
-                    <a href="{{ url_for('recipe', recipe=${recipeId}, title=comment.recipe_title|resub)}}">${recipeTitle}</a>
+                    <a href="{{ url_for('recipe', recipe=${recipeId}, title=comment.title|resub)}}">${recipeTitle}</a>
                     </div><ul class="uk-comment-meta uk-subnav uk-subnav-divider uk-margin-remove-top"><li>${date}</li>
                     </ul></div></header><div class="uk-comment-body">
                     <p class="comment">${reply.value}</p></div></article>`;
@@ -81,7 +81,7 @@ function listenForComments() {
                 };
             };
             xhr.setRequestHeader('content-type', 'application/x-www-form-urlencoded;charset=UTF-8');
-            xhr.send(`recipe_id=${recipeId}&recipe_title=${recipeTitle}&username=${data.value}&date=${date}&reply=${reply.value}`); 
+            xhr.send(`_id=${recipeId}&title=${recipeTitle}&username=${data.value}&date=${date}&reply=${reply.value}`); 
         });
     };
 };

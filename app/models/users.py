@@ -31,7 +31,7 @@ class User:
     def get_id(self):
         return self.username
         
-    def get_user_data(self):
+    def get_data(self):
         user = db.users.find_one({"username": self.username })
         self.user = user
         

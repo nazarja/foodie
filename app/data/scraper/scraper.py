@@ -60,7 +60,7 @@ def get_recipe_urls():
 # ============================================ #
 
 
-def get_recipe_data():
+def get_recipe_details():
     """
         Request recipe page, parse html and extract data, save into a dict as json
     """
@@ -80,25 +80,18 @@ def get_recipe_data():
             html = list(soup.children)[9]
             html = list(html.children)[5]
 
-
-
             # set up lists / dicts
-            recipe_filters = {}
-            recipe_data = {}
+            details = {}
             ingredients = []
             methods = []
             nutrition = []
-            nLabels = []
-            nValues = []
-
-
+            nutrition_labels = []
+            nutrition_values = []
 
             # extract content of script tag containing filter targets and convert to a dict
             filters = re.findall(r'"environment".*"setPageLevelTargeting":true', str(page.content))
             filters = '{' + filters[0]
             filters = json.loads(filters[:-29])
-
-
 
             # separate single and multiple items for iterating
             filters_single_list = ['planning', 'cuisine', 'mood', 'diet', 'skill_level', 'main_ingredient']
@@ -113,33 +106,30 @@ def get_recipe_data():
                 ['serves', "span", {"itemprop": "recipeYield"}]
             ]
 
-
             # check for KeyError and replace - (SINGLE VALUES) - FILTERS
             for i in filters_single_list:
                 try:
-                    recipe_filters[i] = filters[i][0]['value']
+                    filters[i] = filters[i][0]['value']
                 except KeyError:
-                    recipe_filters[i] = ""
+                    filters[i] = ""
 
             # check for KeyError and replace - (LISTS) - FILTERS
             for i in filters_multiple_list:
                 try:
-                    recipe_filters[i] = [i['value'] for i in filters[i]]
+                    filters[i] = [i['value'] for i in filters[i]]
                 except KeyError:
-                    recipe_filters[i] = []
+                    filters[i] = []
 
             # check for AttributeError and replace - (SINGLE VALUES) - HTML_DATA
             for i in html_data:
                 try:
-                    recipe_data[i[0]] = soup.find(i[1], i[2]).get_text()
+                    details[i[0]] = soup.find(i[1], i[2]).get_text()
                 except AttributeError:
-                    recipe_data[i[0]] = ""
+                    details[i[0]] = ""
 
             # find image and extract the src/ alt / title into a list - IMAGE_DATA
             image = soup.find('img', {"itemprop": "image"})
-            image_details = ['https://' + image['src'][2:], image['alt'], image['title']]
-
-
+            image = ['https://' + image['src'][2:], image['alt'], image['title']]
 
             # put all ingredients into a separated list - (LISTS)
             for el in soup.find_all("li", {"class": "ingredients-list__item"}):
@@ -151,17 +141,15 @@ def get_recipe_data():
 
             # put all labels into a list - (NUTRITION)
             for el in soup.find_all("span", {"class": "nutrition__label"}):
-                nLabels.append(el.get_text())
+                nutrition_labels.append(el.get_text())
 
             # put all values into a list
             for el in soup.find_all("span", {"class": "nutrition__value"}):
-                nValues.append(el.get_text())
+                nutrition_values.append(el.get_text())
 
             # join together the labels with their values
             for el in range(6):
-                nutrition.append([nLabels[el], nValues[el]])
-
-
+                nutrition.append([nutrition_labels[el], nutrition_values[el]])
 
             # create user specific fields
             users = {
@@ -171,9 +159,9 @@ def get_recipe_data():
 
             # create recipe object - add all values to master dict
             recipe = {
-                "recipe_filters": recipe_filters,
-                "recipe_data": recipe_data,
-                "image_details": image_details,
+                "filters": filters,
+                "details": details,
+                "image": image,
                 "ingredients": ingredients,
                 "methods": methods,
                 "nutrition": nutrition,
@@ -184,7 +172,7 @@ def get_recipe_data():
             recipe_list.append(recipe)
 
     # write db to json file
-    with open('app/data/scraper/db.json', 'w') as db_file:
+    with open('db.json', 'w') as db_file:
 
         # create dict entry and dump into json file
         db['recipes'] = recipe_list
@@ -198,4 +186,4 @@ def get_recipe_data():
     run scraper 
 """
 get_recipe_urls()
-get_recipe_data()
+get_recipe_details()

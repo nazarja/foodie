@@ -1,28 +1,30 @@
-from app import app, db, ObjectId
-from app.models.users import User
+from app import db
+from bson.objectid import ObjectId
 from flask_login import current_user
+
 
 class Recipe:
 
+    @staticmethod
+    def get_random():
+        cursor = [recipe for recipe in db.recipes.aggregate([{"$sample": {"size": 14}}])]
+        return [cursor[10:], cursor[:10]]
 
-    def get_random_recipes():
-        cursor = [recipe for recipe in db.recipes.aggregate([{ "$sample": { "size": 14 }}])]
-        return (cursor[10:], cursor[:10])
+    @staticmethod
+    def get_details(_id):
+        return db.recipes.find_one({"_id": ObjectId(_id)})
 
+    @staticmethod
+    def get_by_category(category, data, sort, order, page, num):
+        count = db.recipes.count_documents({f"filters.{category}": data})
+        grid = db.recipes.find({f"filters.{category}": data}).sort([(sort, order)]).skip((page-1)*num).limit(num)
+        slideshow = db.recipes.aggregate([{"$match": {f"filters.{category}": data}}, {"$sample": {"size": 10}}])
+        return [[recipe for recipe in grid], [recipe for recipe in slideshow], count]
 
-    def get_recipe_details(id): 
-        return db.recipes.find_one({"_id": ObjectId(id)})
-
-
-    def get_recipes_by_category(category, data, sort, order, page, num):
-        count = db.recipes.count_documents({f"recipe_filters.{category}": data })
-        grid = db.recipes.find({ f"recipe_filters.{category}": data }).sort([(sort, order)]).skip((page-1)*num).limit(num)
-        slideshow = db.recipes.aggregate([{ "$match": { f"recipe_filters.{category}": data }},{ "$sample": { "size": 10 }}])
-        return ([recipe for recipe in grid], [recipe for recipe in slideshow], count)
-
-    def add_comment(id, comment):
-        db.recipes.find_one_and_update({"_id": ObjectId(id)}, { "$push": { "users.comments": comment }})
-        db.users.find_one_and_update({"_id": ObjectId(current_user.user['_id'])}, { "$push": { "comments": comment }})
+    @staticmethod
+    def add_comment(_id, comment):
+        db.recipes.find_one_and_update({"_id": ObjectId(_id)}, {"$push": {"users.comments": comment}})
+        db.users.find_one_and_update({"_id": ObjectId(current_user.user['_id'])}, {"$push": {"comments": comment}})
 
 
         

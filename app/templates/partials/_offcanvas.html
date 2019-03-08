@@ -23,16 +23,20 @@
             <div id="offcanvas-menu">
                 <ul class="uk-nav-default uk-nav-parent-icon" uk-nav>
                     {% for key, values in filters.items() %}
-                    <li class="uk-parent">
-                        <a href="#">{{ key|title }}</a>
-                        <ul class="uk-nav-sub">
-                            {% for value in values %}
-                            <li><a href="{{ url_for('categories', category=key, data=value) }}">{{ value|title }}</a></li>
-                            {% endfor %}
-                        </ul>
-                    </li>
+                        <li class="uk-parent">
+                            <a href="#">{{ key|title }}</a>
+                            <ul class="uk-nav-sub">
+                                {% for value in values %}
+                                    <li>
+                                        <a href="{{ url_for('categories', category=key, data=value) }}">{{ value|title }}</a>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        </li>
                     {% endfor %}
-                    <li><a href="{{ url_for('filters') }}">All Filters</a></li>
+                    <li>
+                        <a href="{{ url_for('filters') }}">All Filters</a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -46,7 +50,7 @@
                 <li><a class="uk-icon-button" href="https://google.com" target="_blank" uk-icon="google"></a></li>
                 <li><a class="uk-icon-button" href="https://youtube.com" target="_blank" uk-icon="youtube"></a></li>
             </ul>
-        <div>
+        </div>
     </div>
 </div>
 {% endblock %}

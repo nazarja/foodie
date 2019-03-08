@@ -1,5 +1,5 @@
 {
-    "recipe_filters": {
+    "filters": {
         "planning": "",
         "cuisine": "",
         "mood": "",
@@ -10,7 +10,7 @@
         "kw": [],
         "ingred": []
     },
-    "recipe_data": {
+    "details": {
         "title": "",
         "author": "",
         "description": "",
@@ -19,7 +19,7 @@
         "difficulty": "",
         "serves": ""
     },
-    "image_details": [],
+    "image": [],
     "ingredients": [],
     "methods": [],
     "nutrition": [
