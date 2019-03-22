@@ -5,6 +5,7 @@
 ==================================================================
 */
 
+
 :root {
     --green: #4D875D;
     --grey: #666666;
@@ -43,13 +44,14 @@
 ==================================================================
 */
 
+
 body {
-    font-family: 'ProximaNova Light', Roboto, sans-serif;
-    color: var(--grey);
-    background-color: var(--white);
-    min-height: 100vh;
     display: flex;
     flex-direction: column;
+    min-height: 100vh;
+    font-family: 'ProximaNova Light', Roboto, sans-serif;
+    background-color: var(--white);
+    color: var(--grey);
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -64,8 +66,8 @@ h1, h2,
 }
 
 ul {
-    padding: 0;
     margin: 0;
+    padding: 0;
 }
 
 li {
@@ -73,15 +75,15 @@ li {
 }
 
 main {
-    margin-top: 50px;
     flex: 1;
+    margin-top: 50px;
 }
 
 footer {
-    background-color: var(--darkblue);
     margin-top: 60px;
-    color: var(--white);
     padding: 30px 0 10px;
+    color: var(--white);
+    background-color: var(--darkblue);
 }
 
 footer a.uk-icon-button.uk-icon {
@@ -104,9 +106,10 @@ footer img {
 ==================================================================
 */
 
+
 .uk-input {
-    border: 1px solid var(--lightgrey);
     margin-top: 10px;
+    border: 1px solid var(--lightgrey);
 }
 
 .uk-input:focus {
@@ -115,13 +118,13 @@ footer img {
 }
 
 .uk-checkbox {
-    border: 1px solid var(--lightgrey);
     margin-right: 10px;
+    border: 1px solid var(--lightgrey);
 }
 
 .uk-button, .uk-button:active, .uk-button:focus {
-    color: var(--white);
     background: var(--darkblue);
+    color: var(--white);
     cursor: pointer;
 }
 
@@ -131,9 +134,10 @@ footer img {
 }
 
 .flashes {
-    color: crimson;
     font-weight: bolder;
+    color: crimson;
 }
+
 
 /*
 ==================================================================
@@ -141,15 +145,16 @@ footer img {
 ==================================================================
 */
 
+
 .featured-slider-card {
     width: 100%;
 }
 
 .uk-card-badge {
-    background-color: var(--darkblue) !important;
-    color: white !important;
     top: 10px;
     right: 10px;
+    color: white !important;
+    background-color: var(--darkblue) !important;
 }
 
 .uk-slidenav-next, .uk-slidenav-previous {
@@ -157,8 +162,8 @@ footer img {
 }
 
 .slider-icons {
-    color: var(--black) !important;
     padding-right: 10px;
+    color: var(--black) !important;
 }
 
 .slider-icons:last-of-type {
@@ -166,25 +171,25 @@ footer img {
 }
 
 .card-lead-text {
-    color: var(--black) !important;
-    width: 80px;
     display: inline-block;
+    width: 80px;
+    color: var(--black) !important;
 }
 
 .uk-card-title a {
-    color: var(--black) !important;
     text-decoration: none;
+    color: var(--black) !important;
 }
 
 .uk-card-title a:hover, a.uk-h5:hover {
-    color: var(--black) !important;
-    text-decoration: none;
     opacity: 0.7;
+    text-decoration: none;
+    color: var(--black) !important;
 }
 
-.uk-iconnav>*>a{
-    color: var(--black);
+.uk-iconnav > * > a {
     text-decoration: none;
+    color: var(--black);
 }
 
 
@@ -194,17 +199,18 @@ footer img {
 ==================================================================
 */
 
+
 #cta {
-    background-image: linear-gradient(to bottom right,rgba(76, 76, 76, 0.3),rgba(224, 224, 224, 0.3)), url(../images/cta-bg.jpg);
-    font-weight: bold;
     border-radius: 10px;
-    margin-top: -40px;
+    font-weight: bold;
+    background-image: linear-gradient(to bottom right,rgba(76, 76, 76, 0.3),rgba(224, 224, 224, 0.3)), url(../images/cta-bg.jpg);
 }
 
 #cta p {
+    font-family: 'Ubuntu', sans-serif;
     text-shadow: 1px 1px rgba(0,0,0,0.5);
-    font-family: 'Ubuntu';
 }
+
 
 /*
 ==================================================================
@@ -212,11 +218,12 @@ footer img {
 ==================================================================
 */
 
+
 .cuisine-badge {
-    color: var(--white);
-    background-color: var(--darkblue);
     padding: 2px 5px;
     border-radius: 3px;
+    color: var(--white);
+    background-color: var(--darkblue);
 }
 
 .tags {
@@ -279,5 +286,5 @@ p.comment {
 }
 
 .grid-image {
-    border-radius: 2.5px;
+    border-radius: 3px;
 }

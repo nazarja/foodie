@@ -20,3 +20,20 @@ class SignForm(FlaskForm):
     def validate_password(self, password):
         if len(password.data) < 4:
             raise ValidationError('password must be longer than 4 characters')
+
+
+# Editor Form
+def EditorForm(*args, data):
+
+    # Placeholder Class
+    class StaticForm(FlaskForm):
+        title = StringField('title', validators=[DataRequired()])
+        author = StringField('author', validators=[DataRequired()])
+
+    if args[0]:
+        StaticForm.title = StringField('title', validators=[DataRequired()], default=data['details']['title'])
+        StaticForm.author = StringField('author', validators=[DataRequired()], default=data['details']['author'])
+
+    return StaticForm()
+
+

@@ -1,7 +1,13 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<section id="editor">
+<section id="editor" class="uk-container">
+    <form>
+        <div uk-sortable>
+            <p class="uk-form-label">{{ form.title.label }}<br />{{ form.title(class_="uk-input") }}</p>
+            <p class="uk-form-label">{{ form.author.label }}<br />{{ form.author(class_="uk-input") }}</p>
+        </div>
 
+    </form>
 </section>
 {% endblock %}

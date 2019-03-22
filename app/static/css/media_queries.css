@@ -5,6 +5,7 @@
 ==================================================================
 */
 
+
 @media screen and (max-width: 1300px) {
     
     #navbar-large {
@@ -12,10 +13,11 @@
     }
 }
 
+
 @media screen and (max-width: 1200px) {
     
-    #navbar-small {
-        display: block;
+    #navbar-small, footer section div {
+        display: block !important;
     }
     
     #navbar-large {
@@ -26,20 +28,22 @@
         flex-direction: column-reverse;
     }
 
-    footer section div {
-        display: block !important;
+    #cta {
+        margin-top: -20px;
     }
 }
+
 
 @media screen and (max-width: 800px) {
 
     .uk-subnav > * {
+        min-width: 100px;
         margin-left: auto;
         margin-right: auto;
-        min-width: 100px;
         text-align: center;
     }
 }
+
 
 @media screen and (max-width: 500px) {
     
