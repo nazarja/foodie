@@ -25,13 +25,18 @@
 
         <!-- Sort By -->
         <p class="uk-text-meta">
-            {% if sort == 'users.likes' %}Likes <i uk-icon="arrow-down"></i>
-            {% elif sort == 'users.dislikes' %}Dislikes <i uk-icon="arrow-down"></i>
+            {% if sort == 'users.likes' %}Likes: {{  recipe.users.likes }} <i uk-icon="arrow-down"></i>
+            {% elif sort == 'users.dislikes' %}Dislikes {{  recipe.users.dislikes }} <i uk-icon="arrow-down"></i>
             {% elif sort == 'details.title' %}By Title
             {% elif sort == 'filters.skill' %}Skill: {{ recipe.filters.skill }}
             {% elif sort == 'details.author' %}Author: {{ recipe.details.author }}
             {% elif sort == 'details.serves' %}{{ recipe.details.serves }}
-            {% elif sort == 'recipe.filters.main_ingredient' %}Main Ingredient: {{ recipe.filters.main_ingredient }}
+            {% elif sort == 'filters.main_ingredient' %}Main Ingredient:  
+            {% if recipe.filters.main_ingredient != "" %}
+                {{ recipe.filters.main_ingredient }}
+            {% else %}
+                {{ recipe.filters.ingred[0] }}
+            {% endif %}
             {% else %}Likes <i uk-icon="arrow-down"></i>
             {% endif %}
         </p>
