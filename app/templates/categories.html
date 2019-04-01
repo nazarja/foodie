@@ -16,17 +16,7 @@
     </h2>
 
     <!-- Sort by Filters -->
-    <div id="grid-filters-nav" class="uk-padding-small uk-margin-medium">
-        <ul class="uk-subnav uk-subnav-pill">
-            <li><a href="{{ url_for('categories', category=category, data=data, sort='users.likes')}}">Likes</a></li>
-            <li><a href="{{ url_for('categories', category=category, data=data, sort='users.dislikes')}}">Dislikes</a></li>
-            <li><a href="{{ url_for('categories', category=category, data=data, sort='details.title', order=1)}}">Title</a></li>
-            <li><a href="{{ url_for('categories', category=category, data=data, sort='filters.skill', order=1)}}">Difficulty</a></li>
-            <li><a href="{{ url_for('categories', category=category, data=data, sort='details.author', order=1)}}">Author</a></li>
-            <li><a href="{{ url_for('categories', category=category, data=data, sort='details.serves', order=-1)}}">Servings</a></li>
-            <li><a href="{{ url_for('categories', category=category, data=data, sort='filters.main_ingredient', order=1)}}">Main Ingredient</a></li>
-        </ul>
-    </div>
+    {% include 'partials/_filters_bar.html' %}
 
     <!-- Recipe Grid -->
     <div id="grid" class="uk-grid-medium uk-grid-match uk-child-width-1-2@s uk-child-width-1-4@m" uk-grid>
@@ -36,23 +26,6 @@
     </div>
 
     <!-- Pagination -->
-    {% if pages > 2 %}
-        <ul class="uk-pagination uk-flex-center uk-margin-large uk-text-emphasis">
-            <!-- Fisrt Arrow -->
-            <li><a href="{{ url_for('categories', category=category, data=data, page=1, sort=sort)}}"><span uk-pagination-previous></span> First </a></li>
-
-            <!-- Loop over pages -->
-            {% for index in range(1, pages) %}
-                {% if index == page %}
-                    <li class="active">{{ index }}</li>
-                {% else %}
-                    <li><a href="{{ url_for('categories', category=category, data=data, page=index, sort=sort)}}">{{ index }}</a></li>
-                {% endif %}
-            {% endfor %}
-
-            <!-- Last Arrow -->
-            <li><a href="{{ url_for('categories', category=category, data=data, page=(pages-1), sort=sort)}}"><span uk-pagination-next> Last </span></a></li>
-        </ul>
-    {% endif %}
+    {% include 'partials/_pagination.html' %}
 </section>
 {% endblock %}

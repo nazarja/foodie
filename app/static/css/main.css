@@ -126,11 +126,14 @@ footer img {
     background: var(--darkblue);
     color: var(--white);
     cursor: pointer;
+    border-radius:  3.5px;
+    transition: 0.4s;
 }
 
 .uk-button:hover {
     background-color: var(--lightblack);
     box-shadow: var(--light-box-shadow);
+    border-radius: 0;
 }
 
 .flashes {

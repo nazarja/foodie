@@ -76,10 +76,25 @@ def categories(category, data):
     sort = request.args.get('sort') or "users.likes"
     order = request.args.get('order') or -1
     page = request.args.get('page') or 1
-    num = 12
 
-    recipes = Recipe.get_by_category(category, data, sort, int(order), int(page), num=num)
+    recipes = Recipe.get_by_category(category, data, sort, int(order), int(page), num=12)
+
     pages = ceil(recipes[2] / 12) + 1
+    page = int(page)
+    start = page
+    end = pages
+
+    if pages <= 5:
+        start = 1
+    else:
+            if page <= 3:
+                start = 1
+                end = 6
+            elif page > 3 and page < (pages - 2):
+                start = page - 2
+                end = page + 3
+            else:
+                start = pages - 5
 
     return render_template(
         'categories.html', 
@@ -91,7 +106,9 @@ def categories(category, data):
         pages=pages, 
         recipes=recipes[0], 
         slideshow=recipes[1], 
-        count=recipes[2]
+        count=recipes[2],
+        start=start,
+        end=end
     )
 
 
