@@ -1,11 +1,11 @@
 {% block content %}
 <div id="grid-filters-nav" class="uk-padding-small uk-margin-medium">
     <ul class="uk-subnav uk-subnav-pill">
-        <li><a href="{{ url_for('categories', category=category, data=data, sort='users.likes')}}">Likes</a></li>
+        <li><a href="{{ url_for('categories' , category=category, data=data, sort='users.likes')}}">Likes</a></li>
         <li><a href="{{ url_for('categories', category=category, data=data, sort='users.dislikes')}}">Dislikes</a></li>
         <li><a href="{{ url_for('categories', category=category, data=data, sort='details.title', order=1)}}">Title</a></li>
         <li><a href="{{ url_for('categories', category=category, data=data, sort='filters.skill', order=1)}}">Difficulty</a></li>
-        <li><a href="{{ url_for('categories', category=category, data=data, sort='details.author', order=1)}}">Author</a></li>
+        <li><a href="{{ url_for('categories',category=category, data=data, sort='details.author', order=1)}}">Author</a></li>
         <li><a href="{{ url_for('categories', category=category, data=data, sort='details.serves', order=-1)}}">Servings</a></li>
         <li><a href="{{ url_for('categories', category=category, data=data, sort='filters.main_ingredient', order=1)}}">Main Ingredient</a></li>
     </ul>

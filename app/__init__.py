@@ -17,4 +17,4 @@ client = MongoClient('localhost', 27017)
 db = client.foodie
 
 
-from app.views import routes, errors
+from app.routes import routes, errors

@@ -42,6 +42,15 @@
         margin-right: auto;
         text-align: center;
     }
+
+    .uk-select {
+        width: 100%;
+    }
+
+    #filters-form, #filters-grid {
+        display: block;
+        width: 100%;
+    }
 }
 
 

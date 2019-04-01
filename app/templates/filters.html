@@ -2,6 +2,73 @@
 
 {% block content %}
 <section class="uk-container">
-    <h1>Filters</h1>
+    {% if not search_term %}
+        <h1 class="uk-heading-divider uk-h2">Filter All Recipes</h1>
+    {% else %}
+        <h1 class="uk-heading-divider uk-h2">Search Results for  ... {{ search_term|title }}</h1>
+    {% endif %}
+
+    <!-- Filters Form -->
+    {% if search_term %}
+    <form id="filters-form" class="uk-form-stacked uk-margin-large-bottom" action="{{ url_for('filters' , search_term=search_term) }}" method="POST">    
+    {% else %}
+    <form id="filters-form" class="uk-form-stacked uk-margin-large-bottom" action="{{ url_for('filters') }}" method="POST">
+    {% endif %}
+        <div class="uk-margin">
+            <label class="uk-form-label" for="form-stacked-select">Sort By</label>
+            <div class="uk-form-controls">
+                <select class="uk-select" id="form-stacked-select" name="sort">
+                    <option value="users.likes,-1" selected>Likes</option>
+                    <option value="users.dislikes,1">Dislikes</option>
+                    <option value="details.title,1">Title</option>
+                    <option value="filters.skill,1">Difficulty</option>
+                    <option value="details.author,1'">Author</option>
+                    <option value="details.serves,-1">Servings</option>
+                    <option value="filters.main_ingredient,1">Main Ingredient</option>
+                </select>
+            </div>
+        </div>
+        <div class="uk-margin">
+            <label class="uk-form-label" for="form-stacked-select">Number of Results</label>
+            <div class="uk-form-controls">
+                <select class="uk-select" id="form-stacked-select" name="limit">
+                    <option value="12" selected>12</option>
+                    <option value="24">24</option>
+                    <option value="36">36</option>
+                    <option value="48">48</option>
+                </select>
+            </div>
+        </div>
+        {% for key, values in filters.items() %}
+        <div class="uk-margin">
+            <label class="uk-form-label" for="form-stacked-select">{{ key|title }}</label>
+            <div class="uk-form-controls">
+                <select class="uk-select" id="form-stacked-select" name="{{ key }}">
+                    <option value="all" selected>All</option>
+                    {% for value in values %}
+                    <option value="{{ value }}">{{  value|title }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+        </div>
+        {% endfor %}
+        <input type="submit" class="uk-button uk-button" value="Filter">
+        <input type="reset" class="uk-button uk-button" value="Reset">
+    </form>
+
+    <div id="filters-grid">
+        <div id="grid" class="uk-grid-medium uk-grid-match uk-child-width-1-2@s uk-child-width-1-3@m" uk-grid>
+            {% for recipe in recipes %}
+            {% include 'partials/_grid.html' %}
+            {% endfor %}
+        </div>
+
+        {% if not recipes|count %}
+            <div class="uk-placeholder uk-text-center uk-padding-large">
+                <p>Such Empty, No Results, Try again!</p>
+            </div>
+        {% endif %}
+    </div>
+
 </section>
 {% endblock %}

@@ -30,7 +30,7 @@
             {% elif sort == 'details.title' %}By Title
             {% elif sort == 'filters.skill' %}Skill: {{ recipe.filters.skill }}
             {% elif sort == 'details.author' %}Author: {{ recipe.details.author }}
-            {% elif sort == 'details.serves' %}{{ recipe.details.serves }}
+            {% elif sort == 'details.serves' %}{{ recipe.details.serves|title }}
             {% elif sort == 'filters.main_ingredient' %}Main Ingredient:  
             {% if recipe.filters.main_ingredient != "" %}
                 {{ recipe.filters.main_ingredient }}

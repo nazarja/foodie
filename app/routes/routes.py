@@ -29,7 +29,6 @@ def inject_filters():
 def slug_friendly(title):
     return re.sub(r'\W', '_', title)
 
-
 app.jinja_env.filters['resub'] = slug_friendly
 
 
@@ -59,26 +58,56 @@ def profile():
 # ================================================ #
 
 
+# search
+@app.route('/search', methods=['POST'])
+def search():
+    search_term = request.form['search_term']
+    return redirect(url_for('filters', search_term=search_term))
+
+
+# ================================================ #
+# ================================================ #
+
+
 # filters
-@app.route('/filters')
+@app.route('/filters', methods=['GET', 'POST'])
 def filters():
-    return render_template('filters.html')
+    
+    recipe_filters = {}
+    options = { 'sort': 'users.likes', 'order': -1, 'limit': 12}
+    search_term = request.args.get('search_term')
+
+    if request.method == 'POST':
+        recipe_filters = request.form.to_dict()
+
+        if recipe_filters['limit']:
+            sort_values = recipe_filters['sort'].split(',')
+            options['sort'] = sort_values[0]
+            options['order'] = sort_values[1]
+            options['limit'] = recipe_filters['limit']
+            del recipe_filters['sort']
+            del recipe_filters['limit']
+
+
+    filtered_recipes = Recipe.get_filtered_recipes(recipe_filters, options=options, search_term=search_term)
+    return render_template('filters.html', recipes=filtered_recipes, search_term=search_term, sort=options['sort'])
 
 
 # ================================================ #
 # ================================================ #
-
 
 # categories
 @app.route('/categories/<category>/<data>')
 def categories(category, data):
     
-    sort = request.args.get('sort') or "users.likes"
+    sort = request.args.get('sort') or 'users.likes'
     order = request.args.get('order') or -1
     page = request.args.get('page') or 1
+    num = 12
 
     recipes = Recipe.get_by_category(category, data, sort, int(order), int(page), num=12)
 
+    # pagination
     pages = ceil(recipes[2] / 12) + 1
     page = int(page)
     start = page

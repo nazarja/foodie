@@ -12,11 +12,11 @@
 
     <!-- Grid Title -->
     <h2>All {{ data|title }} Recipes 
-        <span class="uk-text-small">({{ (page-1)*num }} - {{ recipes|count+(page-1)*num }} of {{ count }} recipes)</span>
+        <span class="uk-text-small">({{ (page-1)*12 }} - {{ recipes|count+(page-1)*12 }} of {{ count }} recipes)</span>
     </h2>
 
-    <!-- Sort by Filters -->
-    {% include 'partials/_filters_bar.html' %}
+    <!-- Sort by Menu -->
+    {% include 'partials/_sort_menu.html' %}
 
     <!-- Recipe Grid -->
     <div id="grid" class="uk-grid-medium uk-grid-match uk-child-width-1-2@s uk-child-width-1-4@m" uk-grid>
