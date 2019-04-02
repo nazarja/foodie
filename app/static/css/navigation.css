@@ -107,6 +107,12 @@ nav a:hover {
     border-radius:  0 0 5px 5px;
 }
 
+.submenu-heading {
+    padding-left: 10px;
+    text-transform: uppercase;
+    color: var(--darkblue) !important;
+}
+
 /*
 =================================
     Search

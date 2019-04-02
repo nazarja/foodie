@@ -45,9 +45,14 @@ class Recipe:
             search_term_kw = search_term.replace(' ', '-')
             search_term_regex = search_term.replace(' ', '.')
             if filters:
-                cursor = db.recipes.find({"$or": [ {"filters.kw": {"$in": [search_term_kw]}}, {"details.title": { "$regex":  search_term_regex, "$options": "i"}} ], "$and": filters}).sort([(sort, order)]).limit(limit)
+                cursor = db.recipes.find(
+                    {"$or": [ {"filters.kw": {"$in": [search_term_kw]}}, {"details.title": { "$regex":  search_term_regex, "$options": "ig"}} ], "$and": filters}
+                    ).sort([(sort, order)]).limit(limit)
             else:
-                cursor = db.recipes.find({ "$or": [ {"filters.kw": {"$in": [search_term_kw]}}, {"details.title": { "$regex":  search_term_regex, "$options": "i"}} ]}).sort([(sort, order)]).limit(limit)
+                cursor = db.recipes.find(
+                    { "$or": [ {"filters.kw": {"$in": [search_term_kw]}}, {"details.title": { "$regex":  search_term_regex, "$options": "ig"}} ]}
+                    ).sort([(sort, order)]).limit(limit)
+                
         
         # only filter recipes
         elif filters:

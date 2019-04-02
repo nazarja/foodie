@@ -44,8 +44,8 @@
         <!-- Icon Nav -->
         <ul class="uk-iconnav uk-align-left">
             <li class="uk-inline" uk-tooltip="title: Edit; pos: top-right"><a href="{{ url_for('editor', url='edit', recipe=recipe._id) }}" uk-icon="file-edit"></a></li>
-            <li class="uk-inline" uk-tooltip="title: Likes; pos: top-right"><a href="#" uk-icon="heart"> {{ recipe.users.likes }} </a></li>
-            <li class="uk-inline" uk-tooltip="title: Dislikes; pos: top-right"><a href="#" uk-icon="trash"> {{ recipe.users.dislikes }} </a></li>
+            <li class="uk-inline" uk-tooltip="title: Like; pos: top-right"><a href="#" uk-icon="heart"> {{ recipe.users.likes }} </a></li>
+            <li class="uk-inline" uk-tooltip="title: Dislike; pos: top-right"><a href="#" uk-icon="trash"> {{ recipe.users.dislikes }} </a></li>
         </ul>
     </div>
 </div>

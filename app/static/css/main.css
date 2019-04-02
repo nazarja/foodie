@@ -314,3 +314,39 @@ p.comment {
     border-radius: 3px;
 }
 
+.uk-subnav-pill li:hover {
+    cursor: pointer;
+}
+
+
+/*
+==================================================================
+    404, 500 Errors Pages
+==================================================================
+*/
+
+.flask-error {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 50vh;
+}
+
+.flask-error i {
+    color: var(--darkblue);
+    animation: rotateglobe 4s linear infinite;
+}
+
+.flask-error p {
+    font-size: 2.5vmax;
+    font-weight: bold;
+    margin: 10px 10px 15px;
+}
+
+/* rotating global keyframes */
+@keyframes rotateglobe {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(359deg); }
+}

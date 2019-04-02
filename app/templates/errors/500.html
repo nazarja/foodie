@@ -1,7 +1,20 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <section class="uk-container">
-        <h1>500 Error</h1>
-    </section>
+<section class="uk-container">
+    <div class="flask-error">
+
+        <!-- ROTATING GLOBE -->
+        <i uk-icon="icon: world; ratio: 6"></i>
+
+        <!-- TEXT -->
+        <p>Oh no, you broke the Internet?!</p>
+        <p>Wait .. its us, not you! Just a 500 internal server error!</p>
+
+        <!-- HOME BUTTON -->
+        <a href="{{ url_for('index') }}">
+            <button class="uk-button">home</button>
+        </a>
+    </div>
+</section>
 {% endblock %}
