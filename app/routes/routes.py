@@ -179,7 +179,7 @@ def comment():
 
 # update user favourites
 @app.route('/update_favourites', methods=['POST'])
-def update_user():
+def update_favourites():
     if request.form['value'] == 'true':
         User.add_liked_disliked(request.form['_id'], request.form['opinion'])
     else: 

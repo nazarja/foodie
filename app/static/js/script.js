@@ -162,9 +162,14 @@ function updateFavourites(recipe_id, opinion, value) {
 
 /*
 ==================================================================
-   Login Prompt
+   Login Prompts
 ==================================================================
 */
+
+function listenForFileEdit() {
+    document.querySelectorAll('.userNotLoggedIn').forEach(item => item.addEventListener('click', () => promptToLogin()));
+}
+listenForFileEdit();
 
 function promptToLogin() {
     UIkit.notification({
