@@ -111,6 +111,7 @@ nav a:hover {
     padding-left: 10px;
     text-transform: uppercase;
     color: var(--darkblue) !important;
+    font-size: 13px;
 }
 
 /*

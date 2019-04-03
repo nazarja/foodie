@@ -329,6 +329,11 @@ p.comment {
     color: red !important;
 }
 
+.uk-notification-message {
+    border-radius: 3px;
+    color: var(--darkblue);
+}
+
 
 /*
 ==================================================================

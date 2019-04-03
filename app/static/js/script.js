@@ -90,11 +90,13 @@ listenForComments();
 
 function listenForFavourites() {
 
-   // if the user is not logged in - do not continue 
-   if (userLoggedIn == 'false') return promptToLogin();
-
    const favourites = document.querySelectorAll('.favourites');
    favourites.forEach(favourite => favourite.addEventListener('click', event => {
+
+        // if the user is not logged in - do not continue 
+        if (userLoggedIn == 'false') return promptToLogin();
+
+        // get clicked element values
         let [_id, opinion, value] = event.currentTarget.dataset.values.split(',');
 
         favourites.forEach(item => {
@@ -113,12 +115,16 @@ function listenForFavourites() {
                             item.classList.remove('user-favourite');
                             item.dataset.values = `${itemId},${itemOpinion},false`;
                             text.textContent = `${num - 1} `;
+                            console.log('1')
+                            updateFavourites(itemId, itemOpinion, false);
                         }
                         // if we are adding an opinion
                         else {
                             item.classList.add('user-favourite');
                             item.dataset.values = `${itemId},${itemOpinion},true`;
                             text.textContent = `${num + 1} `;
+                            console.log('2')
+                            updateFavourites(itemId, itemOpinion, true);                        
                         }
                 }
 
@@ -129,6 +135,8 @@ function listenForFavourites() {
                         item.classList.remove('user-favourite');
                         item.dataset.values = `${itemId},${itemOpinion},false`;
                         text.textContent = `${num - 1} `;
+                        console.log('3')
+                        updateFavourites(itemId, itemOpinion, false);
                     }
                 }
             };
@@ -140,10 +148,29 @@ listenForFavourites();
 
 /*
 ==================================================================
+   Update Favourites
+==================================================================
+*/
+
+function updateFavourites(recipe_id, opinion, value) {
+    let xhr = new XMLHttpRequest();
+    xhr.open("POST", '/update_favourites', true);
+    xhr.setRequestHeader('content-type', 'application/x-www-form-urlencoded;charset=UTF-8');
+    xhr.send(`_id=${recipe_id}&opinion=${opinion}&value=${value}`); 
+}
+
+
+/*
+==================================================================
    Login Prompt
 ==================================================================
 */
 
 function promptToLogin() {
-    console.log('You need to login to do that!');
+    UIkit.notification({
+        message: `You must be signed in to do that!`,
+        status: 'primary',
+        pos: 'top-right',
+        timeout: 3000
+    });
 }

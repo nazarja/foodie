@@ -177,6 +177,20 @@ def comment():
 # ================================================ #
 
 
+# update user favourites
+@app.route('/update_favourites', methods=['POST'])
+def update_user():
+    if request.form['value'] == 'true':
+        User.add_liked_disliked(request.form['_id'], request.form['opinion'])
+    else: 
+        User.remove_liked_disliked(request.form['_id'], request.form['opinion'])
+    return 'Favourites Updated'
+
+
+# ================================================ #
+# ================================================ #
+
+
 # editor
 @app.route('/editor/<url>')
 def editor(url):

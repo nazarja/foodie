@@ -1,6 +1,8 @@
 import json
 from app import db, login
 from werkzeug.security import check_password_hash, generate_password_hash
+from flask_login import current_user
+from bson.objectid import ObjectId
 
 
 # user loader
@@ -31,9 +33,9 @@ class User:
     def get_id(self):
         return self.username
         
-    def get_data(self):
-        user = db.users.find_one({"username": self.username })
-        self.user = user
+    def get_data():
+        user = db.users.find_one({"_id": current_user.user['_id']})
+        current_user.user = user
         
     @staticmethod
     def check_password(password_hash, password):
@@ -46,3 +48,25 @@ class User:
             user['username'] = username.lower()
             user['password'] = generate_password_hash(password)
             db.users.insert_one(user)
+
+    @staticmethod
+    def add_liked_disliked(recipe_id, opinion):
+        if opinion == 'like':
+            db.users.find_one_and_update({"_id": current_user.user['_id']}, {"$push": {"likes": recipe_id}})
+            db.recipes.find_one_and_update({"_id": ObjectId(recipe_id)}, {"$inc": {"users.likes": 1}})
+        else:
+            db.users.find_one_and_update({"_id": current_user.user['_id']}, {"$push": {"dislikes": recipe_id}})
+            db.recipes.find_one_and_update({"_id": ObjectId(recipe_id)}, {"$inc": {"users.dislikes": 1}})
+        
+        User.get_data()
+
+    @staticmethod
+    def remove_liked_disliked(recipe_id, opinion):
+        if opinion == 'like':
+            db.users.find_one_and_update({"_id": current_user.user['_id']}, {"$pull": {"likes": recipe_id}})
+            db.recipes.find_one_and_update({"_id": ObjectId(recipe_id)}, {"$inc": {"users.likes": -1}})
+        else:
+            db.users.find_one_and_update({"_id": current_user.user['_id']}, {"$pull": {"dislikes": recipe_id}})
+            db.recipes.find_one_and_update({"_id": ObjectId(recipe_id)}, {"$inc": {"users.dislikes": -1}})
+        
+        User.get_data()
