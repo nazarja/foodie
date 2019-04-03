@@ -27,6 +27,7 @@
     <footer>{% include 'partials/_footer.html' %}</footer>
 
     <!-- JavaScript -->
+    <script>const userLoggedIn = '{{ "true" if current_user.is_authenticated else "false" }}';</script>
     <script src="{{ url_for('static', filename='js/uikit.min.js') }}"></script>
     <script src="{{ url_for('static', filename='js/uikit-icons.min.js') }}"></script>
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>

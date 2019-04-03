@@ -1,0 +1,15 @@
+{% block content %}
+    <li class="uk-inline" uk-tooltip="title: Edit; pos: top-right"><a href="{{ url_for('editor', url='edit', recipe=recipe._id) }}" uk-icon="file-edit"></a></li>
+    <li class="uk-inline" uk-tooltip="title: Like; pos: top-right">
+    {% if current_user.is_authenticated  and recipe._id in current_user.user['likes'] %}
+        <i class="favourites user-favourite"  data-values="{{ recipe._id }},like,true" uk-icon="heart"> {{ recipe.users.likes }} </i></li>
+    {% else %}
+        <i class="favourites"  data-values="{{ recipe._id }},like,false" uk-icon="heart"> {{ recipe.users.likes }} </i></li>
+    {% endif %}
+        <li class="uk-inline" uk-tooltip="title: Dislike; pos: top-right">
+    {% if current_user.is_authenticated and recipe._id in current_user.user['dislikes'] %}
+        <i class="favourites user-favourite"  data-values="{{ recipe._id }},dislike,true" uk-icon="trash"> {{ recipe.users.dislikes }} </i></li>
+    {% else %}
+        <i class="favourites"  data-values="{{ recipe._id }},dislike,false" uk-icon="trash"> {{ recipe.users.dislikes }} </i></li>
+    {% endif %}
+{% endblock %}

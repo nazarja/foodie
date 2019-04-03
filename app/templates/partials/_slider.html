@@ -30,10 +30,8 @@
                         <!-- Iconnav -->
                         <div class="uk-card-footer uk-position-bottom-right">
                             <ul class="uk-iconnav">
-                                <li  uk-tooltip="title: Edit; pos: top-right"><a href="{{ url_for('editor', url='edit', recipe=recipe._id) }}" uk-icon="file-edit"> Edit </a></li>
-                                <li  uk-tooltip="title: Like; pos: top-right"><a href="#" uk-icon="heart"> {{ recipe.users.likes }} </a></li>
-                                <li  uk-tooltip="title: Dislike; pos: top-right"><a href="#" uk-icon="trash">  {{ recipe.users.dislikes }} </a></li>
-                                <li  uk-tooltip="title: Comments; pos: top-right"><a href="#" uk-icon="comments">  {{ recipe.users.comments|count }} </a></li>
+                                {% include 'partials/_favourites_menu.html' %}
+                                <li  uk-tooltip="title: Comments; pos: top-right"><i uk-icon="comments">  {{ recipe.users.comments|count }} </i></li>
                             </ul>
                         </div>
                     </div>

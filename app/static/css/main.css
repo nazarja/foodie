@@ -190,9 +190,16 @@ footer img {
     color: var(--black) !important;
 }
 
-.uk-iconnav > * > a {
+.uk-iconnav > * > a, .uk-iconnav > * > i  {
     text-decoration: none;
     color: var(--black);
+    cursor: pointer;
+}
+
+.slider .uk-iconnav > * > a, .slider .uk-iconnav > * > i,
+#recipe .uk-iconnav > * > a, #recipe .uk-iconnav > * > i ,
+.grid .uk-iconnav > * > a, .grid .uk-iconnav > * > i     {
+    vertical-align: top;
 }
 
 
@@ -316,6 +323,10 @@ p.comment {
 
 .uk-subnav-pill li:hover {
     cursor: pointer;
+}
+
+.user-favourite {
+    color: red !important;
 }
 
 
