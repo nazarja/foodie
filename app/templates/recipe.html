@@ -120,7 +120,7 @@
     <!-- Require Sign In to post a comment -->
     {% if not current_user.is_authenticated %}
     <div class="uk-alert-primary" uk-alert>
-        <p>You must be logged in to comment. <a class="uk-align-right" href="{{ url_for('sign', url='in') }}" class="sign-link"> Sign In </a></p>
+        <p>You must be logged in to comment. <a class="uk-align-right@s uk-margin-remove-bottom" href="{{ url_for('sign', url='in') }}" class="sign-link"> Sign In </a></p>
     </div>
 
     <!-- Comment Input form -->

@@ -5,9 +5,7 @@
 ==================================================================
 */
 
-
-@media screen and (max-width: 1300px) {
-    
+@media screen and (max-width: 1300px) {    
     #navbar-large {
         padding: 0 20px;
     }
@@ -15,7 +13,6 @@
 
 
 @media screen and (max-width: 1200px) {
-    
     #navbar-small, footer section div {
         display: block !important;
     }
@@ -35,28 +32,45 @@
 
 
 @media screen and (max-width: 800px) {
-
-    .uk-subnav > * {
-        min-width: 100px;
-        margin-left: auto;
-        margin-right: auto;
-        text-align: center;
+    #cta p {
+        font-size: 1.45rem;
     }
 
-    .uk-select {
-        width: 100%;
+    .recipe-count {
+        display: block;
     }
 
     #filters-form, #filters-grid {
         display: block;
         width: 100%;
     }
+
+    #filters-form {
+       display: none;
+    }
+
+    .filters-toggle {
+        display: block !important;
+    }
+
+    #expand-filters {
+        display: block;
+    }
+
+    .uk-select {
+        width: 100%;
+    }
 }
 
 
 @media screen and (max-width: 500px) {
-    
     #nav-search {
         display: none;
+    }
+
+    .uk-subnav > * {
+        min-width: 200px;
+        margin: auto;
+        text-align: center;
     }
 }

@@ -21,7 +21,7 @@
         </div>
 
         <!-- Recipe Title -->
-        <p><a class="uk-h5" href="{{ url_for('recipe', recipe=recipe._id, title=recipe.details.title|resub )}}">{{ recipe.details.title|title }}</a></p>
+        <p class="uk-text-truncate"><a class="uk-h5" href="{{ url_for('recipe', recipe=recipe._id, title=recipe.details.title|resub )}}">{{ recipe.details.title|title }}</a></p>
 
         <!-- Sort By -->
         <p class="uk-text-meta">

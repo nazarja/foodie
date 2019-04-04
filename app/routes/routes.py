@@ -58,43 +58,19 @@ def profile():
 # ================================================ #
 
 
-# search
-@app.route('/search', methods=['POST'])
-def search():
-    search_term = request.form['search_term']
-    return redirect(url_for('filters', search_term=search_term))
+# update user favourites
+@app.route('/update_favourites', methods=['POST'])
+def update_favourites():
+    if request.form['value'] == 'true':
+        User.add_liked_disliked(request.form['_id'], request.form['opinion'])
+    else: 
+        User.remove_liked_disliked(request.form['_id'], request.form['opinion'])
+    return 'Favourites Updated'
 
 
 # ================================================ #
 # ================================================ #
 
-
-# filters
-@app.route('/filters', methods=['GET', 'POST'])
-def filters():
-    
-    recipe_filters = {}
-    options = { 'sort': 'users.likes', 'order': -1, 'limit': 12}
-    search_term = request.args.get('search_term')
-
-    if request.method == 'POST':
-        recipe_filters = request.form.to_dict()
-
-        if recipe_filters['limit']:
-            sort_values = recipe_filters['sort'].split(',')
-            options['sort'] = sort_values[0]
-            options['order'] = sort_values[1]
-            options['limit'] = recipe_filters['limit']
-            del recipe_filters['sort']
-            del recipe_filters['limit']
-
-
-    filtered_recipes = Recipe.get_filtered_recipes(recipe_filters, options=options, search_term=search_term)
-    return render_template('filters.html', recipes=filtered_recipes, search_term=search_term, sort=options['sort'])
-
-
-# ================================================ #
-# ================================================ #
 
 # categories
 @app.route('/categories/<category>/<data>')
@@ -156,6 +132,21 @@ def recipe(recipe, title):
 # ================================================ #
 
 
+# editor
+@app.route('/editor/<url>')
+def editor(url):
+    recipe = Recipe.get_details(request.args.get('recipe'))
+    if recipe:
+        form = EditorForm(True, data=recipe)
+    else:
+        form = EditorForm(False, data=None)
+    return render_template('editor.html', url=url, form=form)
+
+
+# ================================================ #
+# ================================================ #
+
+
 # comment
 @app.route('/comments', methods=['POST'])
 def comment():
@@ -177,29 +168,39 @@ def comment():
 # ================================================ #
 
 
-# update user favourites
-@app.route('/update_favourites', methods=['POST'])
-def update_favourites():
-    if request.form['value'] == 'true':
-        User.add_liked_disliked(request.form['_id'], request.form['opinion'])
-    else: 
-        User.remove_liked_disliked(request.form['_id'], request.form['opinion'])
-    return 'Favourites Updated'
+# filters
+@app.route('/filters', methods=['GET', 'POST'])
+def filters():
+    
+    recipe_filters = {}
+    options = { 'sort': 'users.likes', 'order': -1, 'limit': 12}
+    search_term = request.args.get('search_term')
+
+    if request.method == 'POST':
+        recipe_filters = request.form.to_dict()
+
+        if recipe_filters['limit']:
+            sort_values = recipe_filters['sort'].split(',')
+            options['sort'] = sort_values[0]
+            options['order'] = sort_values[1]
+            options['limit'] = recipe_filters['limit']
+            del recipe_filters['sort']
+            del recipe_filters['limit']
+
+
+    filtered_recipes = Recipe.get_filtered_recipes(recipe_filters, options=options, search_term=search_term)
+    return render_template('filters.html', recipes=filtered_recipes, search_term=search_term, sort=options['sort'])
 
 
 # ================================================ #
 # ================================================ #
 
 
-# editor
-@app.route('/editor/<url>')
-def editor(url):
-    recipe = Recipe.get_details(request.args.get('recipe'))
-    if recipe:
-        form = EditorForm(True, data=recipe)
-    else:
-        form = EditorForm(False, data=None)
-    return render_template('editor.html', url=url, form=form)
+# search
+@app.route('/search', methods=['POST'])
+def search():
+    search_term = request.form['search_term']
+    return redirect(url_for('filters', search_term=search_term))
 
 
 # ================================================ #
@@ -250,5 +251,10 @@ def sign(url):
 def sign_out():
     logout_user()    
     return redirect(url_for('sign', url='in'))
+
+
+# ================================================ #
+# ================================================ #
+
 
 

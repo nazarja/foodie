@@ -166,11 +166,6 @@ function updateFavourites(recipe_id, opinion, value) {
 ==================================================================
 */
 
-function listenForFileEdit() {
-    document.querySelectorAll('.userNotLoggedIn').forEach(item => item.addEventListener('click', () => promptToLogin()));
-}
-listenForFileEdit();
-
 function promptToLogin() {
     UIkit.notification({
         message: `You must be signed in to do that!`,
@@ -179,3 +174,17 @@ function promptToLogin() {
         timeout: 3000
     });
 }
+
+
+/*
+==================================================================
+   Event Listeners
+==================================================================
+*/
+
+function eventListeners() {
+    // File Edit
+    document.querySelectorAll('.userNotLoggedIn').forEach(item => item.addEventListener('click', () => promptToLogin()));
+
+}
+eventListeners();

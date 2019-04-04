@@ -8,6 +8,11 @@
         <h1 class="uk-heading-divider uk-h2">Search Results for  ... {{ search_term|title }}</h1>
     {% endif %}
 
+    <!-- Mobile Filters Menu Expander -->
+    <div id="expand-filters"  uk-toggle="target: #filters-form; animation: uk-animation-fade; cls: filters-toggle;">
+        <button class="uk-button uk-width-1-1">Toggle Filters Menu</button>
+    </div>
+
     <!-- Filters Form -->
     {% if search_term %}
     <form id="filters-form" class="uk-form-stacked uk-margin-large-bottom" action="{{ url_for('filters' , search_term=search_term) }}" method="POST">    
