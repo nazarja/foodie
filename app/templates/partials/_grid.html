@@ -28,7 +28,7 @@
             {% if sort == 'users.likes' %}Likes: <i uk-icon="arrow-down"></i>
             {% elif sort == 'users.dislikes' %}Dislikes <i uk-icon="arrow-down"></i>
             {% elif sort == 'details.title' %}By Title
-            {% elif sort == 'filters.skill' %}Skill: {{ recipe.filters.skill }}
+            {% elif sort == 'filters.skill' %}Difficulty: {{ recipe.filters.skill }}
             {% elif sort == 'details.author' %}Author: {{ recipe.details.author }}
             {% elif sort == 'details.serves' %}{{ recipe.details.serves|title }}
             {% elif sort == 'filters.main_ingredient' %}Main Ingredient:  

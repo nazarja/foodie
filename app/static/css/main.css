@@ -102,12 +102,12 @@ footer img {
 ==================================================================
 */
 
-.uk-input {
+.uk-input, .uk-textarea, .uk-select {
     margin-top: 10px;
     border: 1px solid var(--lightgrey);
 }
 
-.uk-input:focus {
+.uk-input:focus, .uk-textarea:focus, .uk-select:focus {
     border-color: var(--grey);
     box-shadow: var(--light-box-shadow);
 }
@@ -293,7 +293,7 @@ p.comment {
     width: 70%;
 }
 
-.uk-select {
+#filters-search .uk-select {
     width: 85%;
 }
 
@@ -367,4 +367,59 @@ p.comment {
 @keyframes rotateglobe {
     from { transform: rotate(0deg); }
     to { transform: rotate(359deg); }
+}
+
+
+/*
+==================================================================
+    Editor Page
+==================================================================
+*/
+
+#editor .uk-input, #editor .uk-textarea { 
+    margin-bottom: 10px;
+}
+
+#editor .uk-select {
+    margin: 10px 0;
+}
+
+#editor .uk-grid-margin {
+    margin-top: 15px !important;
+}
+
+#editor textarea {
+    resize: vertical;
+}
+
+#editor #instructions , #editor #ingredients   {
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+}
+
+#editor #instructions div {
+    max-width: 49%;
+}
+
+#editor #ingredients input {
+    max-width: 24%;
+    padding-left: 10px;
+}
+
+#editor td input {
+    position: relative;
+    width: 20%;
+}
+
+#editor .uk-block {
+    display: block;
+}
+
+#editor h3 {
+    background-color: #e6e5e5;
+    padding: 15px;
+    margin-left: 30px;
+    border: 1px solid transparent;
+    border-radius: 10px;
 }

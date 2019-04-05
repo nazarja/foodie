@@ -1,13 +1,150 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<section id="editor" class="uk-container">
-    <form>
-        <div uk-sortable>
-            <p class="uk-form-label">{{ form.title.label }}<br />{{ form.title(class_="uk-input") }}</p>
-            <p class="uk-form-label">{{ form.author.label }}<br />{{ form.author(class_="uk-input") }}</p>
-        </div>
+<section id="editor" method="POST" {% if recipe %} action="{{ url_for('save_recipe', recipe_id='recipe._id') }}" {% else %} action="{{ url_for('save_recipe', recipe_id='new') }}" {% endif %} class="uk-container">
 
+    <h1 class="uk-h2">{{ url|title }} Recipe</h1>
+
+    <form id="new-recipe">
+        <div class="uk-margin-bottom" class="uk-grid-small" uk-grid>
+
+            <!-- Details -->
+            <h3 class="uk-h3 uk-width-1-1">Details</h3>
+
+            <!-- Author -->
+            <div class="uk-width-1-2@s">
+                <label class="uk-form-label" for="author">Author</label>
+                <input class="uk-input" type="text" name="author"  {% if recipe %} value="{{ recipe.details.author }}" {% else %} value="{{ current_user.user['username']|title }}" {% endif %} required>
+            </div>
+
+            <!-- Title -->
+            <div class="uk-width-1-2@s">
+                <label class="uk-form-label" for="title">Title</label>
+                <input class="uk-input" type="text" name="title" {% if recipe %} value="{{ recipe.details.title }}" {% endif %} required>
+            </div>
+
+            <!-- Description -->
+            <div class="uk-width-1-1@m">
+                <label class="uk-form-label" for="description">Description</label>
+                <input class="uk-input" rows="4" type="text" name="description" {% if recipe %} value="{{ recipe.details.description }}" {% else %} placeholder="Write a little about this recipe!" {% endif %} required>
+            </div>
+
+            <h3 class="uk-h3 uk-width-1-1">Further Details</h3>
+            <!-- Cuisine -->
+            <div class="uk-width-1-4@s">
+                <label class="uk-form-label" for="cuisine">Cuisine</label>
+                <div class="uk-form-controls">
+                    <select class="uk-select" name="cuisine">
+                        {% for value in filters.cuisine %}
+                            <option value="{{ value }}">{{  value|title }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+            </div>
+
+             <!-- Serves -->
+             <div class="uk-width-1-4@s">
+                    <label class="uk-form-label" for="serves">No. of Servings</label>
+                    <input class="uk-input" type="text" name="serves" {% if recipe %} value="{{ recipe.details.serves }}" {% else %} value="Serves: " {% endif %} required>
+                </div>
+
+            <!-- CookTime -->
+            <div class="uk-width-1-4@s">
+                <label class="uk-form-label" for="cook-time">Cooking Time</label>
+                <input class="uk-input" type="text" name="cook-time" {% if recipe %} value="{{ recipe.details.cook_time }}" {% else %} value="Cook: " {% endif %} required>
+            </div>
+
+            <!-- PrepTime -->
+            <div class="uk-width-1-4@s">
+                <label class="uk-form-label" for="prep-time">Preperation Time</label>
+                <input class="uk-input" type="text" name="prep-time" {% if recipe %} value="{{ recipe.details.prep_time }}" {% else %} value="Prep: " {% endif %}  required>
+            </div>
+
+            <!-- Image -->
+            <div class="uk-width-1-1@m">
+                <label class="uk-form-label" for="image-url">Image URL</label>
+                <input class="uk-input" type="url" name="image-url" {% if recipe %} value="{{ recipe.image[0] }}" {% else %} value="https://" {% endif %}  required>
+            </div>
+
+            
+            <!-- Instructions -->
+            <h3 class="uk-h3 uk-width-1-1">Instructions</h3>
+            <div id="instructions" class="uk-grid uk-grid-collapse uk-width-1-1@m" uk-grid>
+                {% if recipe %}
+                    {% for method in recipe.methods %}
+                        <div class="uk-width-1-2@s">
+                            <label class="uk-form-label ">No. {{ loop.index }}.</label>
+                            <input class="uk-input" type="textarea" name="instuction-{{ loop.index }}" value="{{ method }}" required>
+                        </div>
+                    {% endfor %}
+                {% else %}
+                    <div class="uk-width-1-2@s">
+                        <label class="uk-form-label ">Instructions 1</label>
+                        <textarea class="uk-textarea" type="textarea" rows="4" name="instuction1" value="" required></textarea>
+                    </div>
+                    <div class="uk-width-1-2@s">
+                        <label class="uk-form-label ">Instructions 2</label>
+                        <textarea class="uk-textarea" type="textarea" rows="4" name="instuction2"></textarea>
+                    </div>
+                {% endif %}
+            </div>
+
+            
+            <!-- Ingredients -->
+            <h3 class="uk-h3 uk-width-1-1">Ingredients</h3>
+            <div id="ingredients" class="uk-grid uk-grid-collapse uk-width-1-1@m uk-child-width-1-4@s" uk-grid>
+                    {% if recipe %}
+                        {% for ingredient in recipe.ingredients %}
+                            <input class="uk-input" type="text" name="ingredient-{{ loop.index }}" value="{{ ingredient }}">
+                        {% endfor %}
+                    {% else %}
+                        <input class="uk-input" type="text" name="ingredient-1" value="" required>
+                        <input class="uk-input" type="text" name="ingredient-2">
+                        <input class="uk-input" type="text" name="ingredient-3">
+                        <input class="uk-input" type="text" name="ingredient-4">
+                    {% endif %}
+            </div>
+
+            <!-- Keywords -->
+            <h3 class="uk-h3 uk-width-1-1">Keywords</h3>
+            <div class="uk-width-1-1@m">
+                <label class="uk-form-label" for="keywords">comma seperated values</label>
+                <input id="keywords" class="uk-input" type="text" name="keywords" {% if recipe %} value="{% for kw in recipe.filters.kw %} {{ kw}}, {% endfor %}" {% endif %}>
+            </div>
+        
+
+            <!-- Nutrition Table -->
+            <h3 class="uk-h3 uk-width-1-1">Nutrition</h3>
+            <div class="uk-width-1-1@m">
+                <div class="uk-margin-medium uk-overflow-auto">
+                    <table class="uk-table uk-table-divider uk-table-striped uk-table-small uk-table-justify">
+                        <thead>
+                            <tr>
+                                <th class="uk-text-bold">kcal</th>
+                                <th class="uk-text-bold">fat</th>
+                                <th class="uk-text-bold">saturates</th>
+                                <th class="uk-text-bold">carbs</th>
+                                <th class="uk-text-bold">sugars</th>
+                                <th class="uk-text-bold">fibre</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                {% for item in range(6) %}
+                                    <td><input type="text" class="uk-text-emphasis" {% if recipe %} value="{{ recipe.nutrition[loop.index - 1][1] }}" {% else %} value="0" {% endif %}></td>
+                                {% endfor %}
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Save Recipe -->
+            <h3 class="uk-h3 uk-width-1-1">Save Recipe</h3>
+        </div>
+        <!-- Save / Reset Buttons -->
+        <input type="submit" class="uk-button uk-button" value="Save">
+        <input type="reset" class="uk-button uk-button" value="Reset">
     </form>
 </section>
 {% endblock %}

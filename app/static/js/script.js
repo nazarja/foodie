@@ -115,7 +115,6 @@ function listenForFavourites() {
                             item.classList.remove('user-favourite');
                             item.dataset.values = `${itemId},${itemOpinion},false`;
                             text.textContent = `${num - 1} `;
-                            console.log('1')
                             updateFavourites(itemId, itemOpinion, false);
                         }
                         // if we are adding an opinion
@@ -123,7 +122,6 @@ function listenForFavourites() {
                             item.classList.add('user-favourite');
                             item.dataset.values = `${itemId},${itemOpinion},true`;
                             text.textContent = `${num + 1} `;
-                            console.log('2')
                             updateFavourites(itemId, itemOpinion, true);                        
                         }
                 }
@@ -135,7 +133,6 @@ function listenForFavourites() {
                         item.classList.remove('user-favourite');
                         item.dataset.values = `${itemId},${itemOpinion},false`;
                         text.textContent = `${num - 1} `;
-                        console.log('3')
                         updateFavourites(itemId, itemOpinion, false);
                     }
                 }

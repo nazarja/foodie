@@ -1,6 +1,6 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, PasswordField, BooleanField, SubmitField
-from wtforms.validators import DataRequired, ValidationError
+from wtforms import StringField, PasswordField, BooleanField, SubmitField, TextAreaField
+from wtforms.validators import DataRequired, ValidationError, URL
 
 
 class SignForm(FlaskForm):
@@ -21,19 +21,5 @@ class SignForm(FlaskForm):
         if len(password.data) < 4:
             raise ValidationError('password must be longer than 4 characters')
 
-
-# Editor Form
-def EditorForm(*args, data):
-
-    # Placeholder Class
-    class StaticForm(FlaskForm):
-        title = StringField('title', validators=[DataRequired()])
-        author = StringField('author', validators=[DataRequired()])
-
-    if args[0]:
-        StaticForm.title = StringField('title', validators=[DataRequired()], default=data['details']['title'])
-        StaticForm.author = StringField('author', validators=[DataRequired()], default=data['details']['author'])
-
-    return StaticForm()
 
 

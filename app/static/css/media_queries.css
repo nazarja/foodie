@@ -60,6 +60,14 @@
     .uk-select {
         width: 100%;
     }
+
+    #editor #instructions div {
+        min-width: 100%;
+    }
+    
+    #editor #ingredients input {
+        min-width: 49%;
+    }
 }
 
 
@@ -72,5 +80,9 @@
         min-width: 200px;
         margin: auto;
         text-align: center;
+    }
+    
+    #editor #ingredients input {
+        min-width: 99%;
     }
 }

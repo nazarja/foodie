@@ -4,7 +4,7 @@ from math import ceil
 from app import app, db
 from flask import render_template, redirect, url_for, request, flash
 from flask_login import login_user, logout_user, login_required, current_user
-from app.models.forms import SignForm, EditorForm
+from app.models.forms import SignForm
 from app.models.users import User
 from app.models.recipes import Recipe
 
@@ -135,12 +135,8 @@ def recipe(recipe, title):
 # editor
 @app.route('/editor/<url>')
 def editor(url):
-    recipe = Recipe.get_details(request.args.get('recipe'))
-    if recipe:
-        form = EditorForm(True, data=recipe)
-    else:
-        form = EditorForm(False, data=None)
-    return render_template('editor.html', url=url, form=form)
+    recipe = Recipe.get_details(request.args.get('recipe')) if url == 'edit' else False    
+    return render_template('editor.html', url=url, recipe=recipe)
 
 
 # ================================================ #
