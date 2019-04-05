@@ -423,3 +423,12 @@ p.comment {
     border: 1px solid transparent;
     border-radius: 10px;
 }
+
+.uk-button-danger {
+    background-color: #F0506E !important;
+    height: 38px;
+}
+
+.uk-button-danger:hover {
+    background-color: var(--black) !important;
+}

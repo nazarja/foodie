@@ -143,6 +143,28 @@ def editor(url):
 # ================================================ #
 
 
+# save recipe
+@app.route('/save_recipe/<recipe_id>', methods=['POST'])
+def save_recipe(recipe_id):
+    url = Recipe.add_edit_recipe(recipe_id, request.form.to_dict())
+    return redirect(url_for('recipe', recipe=url[0], title=url[1]))
+
+
+# ================================================ #
+# ================================================ #
+
+
+# delete recipe
+@app.route('/delete_recipe/<recipe_id>')
+def delete_recipe(recipe_id):
+    Recipe.delete_recipe(recipe_id)
+    return redirect(url_for('index'))
+
+
+# ================================================ #
+# ================================================ #
+
+
 # comment
 @app.route('/comments', methods=['POST'])
 def comment():

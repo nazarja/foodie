@@ -1,11 +1,11 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<section id="editor" method="POST" {% if recipe %} action="{{ url_for('save_recipe', recipe_id='recipe._id') }}" {% else %} action="{{ url_for('save_recipe', recipe_id='new') }}" {% endif %} class="uk-container">
+<section id="editor" class="uk-container">
 
     <h1 class="uk-h2">{{ url|title }} Recipe</h1>
 
-    <form id="new-recipe">
+    <form method="POST" {% if recipe %} action="{{ url_for('save_recipe', recipe_id=recipe._id) }}" {% else %} action="{{ url_for('save_recipe', recipe_id='new') }}" {% endif %} >
         <div class="uk-margin-bottom" class="uk-grid-small" uk-grid>
 
             <!-- Details -->
@@ -74,17 +74,17 @@
                     {% for method in recipe.methods %}
                         <div class="uk-width-1-2@s">
                             <label class="uk-form-label ">No. {{ loop.index }}.</label>
-                            <input class="uk-input" type="textarea" name="instuction-{{ loop.index }}" value="{{ method }}" required>
+                            <input class="uk-input" type="textarea" name="instruction-{{ loop.index }}" value="{{ method }}" required>
                         </div>
                     {% endfor %}
                 {% else %}
                     <div class="uk-width-1-2@s">
                         <label class="uk-form-label ">Instructions 1</label>
-                        <textarea class="uk-textarea" type="textarea" rows="4" name="instuction1" value="" required></textarea>
+                        <textarea class="uk-textarea" type="textarea" rows="4" name="instruction-1" value="" required></textarea>
                     </div>
                     <div class="uk-width-1-2@s">
                         <label class="uk-form-label ">Instructions 2</label>
-                        <textarea class="uk-textarea" type="textarea" rows="4" name="instuction2"></textarea>
+                        <textarea class="uk-textarea" type="textarea" rows="4" name="instruction-2"></textarea>
                     </div>
                 {% endif %}
             </div>
@@ -131,7 +131,7 @@
                         <tbody>
                             <tr>
                                 {% for item in range(6) %}
-                                    <td><input type="text" class="uk-text-emphasis" {% if recipe %} value="{{ recipe.nutrition[loop.index - 1][1] }}" {% else %} value="0" {% endif %}></td>
+                                    <td><input type="text" name="nutrition-{{ loop.index }}" class="uk-text-emphasis" {% if recipe %} value="{{ recipe.nutrition[loop.index - 1][1] }}" {% else %} value="0" {% endif %}></td>
                                 {% endfor %}
                             </tr>
                         </tbody>
@@ -145,6 +145,9 @@
         <!-- Save / Reset Buttons -->
         <input type="submit" class="uk-button uk-button" value="Save">
         <input type="reset" class="uk-button uk-button" value="Reset">
+        {% if recipe %}
+            <a class="uk-button uk-button-danger" href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}">Delete</a>
+        {% endif %}
     </form>
 </section>
 {% endblock %}

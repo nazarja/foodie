@@ -1,4 +1,4 @@
-import re
+import re, json
 from app import db
 from bson.objectid import ObjectId
 from flask_login import current_user
@@ -63,6 +63,69 @@ class Recipe:
         # the returned filtered recipes
         return [recipe for recipe in cursor]
 
+
+    @staticmethod
+    def add_edit_recipe(recipe_id, data):
+
+        if recipe_id != 'new':
+            recipe = db.recipes.find_one({"_id": ObjectId(recipe_id)})
+        else:    
+            with open('app/data/schemas/recipe.json') as recipe_file:
+                recipe = json.load(recipe_file)
+
+        temp = []
+        recipe['details']['author'] = data['author']
+        recipe['details']['title'] = data['title']
+        recipe['details']['description'] = data['description']
+        recipe['filters']['cuisine'] = data['cuisine']
+        recipe['details']['serves'] = data['serves']
+        recipe['details']['cook_time'] = data['cook-time']
+        recipe['details']['prep_time'] = data['prep-time']
+        recipe['filters']['kw'] = data['keywords'].strip().split(',')
+        recipe['methods'] = []
+        recipe['instructions'] = []
+        recipe['nutrition'] = [["kcal", ""],["fat", ""],["saturates", ""],["carbs", ""],["sugars", ""],["fibre", ""]]
+        del recipe['filters']['kw'][len(recipe['filters']['kw']) - 1]
+        
+        if recipe_id == 'new':
+            recipe['image'] = data['image-url']
+        else:
+             recipe['image'][0] = data['image-url']
+
+        for key, value in data.items():
+           
+            if re.match("instruction", key):
+                recipe['methods'].append(value)
+
+            if re.match("ingredients", key):
+                recipe['ingredients'].append(value)
+
+            if re.match("nutrition", key):
+                temp.append(value)
+
+        for index, value in enumerate(temp):
+            recipe['nutrition'][index][1] = value
+
+        if recipe_id == 'new':
+            db.recipes.insert_one(recipe);
+        else:
+            db.recipes.replace_one({"_id":ObjectId(recipe_id)}, recipe, upsert=True)
+        
+        return (recipe['_id'], recipe['details']['title'])
+
+
+    @staticmethod
+    def delete_recipe(recipe_id):
+        db.recipes.delete_one({"_id": ObjectId(recipe_id)})
+
+
+    # Todo: 
+    # If recipe deleted, check user comments and edits,
+    # If recipe edited or created, add to user 
+        
+                
+
+        
 
         
         
