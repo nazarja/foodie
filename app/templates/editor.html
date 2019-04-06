@@ -29,44 +29,55 @@
                 <input class="uk-input" rows="4" type="text" name="description" {% if recipe %} value="{{ recipe.details.description }}" {% else %} placeholder="Write a little about this recipe!" {% endif %} required>
             </div>
 
-            <h3 class="uk-h3 uk-width-1-1">Further Details</h3>
-            <!-- Cuisine -->
-            <div class="uk-width-1-4@s">
-                <label class="uk-form-label" for="cuisine">Cuisine</label>
-                <div class="uk-form-controls">
-                    <select class="uk-select" name="cuisine">
-                        {% for value in filters.cuisine %}
-                            <option value="{{ value }}">{{  value|title }}</option>
-                        {% endfor %}
-                    </select>
-                </div>
-            </div>
-
-             <!-- Serves -->
-             <div class="uk-width-1-4@s">
-                    <label class="uk-form-label" for="serves">No. of Servings</label>
-                    <input class="uk-input" type="text" name="serves" {% if recipe %} value="{{ recipe.details.serves }}" {% else %} value="Serves: " {% endif %} required>
-                </div>
-
-            <!-- CookTime -->
-            <div class="uk-width-1-4@s">
-                <label class="uk-form-label" for="cook-time">Cooking Time</label>
-                <input class="uk-input" type="text" name="cook-time" {% if recipe %} value="{{ recipe.details.cook_time }}" {% else %} value="Cook: " {% endif %} required>
-            </div>
-
-            <!-- PrepTime -->
-            <div class="uk-width-1-4@s">
-                <label class="uk-form-label" for="prep-time">Preperation Time</label>
-                <input class="uk-input" type="text" name="prep-time" {% if recipe %} value="{{ recipe.details.prep_time }}" {% else %} value="Prep: " {% endif %}  required>
-            </div>
-
             <!-- Image -->
             <div class="uk-width-1-1@m">
                 <label class="uk-form-label" for="image-url">Image URL</label>
                 <input class="uk-input" type="url" name="image-url" {% if recipe %} value="{{ recipe.image[0] }}" {% else %} value="https://" {% endif %}  required>
             </div>
 
-            
+            <!-- Filters -->
+            <h3 class="uk-h3 uk-width-1-1">Filters</h3>
+            {% for key, values in filters.items() %}
+            <div class="uk-width-1-3@s uk-width-1-6@m">
+                <label class="uk-form-label" for="form-stacked-select">{{ key|title }}</label>
+                <div class="uk-form-controls">
+                    <select class="uk-select" id="form-stacked-select" name="{{ key }}">
+                        {% for item, itemValue in recipe.filters.items() %}
+                                {% if item == key %}
+                                    {% if key == 'course' %}
+                                        <option value="{{ itemValue[0] }}" selected>{{ itemValue[0]|title }}</option>
+                                    {% else %}
+                                        <option value="{{ itemValue }}" selected>{{ itemValue|title }}</option>
+                                    {% endif %}
+                                {% endif %}
+                        {% endfor %}
+                        {% for value in values %}
+                            <option value="{{ value }}">{{  value|title }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+            </div>
+            {% endfor %}
+
+             <!-- Serves -->
+             <h3 class="uk-h3 uk-width-1-1">Times</h3>
+             <div class="uk-width-1-3@s">
+                <label class="uk-form-label" for="serves">No. of Servings</label>
+                <input class="uk-input" type="text" name="serves" {% if recipe %} value="{{ recipe.details.serves }}" {% else %} value="Serves: " {% endif %} required>
+            </div>
+
+            <!-- CookTime -->
+            <div class="uk-width-1-3@s">
+                <label class="uk-form-label" for="cook-time">Cooking Time</label>
+                <input class="uk-input" type="text" name="cook-time" {% if recipe %} value="{{ recipe.details.cook_time }}" {% else %} value="Cook: " {% endif %} required>
+            </div>
+
+            <!-- PrepTime -->
+            <div class="uk-width-1-3@s">
+                <label class="uk-form-label" for="prep-time">Preperation Time</label>
+                <input class="uk-input" type="text" name="prep-time" {% if recipe %} value="{{ recipe.details.prep_time }}" {% else %} value="Prep: " {% endif %}  required>
+            </div>
+
             <!-- Instructions -->
             <h3 class="uk-h3 uk-width-1-1">Instructions</h3>
             <div id="instructions" class="uk-grid uk-grid-collapse uk-width-1-1@m" uk-grid>
@@ -140,7 +151,7 @@
             </div>
 
             <!-- Save Recipe -->
-            <h3 class="uk-h3 uk-width-1-1">Save Recipe</h3>
+            <h3 class="uk-h3 uk-width-1-1">Save / Delete Recipe</h3>
         </div>
         <!-- Save / Reset Buttons -->
         <input type="submit" class="uk-button uk-button" value="Save">
