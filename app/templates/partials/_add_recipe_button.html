@@ -1,0 +1,5 @@
+{% block content %}
+<div id="add-new-recipe-button" uk-tooltip="title: Add New Recipe; pos: top-left"> 
+        <a {% if current_user.is_authenticated %} href="{{ url_for('editor', url='new') }}" {% else %} href="#" class="userNotLoggedIn" {% endif %}  uk-icon="icon: plus"></a>
+</div>
+{% endblock %}

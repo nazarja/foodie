@@ -131,6 +131,15 @@ footer img {
     border-radius: 0;
 }
 
+.uk-button-danger {
+    background-color: #F0506E !important;
+    height: 38px;
+}
+
+.uk-button-danger:hover {
+    background-color: var(--black) !important;
+}
+
 .flashes {
     font-weight: bolder;
     color: crimson;
@@ -424,11 +433,34 @@ p.comment {
     border-radius: 10px;
 }
 
-.uk-button-danger {
-    background-color: #F0506E !important;
-    height: 38px;
+
+/*
+==================================================================
+    Misc.
+==================================================================
+*/
+
+#add-new-recipe-button {
+    position: fixed;
+    bottom: 40px;
+    right: 20px;
+    border: 1px solid white;
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    line-height: 38px;
+    text-align: center;
+    background-color: var(--darkblue);
+    color: var( --white);
+    transition: var( --transition);
+    box-shadow: -1px 0px 8px 0px rgba(0,0,0,0.4);
+    z-index: 100;
 }
 
-.uk-button-danger:hover {
-    background-color: var(--black) !important;
+#add-new-recipe-button:hover {
+    background-color: var(--black);
+}
+
+#add-new-recipe-button a:hover {
+    color: white !important;
 }

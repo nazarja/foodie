@@ -44,7 +44,7 @@
                     <select class="uk-select" id="form-stacked-select" name="{{ key }}">
                         {% for item, itemValue in recipe.filters.items() %}
                                 {% if item == key %}
-                                    {% if key == 'course' %}
+                                    {% if key == 'course' and itemValue is iterable and itemValue is not string %}
                                         <option value="{{ itemValue[0] }}" selected>{{ itemValue[0]|title }}</option>
                                     {% else %}
                                         <option value="{{ itemValue }}" selected>{{ itemValue|title }}</option>

@@ -4,4 +4,5 @@
 <section class="uk-container">
     <h1>Hey {{ current_user.user['username']|title }}.</h1>
 </section>
+{% include 'partials/_add_recipe_button.html' %}
 {% endblock %}
