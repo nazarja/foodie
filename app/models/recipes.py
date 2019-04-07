@@ -93,7 +93,7 @@ class Recipe:
         del recipe['filters']['kw'][len(recipe['filters']['kw']) - 1]
         
         if recipe_id == 'new':
-            recipe['image'] = data['image-url']
+            recipe['image'] = [data['image-url']]
         else:
              recipe['image'][0] = data['image-url']
 
@@ -114,19 +114,38 @@ class Recipe:
         if recipe_id == 'new':
             db.recipes.insert_one(recipe);
         else:
-            db.recipes.replace_one({"_id":ObjectId(recipe_id)}, recipe, upsert=True)
-        
+            db.recipes.replace_one({"_id": ObjectId(recipe_id)}, recipe, upsert=True)
+
+        # Add recipe to users recipes
+        Recipe.add_user_recipe(recipe)
+        # Redirect to edited / created recipe page
         return (recipe['_id'], recipe['details']['title'])
 
 
     @staticmethod
     def delete_recipe(recipe_id):
         db.recipes.delete_one({"_id": ObjectId(recipe_id)})
+        db.users.update({}, {"$pull": {"recipes": {"_id": ObjectId(recipe_id)}}})
 
 
-    # Todo: 
-    # If recipe deleted, check user comments and edits,
-    # If recipe edited or created, add to user 
+    @staticmethod
+    def add_user_recipe(recipe):
+        db.users.find_one_and_update({"_id": current_user.user['_id']}, {"$addToSet": {"recipes": recipe['_id']}})
+
+
+    @staticmethod
+    def get_user_recipes():
+        
+        user_recipes = []
+        for recipe_id in current_user.user['recipes']:
+            user_recipes.append({"_id": recipe_id})
+
+        return [recipe for recipe in db.recipes.find({"$or": user_recipes})] if user_recipes else []
+        
+        
+        
+        
+
         
                 
 

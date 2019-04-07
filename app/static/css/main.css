@@ -329,7 +329,6 @@ p.comment {
 
 .grid-image {
     border-radius: 3px;
-    width: 100%;
 }
 
 .uk-subnav-pill li:hover {
@@ -442,9 +441,9 @@ p.comment {
 
 #add-new-recipe-button {
     position: fixed;
-    bottom: 40px;
+    bottom: 80px;
     right: 20px;
-    border: 1px solid white;
+    border: 1px solid var(--darkblue);
     border-radius: 50%;
     height: 40px;
     width: 40px;
@@ -458,9 +457,29 @@ p.comment {
 }
 
 #add-new-recipe-button:hover {
-    background-color: var(--black);
+    background-color: var(--lightblack);
 }
 
 #add-new-recipe-button a:hover {
     color: white !important;
+}
+
+
+/*
+==================================================================
+   Profile Page
+==================================================================
+*/
+
+#profile div {
+    vertical-align: top;
+}
+
+#profile #my-comments {
+    width: 24%;
+    margin-left: 15px;
+}
+
+#profile #my-recipes {
+    width: 74%;
 }

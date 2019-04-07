@@ -51,7 +51,8 @@ def index():
 @app.route('/profile')
 @login_required
 def profile():
-    return render_template('profile.html')
+    recipes = Recipe.get_user_recipes()
+    return render_template('profile.html', recipes=recipes)
 
 
 # ================================================ #

@@ -28,6 +28,15 @@
     #cta {
         margin-top: -20px;
     }
+
+    #profile #my-comments {
+        width: 100%;
+        margin-left: 0px;
+    }
+    
+    #profile #my-recipes {
+        width: 100%;
+    }
 }
 
 
@@ -67,6 +76,12 @@
     
     #editor #ingredients input {
         min-width: 49%;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .grid-image {
+        width: 100%;
     }
 }
 
