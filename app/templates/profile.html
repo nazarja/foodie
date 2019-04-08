@@ -6,40 +6,58 @@
 
     <div id="my-recipes" class=" uk-margin uk-inline">
         <h2 class="uk-h4">My Edited Recipes</h2>
-        <div id="grid" class="uk-grid-medium uk-grid-match uk-child-width-1-2@s uk-child-width-1-4@m" uk-grid>
-            {% for recipe in recipes %}
-                {% include 'partials/_grid.html' %}
-            {% endfor %}
-        </div>
-        {% if recipes|count > 8 %}
-            <div class="uk-margin-top">
-                <button id="show-more-recipes" class="uk-button">Show More</button>
-                <button id="show-less-recipes" class="uk-button uk-button-danger">Show Less</button>
+        {% if recipes|count == 0 %}
+            <div id="recipes-placeholder" class="uk-placeholder uk-text-center uk-padding-large">
+                    <p>Such Empty, No Edited Recipes Yet.</p>
             </div>
+        {% else %}
+            <div id="grid" class="uk-grid-medium uk-grid-match uk-child-width-1-2@s uk-child-width-1-4@m" uk-grid>
+                {% for recipe in recipes %}
+                    {% include 'partials/_grid.html' %}
+                {% endfor %}
+            </div>
+            {% if recipes|count > 8 %}
+                <div class="uk-margin-top">
+                    <button id="show-more-recipes" class="uk-button">Show More</button>
+                    <button id="show-less-recipes" class="uk-button uk-button-danger">Show Less</button>
+                </div>
+            {% endif %}
         {% endif %}
     </div>
 
     <div id="my-comments" class="uk-margin uk-inline">    
         <h2 class="uk-h4">My Recent Comments</h2>
-        {% for comment in current_user.user['comments']|reverse %}
-            {% if loop.index < 7 %}
-                <div class="uk-padding-small uk-margin-small-bottom uk-comment">
-                    <div class="uk-width-expand">
-                            <div class="uk-comment-meta">
-                                <a href="{{ url_for('recipe', recipe=comment._id, title=comment.title|resub )}}">{{ comment.title|title }}</a>
+        {% if current_user.user['comments']|count == 0 %}
+            <!-- Placeholder if no comments exist -->    
+            <div id="comments-placeholder" class="uk-placeholder uk-text-center">
+                    <p>Such Empty, No Comments Yet.</p>
+            </div>
+        {% else %}
+            {% for comment in current_user.user['comments']|reverse %}
+                {% if loop.index < 8 %}
+                    <div class="uk-padding-small uk-margin-small-bottom uk-comment">
+                        <div class="uk-width-expand">
+                                <div class="uk-comment-meta">
+                                    <a href="{{ url_for('recipe', recipe=comment._id, title=comment.title|resub )}}">{{ comment.title|title }}</a>
+                                </div>
+                                <ul class="uk-comment-meta uk-subnav uk-subnav-divider uk-margin-remove-top">
+                                    <li>{{ comment.date }}</li>
+                                </ul>
                             </div>
-                            <ul class="uk-comment-meta uk-subnav uk-subnav-divider uk-margin-remove-top">
-                                <li>{{ comment.date }}</li>
-                            </ul>
+                        </header>
+                        <div class="uk-comment-body">
+                            <p>{{ comment.reply }}</p>
                         </div>
-                    </header>
-                    <div class="uk-comment-body">
-                        <p>{{ comment.reply }}</p>
                     </div>
-                </div>
-            {% endif%}
-        {% endfor %}
+                {% endif%}
+            {% endfor %}
+        {% endif %}
     </div>
+
+    <!-- Site Statistics -->
+    <h2 class="uk-h4 uk-heading-divider">Site Statistics</h2>
+    <div></div>
+
 </section>
 {% include 'partials/_add_recipe_button.html' %}
 {% endblock %}

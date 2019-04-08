@@ -127,7 +127,7 @@ class Recipe:
     @staticmethod
     def delete_recipe(recipe_id):
         db.recipes.delete_one({"_id": ObjectId(recipe_id)})
-        db.users.update({}, {"$pull": {"recipes": {"_id": ObjectId(recipe_id)}, "comments": {"_id": recipe_id}}})
+        db.users.update({}, {"$pull": {"recipes": ObjectId(recipe_id), "comments": {"_id": recipe_id}}})
 
 
     @staticmethod
