@@ -157,7 +157,7 @@ footer img {
 }
 
 .uk-card-badge {
-    top: 5px;
+    top: 10px;
     right: 10px;
     color: white !important;
     background-color: var(--darkblue) !important;
@@ -331,6 +331,10 @@ p.comment {
     border-radius: 3px;
 }
 
+.uk-cover {
+    top: 46%;
+}
+
 .uk-subnav-pill li:hover {
     cursor: pointer;
 }
@@ -471,7 +475,7 @@ p.comment {
 ==================================================================
 */
 
-#profile div {
+#profile #my-comments, #profile #my-recipes {
     vertical-align: top;
 }
 
@@ -482,4 +486,8 @@ p.comment {
 
 #profile #my-recipes {
     width: 74%;
+}
+
+#profile .uk-align-left {
+    margin-right: 0;
 }

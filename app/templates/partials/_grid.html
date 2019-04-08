@@ -2,9 +2,10 @@
 <div class="uk-card uk-card-default uk-card-hover">
 
     <!-- Recipe Image -->
-    <div class="uk-card-media-top">
+    <div class="uk-card-media-top uk-cover-container">
         <a tabindex="0" href="{{ url_for('recipe', recipe=recipe._id, title=recipe.details.title|resub )}}">
-            <img class="grid-image" data-src="{{ recipe.image[0] }}" alt="{{ recipe.image[1] }}" uk-img>
+            <img class="grid-image " data-src="{{ recipe.image[0] }}" alt="{{ recipe.image[1] }}" uk-img uk-cover>
+            <canvas height="1000" width="1000"></canvas>
         </a>
     </div>
 
@@ -15,8 +16,10 @@
         <div class="uk-card-badge uk-label">
             {% if recipe.filters.main_ingredient != "" %}
                 {{ recipe.filters.main_ingredient }}
-            {% else %}
+            {% elif recipe.filters.ingred[0] != "" %}
                 {{ recipe.filters.ingred[0] }}
+            {% else %}
+                {{ recipe.filters.cuisine }}
             {% endif %}
         </div>
 
@@ -32,11 +35,11 @@
             {% elif sort == 'details.author' %}Author: {{ recipe.details.author }}
             {% elif sort == 'details.serves' %}{{ recipe.details.serves|title }}
             {% elif sort == 'filters.main_ingredient' %}Main Ingredient:  
-            {% if recipe.filters.main_ingredient != "" %}
-                {{ recipe.filters.main_ingredient }}
-            {% else %}
-                {{ recipe.filters.ingred[0] }}
-            {% endif %}
+                {% if recipe.filters.main_ingredient != "" %}
+                    {{ recipe.filters.main_ingredient }}
+                {% else %}
+                    {{ recipe.filters.ingred[0] }}
+                {% endif %}
             {% else %}Likes <i uk-icon="arrow-down"></i>
             {% endif %}
         </p>

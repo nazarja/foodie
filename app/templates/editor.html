@@ -32,7 +32,7 @@
             <!-- Image -->
             <div class="uk-width-1-1@m">
                 <label class="uk-form-label" for="image-url">Image URL</label>
-                <input class="uk-input" type="url" name="image-url" {% if recipe %} value="{{ recipe.image[0] }}" {% else %} value="https://i.pinimg.com/474x/6c/b8/3b/6cb83b4b56dcd5bd409a57ff7ceee02b--black-beauty-cameo.jpg" {% endif %}  required>
+                <input class="uk-input" type="url" name="image-url" {% if recipe %} value="{{ recipe.image[0] }}" {% else %} value="http://tinyurl.com/y43mkb4h" {% endif %}  required>
             </div>
 
             <!-- Filters -->
@@ -92,19 +92,24 @@
                     {% for method in recipe.methods %}
                         <div class="uk-width-1-2@s">
                             <label class="uk-form-label ">No. {{ loop.index }}.</label>
-                            <input class="uk-input" type="textarea" name="instruction-{{ loop.index }}" value="{{ method }}" required>
+                            <input class="uk-input" type="textarea" name="instruction-{{ loop.index }}" value="{{ method }}">
                         </div>
                     {% endfor %}
                 {% else %}
                     <div class="uk-width-1-2@s">
-                        <label class="uk-form-label ">Instructions 1</label>
-                        <textarea class="uk-textarea" type="textarea" rows="4" name="instruction-1" value="" required></textarea>
+                        <label class="uk-form-label ">No. 1</label>
+                        <input class="uk-input" type="textarea" name="instruction-1">
                     </div>
                     <div class="uk-width-1-2@s">
-                        <label class="uk-form-label ">Instructions 2</label>
-                        <textarea class="uk-textarea" type="textarea" rows="4" name="instruction-2"></textarea>
+                        <label class="uk-form-label ">No. 2</label>
+                        <input class="uk-input" type="textarea" name="instruction-2">
                     </div>
                 {% endif %}
+            </div>
+
+            <div class="uk-width-1-1">
+                <input id="add-instruction" type="button" class="uk-button" value="Add Instruction">
+                <input id="remove-instruction" type="button" class="uk-button uk-button-danger" value="Remove Last">
             </div>
 
             
@@ -121,6 +126,11 @@
                         <input class="uk-input" type="text" name="ingredient-3">
                         <input class="uk-input" type="text" name="ingredient-4">
                     {% endif %}
+            </div>
+
+            <div class="uk-width-1-1">
+                <input id="add-ingredient" type="button" class="uk-button" value="Add Ingredient">
+                <input id="remove-ingredient" type="button" class="uk-button uk-button-danger" value="Remove Last">
             </div>
 
             <!-- Keywords -->

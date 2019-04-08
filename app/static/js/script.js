@@ -175,6 +175,59 @@ function promptToLogin() {
 
 /*
 ==================================================================
+   Add Inputs to Editor Form
+==================================================================
+*/
+
+function addEditorInput(category) {
+    if (category == 'instruction') {
+        const instructions = document.querySelector('#instructions');
+        const length = document.querySelectorAll('#instructions input').length;
+        const div = document.createElement('div');
+        div.className = 'uk-width-1-2@s';
+        const label = document.createElement('label');
+        label.className = 'uk-form-label'
+        label.innerText = `No. ${length + 1}`;
+        const input = document.createElement('input');
+        input.className = 'uk-input';
+        input.type = 'textarea';
+        input.name = `instruction-${length + 1}">`
+        div.append(label);
+        div.append(input);
+        instructions.appendChild(div);
+    }
+    else {
+        const ingredients = document.querySelector('#ingredients');
+        const length = document.querySelectorAll('#ingredients input').length;
+        const input = document.createElement('input');
+        input.className = 'uk-input';
+        input.type = 'textarea';
+        input.name = `ingredient-${length + 1}">`
+        ingredients.appendChild(input);
+    }
+}
+
+/*
+==================================================================
+   Remove Inputs to Editor Form
+==================================================================
+*/
+
+function removeEditorInput(category) {
+    if (category == 'instruction') {
+        const instructions = document.querySelector('#instructions');
+        const length = document.querySelectorAll('#instructions input').length;
+        if (length > 1)  instructions.removeChild(instructions.lastElementChild);
+    }
+    else {
+        const ingredients = document.querySelector('#ingredients');
+        const length = document.querySelectorAll('#ingredients input').length;
+        if (length > 1)  ingredients.removeChild(ingredients.lastElementChild);
+    }
+}
+
+/*
+==================================================================
    Event Listeners
 ==================================================================
 */
@@ -183,5 +236,12 @@ function eventListeners() {
     // File Edit
     document.querySelectorAll('.userNotLoggedIn').forEach(item => item.addEventListener('click', () => promptToLogin()));
 
+    if (window.location.href.includes('editor')) {
+        document.querySelector('#add-instruction').onclick = () => addEditorInput('instruction');
+        document.querySelector('#add-ingredient').onclick = () => addEditorInput('ingredient');
+        document.querySelector('#remove-instruction').onclick = () => removeEditorInput('instruction');
+        document.querySelector('#remove-ingredient').onclick = () => removeEditorInput('ingredient');
+    }
 }
 eventListeners();
+

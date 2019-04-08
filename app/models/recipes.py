@@ -86,23 +86,25 @@ class Recipe:
         recipe['details']['serves'] = data['serves']
         recipe['details']['cook_time'] = data['cook-time']
         recipe['details']['prep_time'] = data['prep-time']
-        recipe['filters']['kw'] = data['keywords'].strip().split(',')
+        recipe['filters']['kw'] = [x.strip() for x in data['keywords'].split(',')]
         recipe['methods'] = []
         recipe['instructions'] = []
+        recipe['ingredients'] = []
         recipe['nutrition'] = [["kcal", ""],["fat", ""],["saturates", ""],["carbs", ""],["sugars", ""],["fibre", ""]]
         del recipe['filters']['kw'][len(recipe['filters']['kw']) - 1]
         
         if recipe_id == 'new':
             recipe['image'] = [data['image-url']]
+            recipe['filters']['ingred'] = [data['cuisine']]
         else:
              recipe['image'][0] = data['image-url']
 
         for key, value in data.items():
            
-            if re.match("instruction", key):
+            if re.match("instruction", key) and value is not '':
                 recipe['methods'].append(value)
 
-            if re.match("ingredients", key):
+            if re.match("ingredient", key) and value is not '':
                 recipe['ingredients'].append(value)
 
             if re.match("nutrition", key):
@@ -125,7 +127,7 @@ class Recipe:
     @staticmethod
     def delete_recipe(recipe_id):
         db.recipes.delete_one({"_id": ObjectId(recipe_id)})
-        db.users.update({}, {"$pull": {"recipes": {"_id": ObjectId(recipe_id)}}})
+        db.users.update({}, {"$pull": {"recipes": {"_id": ObjectId(recipe_id)}, "comments": {"_id": recipe_id}}})
 
 
     @staticmethod
@@ -135,7 +137,6 @@ class Recipe:
 
     @staticmethod
     def get_user_recipes():
-        
         user_recipes = []
         for recipe_id in current_user.user['recipes']:
             user_recipes.append({"_id": recipe_id})
