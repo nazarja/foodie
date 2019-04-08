@@ -6,6 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta id="uli" data-value="{{ 'true' if current_user.is_authenticated else 'false' }}">
     <meta name="description" content="Your recipe website to share and create world cuisine recipes. Log in today and get started!">
     <meta name="author" content="Sean Murphy">
     <title>Foodie | Create . Share . Eat</title>
@@ -27,7 +28,6 @@
     <footer>{% include 'partials/_footer.html' %}</footer>
 
     <!-- JavaScript -->
-    <script>const userLoggedIn = '{{ "true" if current_user.is_authenticated else "false" }}';</script>
     <script src="{{ url_for('static', filename='js/uikit.min.js') }}"></script>
     <script src="{{ url_for('static', filename='js/uikit-icons.min.js') }}"></script>
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>

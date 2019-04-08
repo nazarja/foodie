@@ -52,6 +52,7 @@ def index():
 @login_required
 def profile():
     recipes = Recipe.get_user_recipes()
+
     return render_template('profile.html', recipes=recipes)
 
 

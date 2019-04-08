@@ -91,6 +91,8 @@ listenForComments();
 function listenForFavourites() {
 
    const favourites = document.querySelectorAll('.favourites');
+   const userLoggedIn = document.querySelector('#uli').dataset.value;
+   
    favourites.forEach(favourite => favourite.addEventListener('click', event => {
 
         // if the user is not logged in - do not continue 
