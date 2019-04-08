@@ -48,7 +48,7 @@ def index():
 
 
 # profile
-@app.route('/profile')
+@app.route('/profile', methods=['GET', 'POST'])
 @login_required
 def profile():
     recipes = Recipe.get_user_recipes()

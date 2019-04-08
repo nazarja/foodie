@@ -226,6 +226,56 @@ function removeEditorInput(category) {
     }
 }
 
+
+/*
+==================================================================
+   Profile Page Show / Hide Recipes
+==================================================================
+*/
+
+function showHideUserRecipes() {
+    if (document.querySelector('#show-more-recipes')) {
+        const buttonMore = document.querySelector('#show-more-recipes');    
+        const buttonLess = document.querySelector('#show-less-recipes');    
+        
+        let start = 1;
+        showHideRecipes(start);
+
+        buttonMore.onclick = () => {
+            start += 1;
+            showHideRecipes(start);
+        }
+
+        buttonLess.onclick = () => {
+            start -= 1;
+            showHideRecipes(start);
+        }
+   
+        function showHideRecipes() {
+            const recipes = document.querySelectorAll('.recipe-card ');
+        
+            if (start == 1) step = 8;
+            else step = (8 * start) - 4;
+        
+        
+            for (let i = 0; i < recipes.length; i++) {
+                if (i < step) recipes[i].style.display = 'block';
+                else recipes[i].style.display = 'none';
+            }
+            
+            // shows / hides more recipes button
+            if (recipes[recipes.length - 1].style.display == 'block') buttonMore.style.display = 'none';
+            else buttonMore.style.display = 'inline-block';
+
+            // shows / hides less recipes button
+            if (start > 1) buttonLess.style.display = 'inline-block';
+            else buttonLess.style.display = 'none';
+        }
+    }
+}
+showHideUserRecipes();
+
+
 /*
 ==================================================================
    Event Listeners
