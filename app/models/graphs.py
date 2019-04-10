@@ -1,4 +1,5 @@
 import pygal    
+from pygal.style import LightColorizedStyle
 from app import db
 from bson.objectid import ObjectId
 from flask_login import current_user
@@ -11,8 +12,9 @@ class Graphs:
 
 
     def likes_chart():
-        bar_chart = pygal.Bar()
+        bar_chart = pygal.Bar(fill=True, interpolate='cubic', style=LightColorizedStyle)
         bar_chart.title = 'Average Likes / Dislikes per Cuisine'
+        bar_chart.x_labels = ['Likes', 'Dislikes']
         cursor = db.recipes.aggregate([{"$group": {"_id": "$filters.cuisine", "likes": { "$avg": '$users.likes' }, "dislikes": { "$avg": '$users.dislikes' }}}])
         
         for item in cursor:
@@ -23,26 +25,23 @@ class Graphs:
 
 
     def kcal_chart():
-        pie_chart = pygal.Pie()
+        pie_chart = pygal.Pie(inner_radius=.4, fill=True, interpolate='cubic', style=LightColorizedStyle)
         pie_chart.title = 'Average KCAL per Cuisine'
 
         cursor = db.recipes.aggregate([
-                {
-                    "$project":
+                { "$project":
                         {
                             "_id": "$filters.cuisine",
                             "arr": { "$arrayElemAt": [ "$nutrition", 0 ] }
                         }
                 },
-                {
-                    "$project":
+                { "$project":
                         {
                             "_id": "$_id",
                             "kcal": { "$arrayElemAt": [ "$arr", 1 ] }
                         }
                 },
-                {   
-                   "$group": {
+                { "$group": {
                        "_id": "$_id",
                        "avgKcal": { "$avg": {
                                 "$toInt": "$kcal"
@@ -58,7 +57,3 @@ class Graphs:
                 
         return pie_chart.render_data_uri() 
 
-
-
-
-  
