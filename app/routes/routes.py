@@ -7,6 +7,7 @@ from flask_login import login_user, logout_user, login_required, current_user
 from app.models.forms import SignForm
 from app.models.users import User
 from app.models.recipes import Recipe
+from app.models.graphs import Graphs
 
 
 # ================================================ #
@@ -52,8 +53,9 @@ def index():
 @login_required
 def profile():
     recipes = Recipe.get_user_recipes()
-
-    return render_template('profile.html', recipes=recipes)
+    likes_chart = Graphs.likes_chart()
+    kcal_chart = Graphs.kcal_chart()
+    return render_template('profile.html', recipes=recipes, likes_chart=likes_chart, kcal_chart=kcal_chart)
 
 
 # ================================================ #

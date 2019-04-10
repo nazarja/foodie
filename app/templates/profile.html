@@ -56,7 +56,22 @@
 
     <!-- Site Statistics -->
     <h2 class="uk-h4 uk-heading-divider">Site Statistics</h2>
-    <div></div>
+    <div class="uk-margin-medium-top" uk-grid>
+
+        <!-- Likes / Dislikes Bar Chart -->
+        <div class="uk-width-1-2@m">
+            <figure>
+                <embed type="image/svg+xml" src="{{ likes_chart|safe }}" />
+            </figure>
+        </div>
+        
+        <!-- Avg. KCAL Pie Chart -->
+        <div class="uk-width-1-2@m">
+            <figure>
+                <embed type="image/svg+xml" src="{{ kcal_chart|safe }}" />
+            </figure>
+        </div>
+    </div>
 
 </section>
 {% include 'partials/_add_recipe_button.html' %}
