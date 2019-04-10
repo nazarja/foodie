@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div>
+
+        <figure>
+            <embed type="image/svg+xml" src="{{ kcal_chart|safe }}" />
+        </figure>
+
+        <figure>
+            <embed type="image/svg+xml" src="{{ likes_chart|safe }}" />
+        </figure>
+       
+    </div>
+{% endblock %}
