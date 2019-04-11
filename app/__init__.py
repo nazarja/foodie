@@ -13,7 +13,7 @@ login = LoginManager(app)
 login.login_view = '/sign/in'
 
 # configure mongodb, during development ('localhost', 27017) was used
-client = MongoClient('localhost', 27017)
+client = MongoClient(Config.MONGO_URI)
 db = client.foodie
 
 # import routes
