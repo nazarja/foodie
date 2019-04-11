@@ -38,7 +38,7 @@ def slug_friendly(title):
     """
 
     title = re.sub(r'\W', '_', title)
-    return title.replace('___', '_+_')
+    return title.replace('___', '_')
 
 
 # make function available as a custom filter to jinja

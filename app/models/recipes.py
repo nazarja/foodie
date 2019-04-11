@@ -167,17 +167,16 @@ class Recipe:
             if re.match("nutrition", key):
                 temp.append(value)
 
-       # assign nutrition values from temp list to recipe
+        # assign nutrition values from temp list to recipe
         for index, value in enumerate(temp):
-            
-            # make sure value is a positive integer number
-            try:
-                value = int(value)
-                value = '0' if value < 0 else value
-            except:
-                value = '0'
-
             recipe['nutrition'][index][1] = value
+
+        # make sure kcal is a positive integer number
+        try:
+            value = int(recipe['nutrition'][0][1])
+            recipe['nutrition'][0][1] = '0' if value < 0 else value
+        except:
+            recipe['nutrition'][0][1] = '0'
 
         # if its a new recipe, insert it
         if recipe_id == 'new':
