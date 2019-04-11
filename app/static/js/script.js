@@ -5,8 +5,11 @@
 ==================================================================
 */
 
+// Animation to change the height of the navbar and change the logo image
 function menuAnimation() {
 
+    // constructing a new url was necessary for setting the logo ..
+    // .. image src from a css file with javascript
     const logo = document.querySelector('#logo');
     const url = window.location.protocol + '//' + window.location.host + '/';
 
@@ -28,7 +31,7 @@ function menuAnimation() {
 }
 menuAnimation();
 
-
+// As menu height changes, so does the dropdown menu offset
 function changeDropDown(offset) {    
     const menus = document.querySelectorAll('.main-dropdown-menu');
     menus.forEach(menu => menu.setAttribute('uk-drop', `offset: ${offset}`));
@@ -41,8 +44,10 @@ function changeDropDown(offset) {
 ==================================================================
 */
 
+// To prevent page refesh after a comment has been posted
 function listenForComments() {
 
+    // if on a page with the comments form
     if (document.querySelector('#comments-form')) {
 
         const form = document.querySelector('#comments-form');
@@ -51,16 +56,19 @@ function listenForComments() {
         const data = document.querySelector('#hidden-input');
         const reply = document.querySelector('#form-reply-comment');
         
-
+        // listener for submit
         form.addEventListener('submit', (event) => {
+            
             event.preventDefault()
             const date = new Date().toLocaleString();
 
+            // send off a xhr request, when response received, add html comment with data
             let xhr = new XMLHttpRequest();
             xhr.open("POST", '/comments', true);
             xhr.onreadystatechange = function() {
                 if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
 
+                    // comment html (unformatted)
                     const comment =
                     `<article class="uk-comment uk-padding-small uk-margin-medium"><header class="uk-comment-header uk-grid-medium uk-flex-middle" uk-grid>
                     <div class="uk-width-auto"><img class="uk-comment-avatar" src="../../static/images/profile_picture.png" width="80" height="80" alt="profile picture"></div>
@@ -69,11 +77,14 @@ function listenForComments() {
                     </div><ul class="uk-comment-meta uk-subnav uk-subnav-divider uk-margin-remove-top">
                     <li>${date}</li></ul></div></header><div class="uk-comment-body"><p class="comment">${reply.value}</p></div></article>`;
                     
+                    // insert at bottom of comments and reset comments form value
                     if (placeholder) placeholder.style.display = 'none';
                     userComments.insertAdjacentHTML("beforeend", comment);
                     reply.value = '';
                 }
             };
+
+            // set correct headers and send xhr data to backend
             xhr.setRequestHeader('content-type', 'application/x-www-form-urlencoded;charset=UTF-8');
             xhr.send(`_id=${recipeId}&title=${recipeTitle}&username=${data.value}&date=${date}&reply=${reply.value}`); 
         });
@@ -93,6 +104,7 @@ function listenForFavourites() {
    const favourites = document.querySelectorAll('.favourites');
    const userLoggedIn = document.querySelector('#uli').dataset.value;
    
+   // add event listener to each like / dislike button
    favourites.forEach(favourite => favourite.addEventListener('click', event => {
 
         // if the user is not logged in - do not continue 
@@ -101,6 +113,9 @@ function listenForFavourites() {
         // get clicked element values
         let [_id, opinion, value] = event.currentTarget.dataset.values.split(',');
 
+        // like and dislike are both svg elements and listing for the event bubble is ..
+        // .. the most efficent way to capture the click, changing the node values ensures that ..
+        // .. any other nodes are not overwrittn with updated values
         favourites.forEach(item => {
             let [itemId, itemOpinion, itemValue] = item.dataset.values.split(',');
             let text = item.childNodes[0];
@@ -151,6 +166,7 @@ listenForFavourites();
 ==================================================================
 */
 
+// sends a lxhr request to backend to add or remove a like or dislike
 function updateFavourites(recipe_id, opinion, value) {
     let xhr = new XMLHttpRequest();
     xhr.open("POST", '/update_favourites', true);
@@ -165,6 +181,7 @@ function updateFavourites(recipe_id, opinion, value) {
 ==================================================================
 */
 
+// if the user is not logged  shows a notification
 function promptToLogin() {
     UIkit.notification({
         message: `You must be signed in to do that!`,
@@ -181,6 +198,7 @@ function promptToLogin() {
 ==================================================================
 */
 
+//  creates additional input element in editor group
 function addEditorInput(category) {
     if (category == 'instruction') {
         const instructions = document.querySelector('#instructions');
@@ -215,6 +233,7 @@ function addEditorInput(category) {
 ==================================================================
 */
 
+// removes last input element in editor group
 function removeEditorInput(category) {
     if (category == 'instruction') {
         const instructions = document.querySelector('#instructions');
@@ -235,6 +254,7 @@ function removeEditorInput(category) {
 ==================================================================
 */
 
+// javascript pagination function to show or hide recipes on the users profile page
 function showHideUserRecipes() {
     if (document.querySelector('#show-more-recipes')) {
         const buttonMore = document.querySelector('#show-more-recipes');    
@@ -243,11 +263,13 @@ function showHideUserRecipes() {
         let start = 1;
         showHideRecipes(start);
 
+        // increase recipes
         buttonMore.onclick = () => {
             start += 1;
             showHideRecipes(start);
         }
 
+        // decrease recipes
         buttonLess.onclick = () => {
             start -= 1;
             showHideRecipes(start);
@@ -255,11 +277,13 @@ function showHideUserRecipes() {
    
         function showHideRecipes() {
             const recipes = document.querySelectorAll('.recipe-card ');
-        
+            
+            //  on page load, 8 recipes can be show 
+            // increasing or decreasing insteps of 4
             if (start == 1) step = 8;
             else step = (8 * start) - 4;
         
-        
+            // iterate over recipes are set display values
             for (let i = 0; i < recipes.length; i++) {
                 if (i < step) recipes[i].style.display = 'block';
                 else recipes[i].style.display = 'none';
@@ -285,9 +309,11 @@ showHideUserRecipes();
 */
 
 function eventListeners() {
-    // File Edit
+   
+    // File Edit Button
     document.querySelectorAll('.userNotLoggedIn').forEach(item => item.addEventListener('click', () => promptToLogin()));
 
+    // Only set event listeners on editor page
     if (window.location.href.includes('editor')) {
         document.querySelector('#add-instruction').onclick = () => addEditorInput('instruction');
         document.querySelector('#add-ingredient').onclick = () => addEditorInput('ingredient');
