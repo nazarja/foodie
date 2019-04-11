@@ -172,7 +172,6 @@ class Recipe:
             recipe['nutrition'][index][1] = value
 
         # make sure kcal is a positive integer number
-        
         try:
             value = int(recipe['nutrition'][0][1])
             recipe['nutrition'][0][1] = '0' if value < 0 else value
