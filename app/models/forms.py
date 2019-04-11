@@ -1,9 +1,15 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, PasswordField, BooleanField, SubmitField, TextAreaField
-from wtforms.validators import DataRequired, ValidationError, URL
+from wtforms import StringField, PasswordField, BooleanField, SubmitField
+from wtforms.validators import DataRequired, ValidationError
 
 
 class SignForm(FlaskForm):
+    """
+        Flask WTF_Forms was only used for user sign in and sign up.
+        Required fields are validated with DataRequired() and
+        additional validation is limited to providing a username and
+        password no shorter than 4 characters.
+    """
 
     # Fields - require some validation
     username = StringField('Username', validators=[DataRequired()])

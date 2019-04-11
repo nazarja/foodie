@@ -1,5 +1,6 @@
 from pymongo import MongoClient
 from werkzeug.security import generate_password_hash
+from config.config import Config
 import json
 
 """ 
@@ -9,8 +10,8 @@ import json
     for easy and quick queries and to be used to create menus and options.
 """
 
-# assign mongo client
-client = MongoClient("localhost", 27017)
+#  configure mongodb, during development ('localhost', 27017) was used
+client = MongoClient(Config.MONGO_URI)
 
 # database / collections
 db = client.foodie
@@ -23,8 +24,9 @@ filters = db.filters
 
 
 def add_recipes():
+
     """
-        add recipes to recipe collection
+        Add recipes to recipe collection
     """
 
     with open('db.json') as db_file:
@@ -36,8 +38,9 @@ def add_recipes():
 
 
 def add_user():
+
     """
-        add first user to user collection
+        Add first user to user collection
     """
 
     with open('../schemas/user.json') as users_file:
@@ -51,8 +54,9 @@ def add_user():
 
 
 def add_filters():
+
     """
-        create collection for menu items and mega filter
+        Create collection for menu items and mega filter
     """
 
     with open('db.json') as db_file:
@@ -114,8 +118,9 @@ def add_filters():
 
 
 """ 
-    run file
+    Run file
 """
+
 add_recipes()
 add_user()
 add_filters()

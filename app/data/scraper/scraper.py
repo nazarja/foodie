@@ -12,6 +12,7 @@ from bs4 import BeautifulSoup
 
 db = {}
 recipe_urls = []
+
 base_urls = [
     'https://www.bbcgoodfood.com/recipes/collection/american',
     'https://www.bbcgoodfood.com/recipes/collection/british',
@@ -36,6 +37,7 @@ base_urls = [
 
 
 def get_recipe_urls():
+
     """
         Request collection page, parse html and extract the url link
     """
@@ -61,6 +63,7 @@ def get_recipe_urls():
 
 
 def get_recipe_details():
+
     """
         Request recipe page, parse html and extract data, save into a dict as json
     """
@@ -183,7 +186,8 @@ def get_recipe_details():
 
 
 """ 
-    run scraper 
+    Run scraper 
 """
+
 get_recipe_urls()
 get_recipe_details()
