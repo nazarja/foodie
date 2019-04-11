@@ -1,9 +1,8 @@
 {% extends 'base.html' %}
-
 {% block content %}
 <section class="uk-container">
 
-    <!-- Call To Action -->
+    <!--cALL TO ACTION-->
     <div id="cta" class="uk-height-medium uk-background-cover uk-overflow-hidden uk-light uk-flex uk-flex-top">
         <div class="uk-text-center uk-margin-auto uk-margin-auto-vertical">
             {% if not current_user.is_authenticated %}
@@ -16,11 +15,11 @@
         </div>
     </div>
 
-    <!-- Slider -->
+    <!-- SLIDER -->
     <h1 class="uk-heading-divider uk-h2">Featured Recipes</h1>
     {% include 'partials/_slider.html' %}
 
-    <!-- Recipe Grid -->
+    <!-- RECIPE GRID-->
     <h3>You May Also Like ...</h3>    
     <div id="grid" class="uk-grid-medium uk-grid-match uk-child-width-1-2@s uk-child-width-1-4@m" uk-grid>
         {% for recipe in recipes %}

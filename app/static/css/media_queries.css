@@ -5,6 +5,7 @@
 ==================================================================
 */
 
+/* 1300px */
 @media screen and (max-width: 1300px) {    
     #navbar-large {
         padding: 0 20px;
@@ -12,6 +13,7 @@
 }
 
 
+/* 1200px */
 @media screen and (max-width: 1200px) {
     #navbar-small, footer section div {
         display: block !important;
@@ -39,6 +41,8 @@
     }
 }
 
+
+/* 800px */
 @media screen and (max-width: 800px) {
     #cta p {
         font-size: 1.45rem;
@@ -78,13 +82,14 @@
     }
 }
 
+/* 640px */
 @media screen and (max-width: 640px) {
     .grid-image {
         width: 100%;
     }
 }
 
-
+/* 500px */
 @media screen and (max-width: 500px) {
     #nav-search {
         display: none;

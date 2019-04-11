@@ -1,9 +1,9 @@
 {% block content %}
 
-<!-- Small Navbar -->
+<!-- SMALL NAVBAR-->
 <nav id="navbar-small">
 
-    <!-- Logo / Burger Icon -->
+    <!-- LOGO / BURDER ICON -->
     <div id="nav-small-left">
         <i id="offcanvas-toggle" uk-toggle="target: #offcanvas-menu" uk-icon="menu"></i>
         <a href="{{ url_for('index') }}">
@@ -11,39 +11,41 @@
         </a>
     </div>
 
-    <!-- Search and Sign  -->
+    <!-- SEARCH AND SIGN -->
     <div id="navbar-small-right" class="uk-navbar uk-position-right">
         <div id="nav-search" class="uk-navbar-right">
             <a id="search-icon-text" href="#modal-full" uk-toggle>search ...</a>
             <a id="search-icon" class="uk-navbar-toggle" href="#modal-full" uk-search-icon uk-toggle></a>
         </div>
-        <!-- Sign / Account -->
+        <!-- SIGN / ACCOUNT -->
         {% include 'partials/_sign.html' %}
     </div>
-    <!-- OffCanvas Menu -->
+    <!-- OFFCANVAS MENU-->
     {% include 'partials/_offcanvas.html' %}
 </nav>
 
 
 
-<!-- Large Navbar -->
+<!-- LARGE NAVBAR -->
 <nav id="navbar-container">
     <div id="navbar-large" uk-navbar>
 
-        <!-- Search and Sign  -->
+        <!-- SEARCH AND SIGN  -->
         <div class="uk-navbar-left">
             <a id="logo-container" href="{{ url_for('index') }}">
                 <img id="logo" src="{{ url_for('static', filename='images/logo_large_white.png') }}" alt="foodie logo" uklogo>
             </a>
 
-            <!-- Main Menu -->
+            <!-- MAIN MENU -->
             <ul id="main-menu" class="uk-navbar-nav">
                 {% for key, values in filters.items() %}
                     <li>
+                        <!-- MENU TITLE -->
                         <a href="#">{{ key }}<i uk-icon="chevron-down"></i></a>
                         <div class="uk-navbar-dropdown uk-navbar-dropdown-width-2 main-dropdown-menu" uk-drop="offset: 15; pos: bottom-center">
                             <span class="uk-text-primary submenu-heading">{{ key }}</span>
                             <ul class="uk-nav uk-navbar-dropdown-nav main-menu-ul">
+                                <!-- MENU ITEM -->
                                 {% for value in values %}
                                     <li class="main-menu-item">
                                         <a href="{{ url_for('categories', category=key, data=value) }}">{{ value|title }}</a>
@@ -58,9 +60,9 @@
                 </li>
             </ul>
         </div>
-        <!-- Search Element -->
+        <!-- SEARCH ELEMENT-->
         {% include 'partials/_search_modal.html' %}
-        <!-- Sign / Account Ul Element -->
+        <!--SIGN / UI INTERFACE ELEMENT -->
         {% include 'partials/_sign.html' %}
     </div>
 </nav>

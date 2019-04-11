@@ -1,19 +1,23 @@
 {% block content %}
- {% if pages > 2 %}
- <ul class="uk-pagination uk-flex-center uk-margin-large uk-text-emphasis">
-     <!-- First Arrow -->
-     <li><a href="{{ url_for( 'categories', category=category, data=data, page=1, sort=sort)}}"><span uk-pagination-previous></span> First </a></li>
 
-     <!-- Loop over pages -->
-     {% for index in range(start,  end) %}
-         {% if index == page %}
-             <li class="active">{{ index }}</li>
-        {% else %}
-            <li><a href="{{ url_for('categories', category=category, data=data, page=index, sort=sort)}}">{{ index }}</a></li>
-        {% endif %}
-    {% endfor %}
+{% if pages > 2 %}
+<ul class="uk-pagination uk-flex-center uk-margin-large uk-text-emphasis">
+    
+    <!-- FIRST PAGE ARROW -->
+    <li><a href="{{ url_for( 'categories', category=category, data=data, page=1, sort=sort)}}"><span uk-pagination-previous></span> First </a></li>
 
-    <!-- Last Arrow -->
+    <!-- LOOP OVER PAGE INDEXES -->
+    {% for index in range(start,  end) %}
+
+        <!-- CURRENT PAGE -->
+        {% if index == page %}
+            <li class="active">{{ index }}</li>
+            {% else %}
+                <li><a href="{{ url_for('categories', category=category, data=data, page=index, sort=sort)}}">{{ index }}</a></li>
+            {% endif %}
+        {% endfor %}
+
+    <!-- LAT PAGE ARROW -->
     <li><a href="{{ url_for('categories', category=category, data=data, page=(pages-1), sort=sort)}}"><span uk-pagination-next> Last </span></a></li>
 </ul>
 {% endif %}

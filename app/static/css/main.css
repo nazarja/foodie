@@ -5,6 +5,7 @@
 ==================================================================
 */
 
+/* Set variables on root to make available to all styles */
 :root {
     --green: #4D875D;
     --grey: #666666;
@@ -21,6 +22,7 @@
     --light-box-shadow: 0px 2px 10px 0px rgba(0,0,0,0.1);
 }
 
+/* Font Imports */
 @font-face {
     src: url('../fonts/ProximaNova-Light.woff2');
     font-family: 'ProximaNova Light';
@@ -43,6 +45,7 @@
 ==================================================================
 */
 
+/* body get a min-height and flex  to push footer to p */
 body {
     display: flex;
     flex-direction: column;
@@ -51,6 +54,7 @@ body {
     color: var(--grey);
 }
 
+/* headings restyled form default */
 h1, h2, h3, h4, h5, h6 {
     font-family: 'ProximaNova Regular', Roboto, sans-serif;
     color: var(--black);
@@ -70,11 +74,13 @@ li {
     list-style: none;
 }
 
+/* flex: 1 used to make main fill any unused remaining space  */
 main {
     flex: 1;
     margin-top: 50px;
 }
 
+/*  footer should be at bottom of either page or content */
 footer {
     margin-top: 60px;
     padding: 30px 0 10px;
@@ -101,6 +107,9 @@ footer img {
     Forms
 ==================================================================
 */
+
+/* Most changes on the form where overwrites of default styling by uikit  */
+
 
 .uk-input, .uk-textarea, .uk-select {
     margin-top: 10px;
@@ -140,6 +149,7 @@ footer img {
     background-color: var(--black) !important;
 }
 
+/* wtf_forms error message color */
 .flashes {
     font-weight: bolder;
     color: crimson;

@@ -1,3 +1,12 @@
+/*======================================
+    The css is split into 3 main categories by:
+    - Main Page Styles
+    - Navigation Styles
+    - Media Queries
+
+    CSS Framework used is UIKIT from getuikit.com
+======================================*/
+
 @import 'main.css';
 @import 'navigation.css';
 @import 'media_queries.css';

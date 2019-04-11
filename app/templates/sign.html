@@ -1,34 +1,35 @@
 {% extends 'base.html' %}
-
 {% block content %}
 <section id="sign">
+
+    <!-- LOGO / HEADING -->
     <a href="{{ url_for('index') }}"><img src="{{ url_for('static', filename='images/logo_large_black.png') }}" alt="foodie logo"></a>
     <h1>Sign {{ url }} to <strong>Foodie</strong></h1>
 
-    <!-- Form -->
+    <!-- FORM  -->
     <form action="" method="POST" autocomplete="off" novalidate>
         {{ form.hidden_tag() }}
 
-        <!-- Username-->
+        <!-- USERNAME -->
         <p class="uk-form-label">{{ form.username.label }}<br />{{ form.username(class_="uk-input") }}</p>
         {% if form.username.errors %}
             <p>{% for error in form.username.errors %}<span class="flashes">{{ error }}</span>{% endfor %}</p>
         {% endif %}
 
-        <!-- Password -->
+        <!-- PASSWORD -->
         <p class="uk-form-label">{{ form.password.label }}<br />{{ form.password(class_="uk-input") }}</p>
         {% if form.password.errors %}
             <p>{% for error in form.password.errors %}<span class="flashes">{{ error }}</span>{% endfor %}</p>
         {% endif %}
 
-        <!-- Remember Me -->
+        <!-- REMEMBER ME -->
         <p class="uk-form-label">{{ form.remember(class_="uk-checkbox") }} {{ form.remember.label }}</p>
 
-        <!-- Submit -->
+        <!-- SUBMIT -->
         <p>{{ form.submit(class_="uk-button uk-button-large uk-width-1-1") }}</p>
     </form>
 
-    <!-- Change Sign in / up url -->
+    <!-- CHANGE SIGN UP / IN URL -->
     <div>
         {% if url == 'in' %}
             <p>Not Registered Yet? <a href="{{ url_for('sign', url='up') }}" class="sign-link">Sign Up</a></p>
@@ -37,11 +38,12 @@
         {% endif %}
     </div>
 
-    <!-- Flash Error Messages -->
+    <!-- FLASH ERROR MESSAGES -->
     <div>
         {% with messages = get_flashed_messages(category_filter=["sign-error"]) %}
             {% if messages %}
                 <ul class=flashes>
+                    <!-- MESSAGE -->
                     {% for message in messages %}
                         <li>{{ message }}</li>
                     {% endfor %}

@@ -1,11 +1,15 @@
 {% extends 'base.html' %}
-
 {% block content %}
 <section id="profile" class="uk-container">
+
+    <!-- TITLE -->
     <h1 class="uk-heading-divider uk-h2 uk-margin">Welcome, {{ current_user.user['username']|title }}.</h1>
 
+    <!-- EDITED RECIPES -->
     <div id="my-recipes" class=" uk-margin uk-inline">
         <h2 class="uk-h4">My Edited Recipes</h2>
+
+        <!-- PLACEHOLDER IF 0 RECIPES EXIST  -->
         {% if recipes|count == 0 %}
             <div id="recipes-placeholder" class="uk-placeholder uk-text-center uk-padding-large">
                     <p>Such Empty, No Edited Recipes Yet.</p>
@@ -16,6 +20,8 @@
                     {% include 'partials/_grid.html' %}
                 {% endfor %}
             </div>
+
+            <!-- SHOW BUTTONS IF MORE THAN 8 RECIPES EXIST -->
             {% if recipes|count > 8 %}
                 <div class="uk-margin-top">
                     <button id="show-more-recipes" class="uk-button">Show More</button>
@@ -25,26 +31,35 @@
         {% endif %}
     </div>
 
+    <!-- RECENT COMMENTS -->
     <div id="my-comments" class="uk-margin uk-inline">    
         <h2 class="uk-h4">My Recent Comments</h2>
         {% if current_user.user['comments']|count == 0 %}
-            <!-- Placeholder if no comments exist -->    
+
+            <!-- PLACEHOLDER IF NO COMMENTS EXIST -->    
             <div id="comments-placeholder" class="uk-placeholder uk-text-center">
                     <p>Such Empty, No Comments Yet.</p>
             </div>
         {% else %}
+
+            <!-- REVERSE COMMENTS TO SHOW MOST RECENT FIRST -->
             {% for comment in current_user.user['comments']|reverse %}
+
+                <!-- LIMIT TO 8 COMMENTS -->
                 {% if loop.index < 8 %}
                     <div class="uk-padding-small uk-margin-small-bottom uk-comment">
                         <div class="uk-width-expand">
                                 <div class="uk-comment-meta">
+                                    <!-- COMMENT TITLE -->
                                     <a href="{{ url_for('recipe', recipe=comment._id, title=comment.title|resub )}}">{{ comment.title|title }}</a>
                                 </div>
+                                <!-- TIME OF COMMENT -->
                                 <ul class="uk-comment-meta uk-subnav uk-subnav-divider uk-margin-remove-top">
                                     <li>{{ comment.date }}</li>
                                 </ul>
                             </div>
                         </header>
+                        <!-- COMMENT REPLY TEXT -->
                         <div class="uk-comment-body">
                             <p>{{ comment.reply }}</p>
                         </div>
@@ -54,25 +69,24 @@
         {% endif %}
     </div>
 
-    <!-- Site Statistics -->
+    <!-- SITE STATISTICS -->
     <h2 class="uk-h4 uk-heading-divider">Site Statistics</h2>
     <div class="uk-margin-medium-top" uk-grid>
 
-        <!-- Likes / Dislikes Bar Chart -->
+        <!-- LIKES / DISLIKES BAR CHART -->
         <div class="uk-width-1-2@m">
             <figure>
                 <embed type="image/svg+xml" src="{{ likes_chart|safe }}" />
             </figure>
         </div>
         
-        <!-- Avg. KCAL Pie Chart -->
+        <!-- AVG. KCAL PIE CHART -->
         <div class="uk-width-1-2@m">
             <figure>
                 <embed type="image/svg+xml" src="{{ kcal_chart|safe }}" />
             </figure>
         </div>
     </div>
-
 </section>
 {% include 'partials/_add_recipe_button.html' %}
 {% endblock %}

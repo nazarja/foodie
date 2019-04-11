@@ -1,7 +1,7 @@
 {% block content %}
 <div class="recipe-card uk-card uk-card-default uk-card-hover">
 
-    <!-- Recipe Image -->
+    <!-- RECIPE IMAGE -->
     <div class="uk-card-media-top uk-cover-container">
         <a tabindex="0" href="{{ url_for('recipe', recipe=recipe._id, title=recipe.details.title|resub )}}">
             <img class="grid-image " data-src="{{ recipe.image[0] }}" alt="{{ recipe.image[1] }}" uk-img uk-cover>
@@ -9,10 +9,10 @@
         </a>
     </div>
 
-    <!-- Card Body -->
+    <!-- CARD BODY -->
     <div class="uk-card-body uk-padding-small">
 
-        <!-- Recipe Label -->
+        <!-- RECIPE LABEL -->
         <div class="uk-card-badge uk-label">
             {% if recipe.filters.main_ingredient != "" %}
                 {{ recipe.filters.main_ingredient }}
@@ -23,10 +23,10 @@
             {% endif %}
         </div>
 
-        <!-- Recipe Title -->
+        <!-- RECIPE TITLE -->
         <p class="uk-text-truncate"><a class="uk-h5" href="{{ url_for('recipe', recipe=recipe._id, title=recipe.details.title|resub )}}">{{ recipe.details.title|title }}</a></p>
 
-        <!-- Sort By -->
+        <!-- SORT BY -->
         <p class="uk-text-meta">
             {% if sort == 'users.likes' %}Likes: <i uk-icon="arrow-down"></i>
             {% elif sort == 'users.dislikes' %}Dislikes <i uk-icon="arrow-down"></i>
@@ -44,7 +44,7 @@
             {% endif %}
         </p>
 
-        <!-- Icon Nav -->
+        <!-- ICON NAV -->
         <ul class="uk-iconnav uk-align-left">
                 {% include 'partials/_favourites_menu.html' %}
         </ul>

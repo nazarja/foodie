@@ -4,14 +4,14 @@
         <button class="uk-offcanvas-close" type="button" uk-close></button>
         <div id="offcanvas-content">
 
-            <!-- Logo -->
+            <!-- LOGO -->
             <div id="offcanvas-logo" class="uk-text-center">
                 <a href="{{ url_for('index') }}">
                     <img src="{{ url_for('static', filename='images/logo_small_white.png') }}" alt="foodie logo">
                 </a>
             </div>
 
-            <!-- Search Element -->
+            <!-- SEARCH ELEMENT -->
             <div id="offcanvas-search">
                 <a class="uk-navbar-toggle" href="#modal-full" uk-toggle>
                     <i id="offcanvas-search-icon" uk-icon="search"></i>
@@ -19,14 +19,16 @@
                 </a>
             </div>
 
-            <!-- Menu -->
+            <!-- MENU -->
             <div id="offcanvas-menu">
                 <ul class="uk-nav-default uk-nav-parent-icon" uk-nav>
                     {% for key, values in filters.items() %}
                         <li class="uk-parent">
+                            <!-- MENU TITLE -->
                             <a href="#">{{ key|title }}</a>
                             <ul class="uk-nav-sub">
                                 {% for value in values %}
+                                    <!-- MENU ITEM -->
                                     <li>
                                         <a href="{{ url_for('categories', category=key, data=value) }}">{{ value|title }}</a>
                                     </li>
@@ -41,7 +43,7 @@
             </div>
         </div>
 
-        <!-- Icon Nav -->
+        <!-- ICON NAV -->
         <div id="offcanvas-iconnav">
             <p class="uk-text-meta uk-text-center">Get in touch with us!</p>
             <ul class="uk-iconnav">

@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
-
 {% block content %}
+<!-- 404 Error -->
 <section class="uk-container">
     <div class="flask-error">
 
@@ -11,7 +11,7 @@
         <p>Oh no, you broke the Internet?!</p>
         <p>Wait .. its us, not you! Just a 500 internal server error!</p>
 
-        <!-- HOME BUTTON -->
+        <!-- GO HOME BUTTON -->
         <a href="{{ url_for('index') }}">
             <button class="uk-button">home</button>
         </a>

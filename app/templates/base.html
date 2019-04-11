@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 
-    <!-- Meta -->
+    <!-- META -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -18,16 +18,16 @@
 </head>
 <body>
 
-    <!--Header -->
+    <!--HEADER -->
     <header id="header" uk-sticky>{% include 'partials/_navbar.html' %}</header>
 
-    <!-- Main -->
+    <!-- MAIN -->
     <main>{% block content %}{% endblock %}</main>
 
-    <!-- Footer -->
+    <!-- FOOTER -->
     <footer>{% include 'partials/_footer.html' %}</footer>
 
-    <!-- JavaScript -->
+    <!-- JAVASCRIPT -->
     <script src="{{ url_for('static', filename='js/uikit.min.js') }}"></script>
     <script src="{{ url_for('static', filename='js/uikit-icons.min.js') }}"></script>
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>

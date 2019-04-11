@@ -1,9 +1,12 @@
 {% block content %}
+<!-- COMMENT  -->
 <article class="uk-comment uk-padding-small uk-margin-medium">
     <header class="uk-comment-header uk-grid-medium uk-flex-middle" uk-grid>
+        <!-- PROFILE PICTURE -->
         <div class="uk-width-auto">
             <img class="uk-comment-avatar" src="{{ url_for('static', filename='images/profile_picture.png')}}" width="80" height="80" alt="profile picture">
         </div>
+        <!-- COMMENT DETAILS -->
         <div class="uk-width-expand">
             <h4 class="uk-comment-title uk-margin-remove">{{ comment.username }}</h4>
             <div class="uk-comment-meta">
@@ -14,6 +17,7 @@
             </ul>
         </div>
     </header>
+    <!-- COMMENT TEXT -->
     <div class="uk-comment-body">
         <p class="comment">{{ comment.reply }}</p>
     </div>

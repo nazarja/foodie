@@ -1,31 +1,32 @@
 {% extends 'base.html' %}
-
 {% block content %}
 <section id="categories" class="uk-container">
+
+    <!-- HEADING -->
     <h1 class="uk-heading-divider uk-h2">Featured {{ data|title }} Recipes</h1>
 
-    <!-- Slider -->
+    <!-- SLIDER -->
     {% include 'partials/_slider.html' %}
 
-    <!-- Divider -->
+    <!-- DIVIDER -->
     <hr class="uk-icon-divider">
 
-    <!-- Grid Title -->
+    <!-- TITLE -->
     <h2>All {{ data|title }} Recipes 
         <span class="uk-text-small recipe-count">({{ (page-1)*12 }} - {{ recipes|count+(page-1)*12 }} of {{ count }} recipes)</span>
     </h2>
 
-    <!-- Sort by Menu -->
+    <!-- SORT BY MENU -->
     {% include 'partials/_sort_menu.html' %}
 
-    <!-- Recipe Grid -->
+    <!-- RECIPE GRID -->
     <div id="grid" class="uk-grid-medium uk-grid-match uk-child-width-1-2@s uk-child-width-1-4@m" uk-grid>
     {% for recipe in recipes %}
         {% include 'partials/_grid.html' %}
     {% endfor %}
     </div>
 
-    <!-- Pagination -->
+    <!-- PAGINATION -->
     {% include 'partials/_pagination.html' %}
 </section>
 {% include 'partials/_add_recipe_button.html' %}
