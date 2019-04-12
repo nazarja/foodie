@@ -44,7 +44,7 @@
                         <a href="#">{{ key }}<i uk-icon="chevron-down"></i></a>
                         <div class="uk-navbar-dropdown uk-navbar-dropdown-width-2 main-dropdown-menu" uk-drop="offset: 15; pos: bottom-center">
                             <span class="uk-text-primary submenu-heading">{{ key }}</span>
-                            <ul class="uk-nav uk-navbar-dropdown-nav main-menu-ul">
+                            <ul class="uk-nav uk-navbar-dropdown-nav main-menu-ul {% if key == 'skill' %}nowrap{% endif %}">
                                 <!-- MENU ITEM -->
                                 {% for value in values %}
                                     <li class="main-menu-item">
