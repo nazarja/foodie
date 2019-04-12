@@ -432,6 +432,7 @@ p.comment {
 #editor td input {
     position: relative;
     width: 20%;
+    min-width: 20px;
 }
 
 #editor .uk-block {

@@ -17,7 +17,7 @@
         {% endif %}
 
         <!-- PASSWORD -->
-        <p class="uk-form-label">{{ form.password.label }}<br />{{ form.password(class_="uk-input") }}</p>
+        <p class="uk-form-label">{{ form.password.label }}<br />{{ form.password(class_="uk-input",  autocomplete="off") }}</p>
         {% if form.password.errors %}
             <p>{% for error in form.password.errors %}<span class="flashes">{{ error }}</span>{% endfor %}</p>
         {% endif %}
