@@ -312,7 +312,7 @@ class TestAppDataBase(unittest.TestCase):
         recipe = db.recipes.find_one({'_id': ObjectId('5caf8126cf37084fba86ac75')})
         assert recipe is None
 
-    ============== #
+    # ============== #
 
     def tearDown(self):
         sign_out = self.client.get('/sign/out')
