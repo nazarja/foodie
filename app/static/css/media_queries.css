@@ -57,6 +57,10 @@
         width: 100%;
     }
 
+    #filters-search .uk-select {
+        width: 100%;
+    }
+
     #filters-form {
        display: none;
     }
