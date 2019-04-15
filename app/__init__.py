@@ -2,11 +2,13 @@ from flask import Flask
 from flask_login import LoginManager
 from config.config import Config
 from pymongo import MongoClient
+rom flask_sslify import SSLify
 
 
 # initialize app
 app = Flask(__name__)
 app.config.from_object(Config)
+sslify = SSLify(app)
 
 # login manager
 login = LoginManager(app)
